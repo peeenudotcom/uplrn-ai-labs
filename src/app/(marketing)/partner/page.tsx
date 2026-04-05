@@ -171,6 +171,9 @@ export default function PartnerPage() {
                 <div className="text-center mt-4">
                   <h3 className="text-xl font-bold text-[#0F172A]">Rohit Sethi</h3>
                   <p className="text-sm text-[#059669] font-medium mt-1">Director, My Visa Guide (MVG)</p>
+                  <a href="tel:+919356800001" className="mt-2 inline-block text-sm text-[#475569] hover:text-[#059669] transition-colors">
+                    +91-93568-00001
+                  </a>
                 </div>
                 {/* Stats */}
                 <div className="w-full mt-2 grid grid-cols-2 gap-3">
