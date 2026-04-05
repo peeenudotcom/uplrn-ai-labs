@@ -1,0 +1,27 @@
+import { HeroSection } from '@/components/marketing/hero-section'
+import { StatsCounter } from '@/components/marketing/stats-counter'
+import { CourseHighlights } from '@/components/marketing/course-highlights'
+import { WhyUplrn } from '@/components/marketing/why-uplrn'
+import { ToolsShowcase } from '@/components/marketing/tools-showcase'
+import { TestimonialsSection } from '@/components/marketing/testimonials-section'
+import { MentorSection } from '@/components/marketing/mentor-section'
+import { PartnerBanner } from '@/components/marketing/partner-banner'
+import { FaqSection } from '@/components/marketing/faq-section'
+import { CtaSection } from '@/components/marketing/cta-section'
+
+export default function HomePage() {
+  return (
+    <>
+      <HeroSection />
+      <StatsCounter />
+      <CourseHighlights />
+      <WhyUplrn />
+      <ToolsShowcase />
+      <TestimonialsSection />
+      <MentorSection />
+      <PartnerBanner />
+      <FaqSection />
+      <CtaSection />
+    </>
+  )
+}
