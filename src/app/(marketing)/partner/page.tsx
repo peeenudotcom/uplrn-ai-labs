@@ -140,7 +140,7 @@ export default function PartnerPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#0F172A] mb-4">Backed by Industry Expertise</h2>
           <p className="max-w-3xl mx-auto text-[#475569] mb-10">
-            Uplrn AI Labs is supported by proven leaders with deep experience in scaling distribution and education businesses across India.
+            Uplrn AI Labs is supported by experienced industry leaders with a proven track record in education, migration, and large-scale business distribution.
           </p>
           <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md p-8 border border-[#E2E8F0] flex flex-col sm:flex-row items-center gap-8 text-left">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -153,16 +153,19 @@ export default function PartnerPage() {
               <h3 className="text-2xl font-semibold text-[#0F172A] mb-1">Rohit Sethi</h3>
               <p className="text-[#059669] font-medium mb-4">Director, My Visa Guide (MVG) | Master Franchise Partner – India</p>
               <p className="text-[#475569] leading-relaxed">
-                Rohit Sethi brings over 20 years of experience in building and scaling distribution networks across India, including his long-standing association as a distributor with Unilevel.
+                Rohit Sethi is the Director of My Visa Guide (MVG), one of India&apos;s leading overseas career consulting organizations, established in 2018. Known for its strong reputation and high client trust, a significant portion of MVG&apos;s business comes through word-of-mouth referrals.
+              </p>
+              <p className="text-[#475569] leading-relaxed mt-4">
+                Alongside his success in the visa and education industry, he brings over 20 years of experience in building and scaling distribution networks across India, including his long-standing association as a distributor with Unilevel.
               </p>
               <ul className="text-[#475569] mt-5 space-y-2">
-                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Extensive experience in developing and managing large-scale partner networks</li>
-                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Strong understanding of ground-level operations in tier-2 and tier-3 markets</li>
-                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Proven track record in scaling education and service-based businesses</li>
-                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Deep expertise in franchise growth, partner onboarding, and retention</li>
+                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Expertise in building and managing large-scale partner and franchise networks</li>
+                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Strong understanding of tier-2 and tier-3 market dynamics</li>
+                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Proven ability to scale education and service-based businesses</li>
+                <li className="flex items-start gap-2"><span className="text-[#059669] font-bold mt-0.5">✔</span> Deep experience in partner onboarding, training, and long-term support</li>
               </ul>
               <p className="text-[#475569] leading-relaxed mt-5">
-                As the <strong className="text-[#0F172A]">Master Franchise Partner for India</strong>, he ensures that every Uplrn AI Labs partner receives the right guidance, systems, and support to build a sustainable and profitable AI training center.
+                As the <strong className="text-[#0F172A]">Master Franchise Partner for India</strong>, he ensures that every Uplrn AI Labs partner receives the right systems, guidance, and support to build a sustainable and profitable AI training center.
               </p>
             </div>
           </div>
