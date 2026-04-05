@@ -143,10 +143,10 @@ export default function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="text-[#475569] leading-relaxed">
-                  To make world-class AI education accessible and practical for
-                  every learner in India — enabling them to build real skills,
-                  solve real problems, and create real impact in their careers
-                  and communities.
+                  To bring real, practical AI education to every serious learner
+                  in India — not just in big cities — so they can build skills
+                  that actually work, solve real-world problems, and grow in
+                  their careers and businesses.
                 </p>
               </div>
               <div className="rounded-xl border border-[#E2E8F0] bg-white p-8 shadow-sm">
@@ -174,9 +174,10 @@ export default function AboutPage() {
                   Our Vision
                 </h3>
                 <p className="text-[#475569] leading-relaxed">
-                  To become India&apos;s most trusted AI skills platform —
-                  recognized for producing job-ready graduates who don&apos;t
-                  just understand AI, but use it to build, create, and lead.
+                  To become India&apos;s most trusted AI learning brand — known
+                  for creating job-ready professionals who don&apos;t just
+                  understand AI, but use it to build real solutions, create
+                  opportunities, and lead in the new digital economy.
                 </p>
               </div>
             </div>
