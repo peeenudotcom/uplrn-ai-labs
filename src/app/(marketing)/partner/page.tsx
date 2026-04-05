@@ -143,8 +143,8 @@ export default function PartnerPage() {
             Uplrn AI Labs is supported by experienced industry leaders with a proven track record in education, migration, and large-scale business distribution.
           </p>
           <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md p-8 border border-[#E2E8F0] flex flex-col sm:flex-row items-start gap-8 text-left">
-            <div className="flex-shrink-0 flex flex-col items-center gap-3 sm:w-48">
-              <div className="h-40 w-40 rounded-full overflow-hidden border-4 border-[#059669]/20 shadow-md bg-white">
+            <div className="flex-shrink-0 flex flex-col items-center gap-3 sm:w-64">
+              <div className="h-64 w-64 rounded-full overflow-hidden border-4 border-[#059669]/20 shadow-md bg-white">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/rohit-sethi.png"
