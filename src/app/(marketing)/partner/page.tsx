@@ -145,7 +145,7 @@ export default function PartnerPage() {
           <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md p-8 border border-[#E2E8F0] flex flex-col sm:flex-row items-center gap-8 text-left">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/rohit-sethi.jpeg"
+              src="/images/rohit-sethi.png"
               alt="Rohit Sethi"
               className="h-36 w-36 rounded-full object-cover object-top shadow-md flex-shrink-0"
             />
