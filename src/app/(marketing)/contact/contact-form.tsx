@@ -8,11 +8,41 @@ import { courses } from '@/config/courses';
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // In production this would call an API
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          courseInterest: formData.get('course'),
+          message: formData.get('message'),
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -115,11 +145,16 @@ export function ContactForm() {
         />
       </div>
 
+      {error && (
+        <p className="text-sm text-red-600">{error}</p>
+      )}
+
       <button
         type="submit"
-        className="inline-flex h-11 w-full items-center justify-center rounded-lg bg-gradient-to-r from-[#059669] to-[#0D9488] px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90 sm:w-auto"
+        disabled={isSubmitting}
+        className="inline-flex h-11 w-full items-center justify-center rounded-lg bg-gradient-to-r from-[#059669] to-[#0D9488] px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50 sm:w-auto"
       >
-        Send Message
+        {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
     </motion.form>
   );
