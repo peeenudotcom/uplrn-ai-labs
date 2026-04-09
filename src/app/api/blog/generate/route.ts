@@ -94,7 +94,7 @@ async function handler(req: NextRequest) {
       max_tokens: 2000,
       messages: [{
         role: 'user',
-        content: `You are a blog writer for Uplrn AI Labs, an AI education platform in Ludhiana, Punjab, India teaching practical AI skills to professionals, students, and business owners across India.
+        content: `You are a blog writer for TARAhut AI Labs, an AI education platform in Kotkapura, Punjab, India teaching practical AI skills to professionals, students, and business owners across India.
 
 Write an insightful blog post inspired by this AI news:
 Headline: ${title}

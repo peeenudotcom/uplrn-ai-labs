@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { AnimatedSection } from './animated-section';
 
 export const metadata: Metadata = {
-  title: 'About Us | Uplrn AI Labs',
+  title: 'About Us | TARAhut AI Labs',
   description:
-    'Learn about Uplrn AI Labs — our mission, team, and vision for making AI education accessible across India. Founded in Ludhiana, Punjab.',
+    'Learn about TARAhut AI Labs — our mission, team, and vision for making AI education accessible across India. Founded in Kotkapura, Punjab.',
 };
 
 const values = [
@@ -50,7 +50,7 @@ const team: { name: string; role: string; bio: string; photo?: string; initials?
   {
     name: 'Parveen Sukhija',
     role: 'Founder & Lead Instructor',
-    bio: 'With 25+ years of experience across IT, digital marketing, and education, Parveen founded Uplrn AI Labs to bring practical AI education to Punjab and beyond.',
+    bio: 'With 25+ years of experience across IT, digital marketing, and education, Parveen founded TARAhut AI Labs to bring practical AI education to Punjab and beyond.',
     photo: '/images/parveen-sukhija.jpeg',
   },
   {
@@ -62,7 +62,7 @@ const team: { name: string; role: string; bio: string; photo?: string; initials?
   {
     name: 'Rohit Sethi',
     role: 'Director',
-    bio: 'With 20+ years of experience in education, distribution, and franchise scaling, Rohit leads strategic partnerships and business growth at Uplrn AI Labs as Director of My Visa Guide (MVG).',
+    bio: 'With 20+ years of experience in education, distribution, and franchise scaling, Rohit leads strategic partnerships and business growth at TARAhut AI Labs as Director of My Visa Guide (MVG).',
     photo: '/images/rohit-sethi.png',
   },
 ];
@@ -75,7 +75,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              About Uplrn AI Labs
+              About TARAhut AI Labs
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-white/80">
               We are building India&apos;s most practical AI education platform
@@ -94,14 +94,14 @@ export default function AboutPage() {
                 Our Story
               </h2>
               <p className="mb-4 text-[#475569] leading-relaxed">
-                Uplrn AI Labs was born in Ludhiana, Punjab, from a simple
+                TARAhut AI Labs was born in Kotkapura, Punjab, from a simple
                 observation: while AI was transforming industries worldwide,
                 access to quality, hands-on AI education remained limited in
                 tier-2 and tier-3 cities across India.
               </p>
               <p className="mb-4 text-[#475569] leading-relaxed">
                 Founded by Parveen Sukhija — a technologist with over 25 years
-                of experience in IT, marketing, and education — Uplrn AI Labs
+                of experience in IT, marketing, and education — TARAhut AI Labs
                 set out to bridge this gap. We believe that every student,
                 professional, and entrepreneur deserves the tools and knowledge
                 to thrive in the AI era.
@@ -227,7 +227,7 @@ export default function AboutPage() {
                 Meet the Team
               </h2>
               <p className="mt-3 text-[#475569]">
-                The people behind Uplrn AI Labs.
+                The people behind TARAhut AI Labs.
               </p>
             </div>
           </AnimatedSection>

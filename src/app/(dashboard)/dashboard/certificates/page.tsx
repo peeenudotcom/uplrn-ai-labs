@@ -18,7 +18,7 @@ export default async function CertificatesPage() {
         Certificates
       </h1>
       <p className="text-slate-500 mb-8">
-        Your earned certificates from Uplrn AI Labs.
+        Your earned certificates from TARAhut AI Labs.
       </p>
 
       {(!certificates || certificates.length === 0) ? (
@@ -31,7 +31,7 @@ export default async function CertificatesPage() {
         <div className="grid gap-4 md:grid-cols-2">
           {certificates.map((cert) => {
             const verifyUrl = `${siteConfig.url}/verify/${cert.verification_id}`;
-            const linkedinShareUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(cert.course_title)}&organizationName=${encodeURIComponent('Uplrn AI Labs')}&certUrl=${encodeURIComponent(verifyUrl)}&certId=${encodeURIComponent(cert.verification_id)}`;
+            const linkedinShareUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(cert.course_title)}&organizationName=${encodeURIComponent('TARAhut AI Labs')}&certUrl=${encodeURIComponent(verifyUrl)}&certId=${encodeURIComponent(cert.verification_id)}`;
 
             return (
               <div

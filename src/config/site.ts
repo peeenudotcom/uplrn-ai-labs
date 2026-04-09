@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: 'Uplrn AI Labs',
-  description: "India's premier AI education platform. Master AI tools through hands-on training in Punjab and beyond.",
+  name: 'TARAhut AI Labs',
+  description: "Punjab's First AI Training Center. Master AI tools through hands-on offline training in Kotkapura and beyond.",
   url: 'https://uplrnailabs.com',
   ogImage: 'https://uplrnailabs.com/og.png',
   links: {
@@ -12,7 +12,7 @@ export const siteConfig = {
   contact: {
     email: 'hello@uplrnailabs.com',
     phone: '+91-9915424411',
-    address: 'Ludhiana, Punjab, India',
+    address: 'Kotkapura, Punjab, India',
   },
   stats: {
     studentsCount: '500+',

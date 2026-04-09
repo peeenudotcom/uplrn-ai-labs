@@ -38,7 +38,7 @@ export const courses: Course[] = [
     rating: 4.8,
     studentsEnrolled: 234,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     syllabus: [
       { module: 'Introduction to AI', topics: ['What is AI?', 'AI vs ML vs DL', 'AI in daily life', 'Setting up accounts'] },
@@ -70,7 +70,7 @@ export const courses: Course[] = [
     rating: 4.9,
     studentsEnrolled: 156,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     syllabus: [
       {
@@ -133,7 +133,7 @@ export const courses: Course[] = [
     rating: 0,
     studentsEnrolled: 0,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     isNew: true,
     batchStartingSoon: true,
@@ -167,7 +167,7 @@ export const courses: Course[] = [
     rating: 0,
     studentsEnrolled: 0,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     isNew: true,
     batchStartingSoon: true,
@@ -201,7 +201,7 @@ export const courses: Course[] = [
     rating: 4.9,
     studentsEnrolled: 312,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     syllabus: [
       { module: 'How LLMs Work', topics: ['Transformer architecture simplified', 'Tokens & context windows', 'Temperature & parameters', 'Model comparison'] },
@@ -232,7 +232,7 @@ export const courses: Course[] = [
     rating: 0,
     studentsEnrolled: 0,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     isNew: true,
     batchStartingSoon: true,
@@ -347,7 +347,7 @@ export const courses: Course[] = [
     rating: 4.9,
     studentsEnrolled: 48,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     isNew: true,
     syllabus: [
@@ -417,7 +417,7 @@ export const courses: Course[] = [
     rating: 4.9,
     studentsEnrolled: 32,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     isNew: true,
     syllabus: [
@@ -475,7 +475,7 @@ export const courses: Course[] = [
     rating: 4.8,
     studentsEnrolled: 67,
     instructorName: 'Parveen Sukhija',
-    instructorRole: 'Founder, Uplrn AI Labs',
+    instructorRole: 'Founder, TARAhut AI Labs',
     isFeatured: true,
     isNew: true,
     syllabus: [

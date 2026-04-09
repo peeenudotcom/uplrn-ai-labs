@@ -18,7 +18,7 @@ export function ReportContent({ report }: { report: ReportData }) {
   const content = report.report_content
   const assessment = report.assessments
   const whatsappMessage = encodeURIComponent(
-    `Hi, I just completed the AI Assessment at Uplrn AI Labs. My name is ${assessment.name} and I'm in the ${assessment.industry} industry. I'd like to book a free consultation to discuss my report.`
+    `Hi, I just completed the AI Assessment at TARAhut AI Labs. My name is ${assessment.name} and I'm in the ${assessment.industry} industry. I'd like to book a free consultation to discuss my report.`
   )
 
   return (

@@ -17,7 +17,7 @@ const faqs = [
   {
     question: 'Are the classes online or offline?',
     answer:
-      'We offer both options. We have offline batches in Ludhiana, Chandigarh, and Jalandhar, as well as live online sessions that you can join from anywhere. Recorded sessions are also available for revision.',
+      'We offer both options. We have offline batches in Kotkapura, Punjab, as well as live online sessions that you can join from anywhere. Recorded sessions are also available for revision.',
   },
   {
     question: 'What is the course fee and are there EMI options?',
@@ -27,7 +27,7 @@ const faqs = [
   {
     question: 'Will I get a certificate after completing the course?',
     answer:
-      'Yes, you will receive an industry-recognized completion certificate from Uplrn AI Labs after successfully completing the course and submitting all required projects.',
+      'Yes, you will receive an industry-recognized completion certificate from TARAhut AI Labs after successfully completing the course and submitting all required projects.',
   },
   {
     question: 'Do you provide placement assistance?',
@@ -45,7 +45,7 @@ const faqs = [
       'Yes, we offer flexible batch switching. If you start with an offline batch and need to switch to online (or vice versa), just let us know at least one week in advance and we will accommodate you.',
   },
   {
-    question: 'What makes Uplrn AI Labs different from other institutes?',
+    question: 'What makes TARAhut AI Labs different from other institutes?',
     answer:
       'We focus exclusively on AI skills with a project-based curriculum. Our instructors are industry practitioners, not just academics. Every course includes real-world projects, and we update our curriculum monthly to include the latest AI tools and techniques.',
   },
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: 'How can I start my own AI training center?',
     answer:
-      'Uplrn AI Labs offers a partnership model for entrepreneurs who want to run their own AI training center. We provide the curriculum, trainer support, branding, and operational system. You bring the space and the drive. Fill out the partnership enquiry form on our Partner page or contact us on WhatsApp to learn more.',
+      'TARAhut AI Labs offers a partnership model for entrepreneurs who want to run their own AI training center. We provide the curriculum, trainer support, branding, and operational system. You bring the space and the drive. Fill out the partnership enquiry form on our Partner page or contact us on WhatsApp to learn more.',
   },
 ]
 

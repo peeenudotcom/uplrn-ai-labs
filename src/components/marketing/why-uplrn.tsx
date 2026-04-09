@@ -61,13 +61,13 @@ export function WhyUplrn() {
           transition={{ duration: 0.5 }}
         >
           <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600">
-            Why Uplrn AI Labs
+            Why TARAhut AI Labs
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">
             Not Just Another IT Institute
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[#475569]">
-            We built Uplrn AI Labs because we were tired of courses that teach theory but not income. Here&apos;s what makes us different.
+            We built TARAhut AI Labs because we were tired of courses that teach theory but not income. Here&apos;s what makes us different.
           </p>
         </motion.div>
 

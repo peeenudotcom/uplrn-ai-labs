@@ -3,7 +3,7 @@ import { courses, categories } from '@/config/courses';
 import { CoursesGrid } from './courses-grid';
 
 export const metadata: Metadata = {
-  title: 'Our Courses | Uplrn AI Labs',
+  title: 'Our Courses | TARAhut AI Labs',
   description:
     'Explore our hands-on AI courses — from beginner-friendly AI tools mastery to advanced prompt engineering and Python development. Learn AI skills that matter.',
 };

@@ -38,7 +38,7 @@ export function PartnerForm() {
     e.preventDefault();
     // Send enquiry via WhatsApp to admin
     const msg = encodeURIComponent(
-      `*New Partner Enquiry – Uplrn AI Labs*\n\n` +
+      `*New Partner Enquiry – TARAhut AI Labs*\n\n` +
       `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n` +
       `Investment: ${form.investment}\nFloor Area: ${form.floorArea || 'N/A'} sq ft\n` +
       `Location: ${form.city}, ${form.state}\nComments: ${form.comments || 'None'}`
@@ -61,7 +61,7 @@ export function PartnerForm() {
         </div>
         <h3 className="mb-2 text-xl font-semibold text-[#0F172A]">Enquiry Submitted!</h3>
         <p className="text-[#475569]">
-          Thank you for your interest in becoming an Uplrn AI Labs partner. Our team will contact you within 24 hours.
+          Thank you for your interest in becoming an TARAhut AI Labs partner. Our team will contact you within 24 hours.
         </p>
         <button
           onClick={() => setSubmitted(false)}

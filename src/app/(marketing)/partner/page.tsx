@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { PartnerForm } from './partner-form';
 
 export const metadata: Metadata = {
-  title: 'Become a Partner | Uplrn AI Labs',
+  title: 'Become a Partner | TARAhut AI Labs',
   description:
-    'Partner with Uplrn AI Labs and launch your own AI training center. Franchise opportunity with full support, curriculum, and branding.',
+    'Partner with TARAhut AI Labs and launch your own AI training center. Franchise opportunity with full support, curriculum, and branding.',
 };
 
 const benefits = [
@@ -33,7 +33,7 @@ const benefits = [
       </svg>
     ),
     title: 'Marketing & Branding',
-    description: 'Use the Uplrn AI Labs brand, social media kits, and marketing templates to attract students fast.',
+    description: 'Use the TARAhut AI Labs brand, social media kits, and marketing templates to attract students fast.',
   },
   {
     icon: (
@@ -64,10 +64,10 @@ export default function PartnerPage() {
               Business Partnership Opportunity
             </span>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Become an Uplrn AI Labs Partner
+              Become an TARAhut AI Labs Partner
             </h1>
             <p className="mt-5 text-lg text-white/85 max-w-2xl">
-              Launch your own AI training center under the Uplrn AI Labs brand. We provide the curriculum, training, support, and marketing — you bring the space and the passion.
+              Launch your own AI training center under the TARAhut AI Labs brand. We provide the curriculum, training, support, and marketing — you bring the space and the passion.
             </p>
             <div className="mt-8 flex flex-wrap gap-6 text-sm text-white/90">
               <div className="flex items-center gap-2">

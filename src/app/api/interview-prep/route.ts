@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Messages required' }, { status: 400 });
     }
 
-    const systemPrompt = `You are an expert AI interview coach at Uplrn AI Labs. You are helping a student prepare for interviews for "${careerPath}" roles. Their career identity is "${identity}".
+    const systemPrompt = `You are an expert AI interview coach at TARAhut AI Labs. You are helping a student prepare for interviews for "${careerPath}" roles. Their career identity is "${identity}".
 
 Your job:
 - Ask them one interview question at a time

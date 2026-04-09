@@ -48,7 +48,7 @@ export function DashboardShell({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           <div className="flex items-center gap-6">
             <Link href="/" className="text-lg font-semibold text-slate-900">
-              Uplrn AI Labs
+              TARAhut AI Labs
             </Link>
 
             {/* Desktop nav */}

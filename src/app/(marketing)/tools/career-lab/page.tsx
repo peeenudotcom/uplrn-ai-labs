@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { CareerLab } from '@/components/career-lab/career-lab'
 
 export const metadata: Metadata = {
-  title: 'AI Career Lab – Find Your AI Career Path | Uplrn AI Labs',
+  title: 'AI Career Lab – Find Your AI Career Path | TARAhut AI Labs',
   description:
     'Discover your ideal AI career path in 60 seconds. Get a personalized career DNA analysis, strength profile, salary projections, and 90-day roadmap.',
   openGraph: {

@@ -4,7 +4,7 @@ import { supabase, type Post } from '@/lib/supabase';
 import { BlogExplorer } from './blog-explorer';
 
 export const metadata: Metadata = {
-  title: 'Blog | Uplrn AI Labs',
+  title: 'Blog | TARAhut AI Labs',
   description: 'Insights, tutorials, and industry perspectives on AI tools, prompt engineering, and building a career in artificial intelligence.',
 };
 

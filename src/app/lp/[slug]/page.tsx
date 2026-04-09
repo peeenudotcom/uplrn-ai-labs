@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = courses.find((c) => c.slug === slug);
   if (!course) return {};
   return {
-    title: `${course.title} | Uplrn AI Labs`,
+    title: `${course.title} | TARAhut AI Labs`,
     description: course.shortDescription,
     openGraph: {
       title: course.title,

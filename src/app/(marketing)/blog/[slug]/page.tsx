@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { data } = await supabase.from('posts').select('title, excerpt').eq('slug', slug).single();
   if (!data) return { title: 'Post Not Found' };
-  return { title: `${data.title} | Uplrn AI Labs Blog`, description: data.excerpt };
+  return { title: `${data.title} | TARAhut AI Labs Blog`, description: data.excerpt };
 }
 
 function formatDate(dateStr: string) {
@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
             <span>·</span>
             <span>{p.read_time}</span>
             <span>·</span>
-            <span>Uplrn AI Labs</span>
+            <span>TARAhut AI Labs</span>
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* CTA */}
           <div className="mt-12 rounded-2xl bg-gradient-to-br from-[#059669]/10 to-[#0D9488]/10 border border-[#059669]/20 p-8 text-center">
             <h3 className="text-xl font-bold text-[#0F172A] mb-2">Want to master AI skills?</h3>
-            <p className="text-[#475569] mb-5">Join Uplrn AI Labs and learn from expert-led, hands-on courses designed for Indian professionals.</p>
+            <p className="text-[#475569] mb-5">Join TARAhut AI Labs and learn from expert-led, hands-on courses designed for Indian professionals.</p>
             <Link
               href="/courses"
               className="inline-block bg-[#059669] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#047857] transition-colors"

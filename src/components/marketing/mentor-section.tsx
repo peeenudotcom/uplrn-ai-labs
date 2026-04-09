@@ -54,7 +54,7 @@ export function MentorSection() {
             Built for Scale. Designed for Results.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-[#475569] text-lg leading-relaxed">
-            Uplrn AI Labs is a structured AI education system designed to deliver consistent, practical learning outcomes across locations.
+            TARAhut AI Labs is a structured AI education system designed to deliver consistent, practical learning outcomes across locations.
             From curriculum to delivery, everything is built to scale — making it ideal for both learners and business partners.
           </p>
         </motion.div>
