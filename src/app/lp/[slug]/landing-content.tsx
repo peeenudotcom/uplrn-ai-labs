@@ -144,8 +144,8 @@ export function LandingPageContent({ course }: { course: Course }) {
               <span className="text-xs md:text-sm text-gray-400">Punjab&apos;s First AI Training Center</span>
             </div>
 
-            {/* Mobile: form first (sticky), Desktop: course info left + form right */}
-            <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+            {/* Mobile: course info first, then form. Desktop: side by side */}
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-start">
               {/* Left: Course info */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
