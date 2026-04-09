@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { courses } from '@/config/courses';
+import { schoolCourses } from '@/config/school-courses';
 import { Badge } from '@/components/ui/badge';
 import { CourseSyllabus } from './course-syllabus';
+import { SchoolCourseSyllabus } from './school-course-syllabus';
 import { siteConfig } from '@/config/site';
 
 const levelColors: Record<string, string> = {
@@ -42,6 +44,8 @@ export default async function CourseDetailPage({
     notFound();
   }
 
+  const schoolCourse = schoolCourses.find((c) => c.slug === slug);
+
   const discount = course.originalPrice
     ? Math.round(((course.originalPrice - course.price) / course.originalPrice) * 100)
     : 0;
@@ -66,6 +70,11 @@ export default async function CourseDetailPage({
             <Badge variant="secondary" className="text-xs">
               {course.category}
             </Badge>
+            {schoolCourse && (
+              <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">
+                {schoolCourse.subtitle}
+              </span>
+            )}
           </div>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             {course.title}
@@ -75,31 +84,31 @@ export default async function CourseDetailPage({
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-6 text-sm text-white/70">
             <span className="flex items-center gap-1.5">
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               {course.duration}
             </span>
-            <span className="flex items-center gap-1.5">
-              <svg
-                className="h-4 w-4 fill-amber-400 text-amber-400"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              {course.rating} rating
-            </span>
-            <span>{course.studentsEnrolled}+ students enrolled</span>
+            {schoolCourse ? (
+              <span className="flex items-center gap-1.5">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Batch starting soon
+              </span>
+            ) : (
+              <span className="flex items-center gap-1.5">
+                <svg className="h-4 w-4 fill-amber-400 text-amber-400" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                {course.rating} rating
+              </span>
+            )}
+            {schoolCourse ? (
+              <span>{schoolCourse.modules} modules · {schoolCourse.enrolled} enrolled</span>
+            ) : (
+              <span>{course.studentsEnrolled}+ students enrolled</span>
+            )}
             <span>by {course.instructorName}</span>
           </div>
         </div>
@@ -111,67 +120,101 @@ export default async function CourseDetailPage({
           <div className="grid gap-12 lg:grid-cols-[1fr_380px]">
             {/* Left Column */}
             <div>
-              {/* Description */}
+
+              {/* About This Course */}
               <div className="mb-12">
-                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">
-                  About This Course
-                </h2>
-                <p className="text-[#475569] leading-relaxed">
-                  {course.description}
-                </p>
+                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">About This Course</h2>
+                <p className="text-[#475569] leading-relaxed whitespace-pre-line">{course.description}</p>
               </div>
 
               {/* Learning Outcomes */}
               <div className="mb-12">
-                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">
-                  What You Will Learn
-                </h2>
-                <ul className="space-y-3">
+                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">What You&apos;ll Achieve</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
                   {course.learningOutcomes.map((outcome, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <svg
-                        className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#059669]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
+                    <div key={i} className="flex items-start gap-3 rounded-xl border border-[#D1FAE5] bg-[#F0FDF4] p-3">
+                      <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-[#475569]">{outcome}</span>
-                    </li>
+                      <span className="text-sm text-[#475569]">{outcome}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
+
+              {/* Highlights — school courses only */}
+              {schoolCourse && (
+                <div className="mb-12">
+                  <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">Course Highlights</h2>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {schoolCourse.highlights.map((h, i) => (
+                      <div key={i} className="flex items-start gap-3 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-3">
+                        <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#059669] text-white text-[10px] font-bold">{i + 1}</span>
+                        <span className="text-sm text-[#475569]">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Syllabus */}
               <div className="mb-12">
-                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">
-                  Course Syllabus
-                </h2>
-                <CourseSyllabus syllabus={course.syllabus} />
+                <h2 className="mb-2 text-2xl font-bold text-[#0F172A]">Course Syllabus</h2>
+                {schoolCourse ? (
+                  <>
+                    <p className="mb-4 text-sm text-[#64748B]">{schoolCourse.modules} modules · 12 sessions × 2 hours · 24 hours total</p>
+                    <SchoolCourseSyllabus syllabus={schoolCourse.syllabus} />
+                  </>
+                ) : (
+                  <CourseSyllabus syllabus={course.syllabus} />
+                )}
               </div>
 
               {/* Tools */}
-              <div>
-                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">
-                  Tools You Will Master
-                </h2>
+              <div className="mb-12">
+                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">Tools You Will Master</h2>
                 <div className="flex flex-wrap gap-2">
-                  {course.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-1.5 text-sm font-medium text-[#0F172A]"
-                    >
+                  {(schoolCourse?.tools ?? course.tools).map((tool) => (
+                    <span key={tool} className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-1.5 text-sm font-medium text-[#0F172A]">
                       {tool}
                     </span>
                   ))}
                 </div>
               </div>
+
+              {/* Who is this for — school courses only */}
+              {schoolCourse && (
+                <div className="mb-12">
+                  <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">Who Is This For?</h2>
+                  <ul className="space-y-3">
+                    {schoolCourse.whoIsThisFor.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span className="text-[#475569]">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* What you get — school courses only */}
+              {schoolCourse && (
+                <div className="mb-12 rounded-2xl bg-gradient-to-br from-[#059669]/5 to-[#0D9488]/5 border border-[#059669]/10 p-6">
+                  <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">What You Get</h2>
+                  <ul className="space-y-3">
+                    {schoolCourse.whatYouGet.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-[#475569] font-medium">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             {/* Right Column — Sticky Enrollment Card */}
@@ -239,15 +282,21 @@ export default async function CourseDetailPage({
                     <div className="flex justify-between">
                       <span className="text-[#64748B]">Enrolled</span>
                       <span className="font-medium text-[#0F172A]">
-                        {course.studentsEnrolled}+ students
+                        {schoolCourse ? schoolCourse.enrolled : `${course.studentsEnrolled}+`} students
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-[#64748B]">Modules</span>
                       <span className="font-medium text-[#0F172A]">
-                        {course.syllabus.length} modules
+                        {schoolCourse ? schoolCourse.modules : course.syllabus.length} modules
                       </span>
                     </div>
+                    {schoolCourse && (
+                      <div className="flex justify-between">
+                        <span className="text-[#64748B]">Batch size</span>
+                        <span className="font-medium text-[#059669]">Max 10 students</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

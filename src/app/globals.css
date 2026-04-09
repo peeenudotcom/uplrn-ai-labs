@@ -129,3 +129,12 @@
     @apply font-sans;
   }
 }
+
+/* Audience card hover reveal */
+.audience-card-link {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.audience-card:hover .audience-card-link {
+  opacity: 1;
+}

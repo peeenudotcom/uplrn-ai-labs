@@ -60,10 +60,10 @@ const team: { name: string; role: string; bio: string; photo?: string; initials?
     photo: '/images/liky-prusty.jpeg',
   },
   {
-    name: 'Simone',
-    role: 'Student Success Manager',
-    bio: 'Simone ensures every student gets personalized guidance, from enrollment to placement. She manages our mentorship and career support programs.',
-    photo: '/images/simone.jpeg',
+    name: 'Rohit Sethi',
+    role: 'Director',
+    bio: 'With 20+ years of experience in education, distribution, and franchise scaling, Rohit leads strategic partnerships and business growth at Uplrn AI Labs as Director of My Visa Guide (MVG).',
+    photo: '/images/rohit-sethi.png',
   },
 ];
 
@@ -231,7 +231,7 @@ export default function AboutPage() {
               </p>
             </div>
           </AnimatedSection>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-start">
             {team.map((member, i) => (
               <AnimatedSection key={member.name} delay={i * 0.1}>
                 <div className="flex flex-col items-center rounded-xl border border-[#E2E8F0] bg-white p-8 text-center shadow-sm">
@@ -240,7 +240,7 @@ export default function AboutPage() {
                     <img
                       src={member.photo}
                       alt={member.name}
-                      className="mb-4 h-24 w-24 rounded-full object-cover object-top shadow-md"
+                      className="mb-4 h-24 w-24 rounded-full object-cover object-top shadow-md bg-[#F0FDF4]"
                     />
                   ) : (
                     <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#059669] to-[#0D9488] text-2xl font-bold text-white">

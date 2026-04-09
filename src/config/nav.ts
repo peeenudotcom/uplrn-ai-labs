@@ -21,8 +21,8 @@ export const navEntries: NavEntry[] = [
       { label: 'All Courses', href: '/courses' },
       { label: 'AI Tools Mastery', href: '/courses/ai-tools-mastery-beginners' },
       { label: 'AI for Marketing', href: '/courses/ai-digital-marketing' },
-      { label: 'AI for Business', href: '/courses/ai-business-automation' },
-      { label: 'AI Content Creation', href: '/courses/ai-content-creation' },
+      { label: 'AI for Business', href: '/courses/ai-business-leaders' },
+      { label: 'AI Content Creation', href: '/courses/ai-video-content-creation' },
     ],
   },
   {

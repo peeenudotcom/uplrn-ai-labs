@@ -80,24 +80,31 @@ export function CoursesGrid({
                   <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-[#059669]/15">
                     {course.category}
                   </div>
-                  <div className="absolute top-3 left-3">
+                  <div className="absolute top-3 left-3 flex gap-2">
                     <span
                       className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${levelColors[course.level]}`}
                     >
                       {course.level}
                     </span>
+                    {course.isNew && (
+                      <span className="inline-block rounded-full bg-green-500 px-3 py-1 text-xs font-semibold text-white">
+                        New
+                      </span>
+                    )}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-5">
-                  <Badge variant="secondary" className="mb-2 w-fit text-xs">
-                    {course.category}
-                  </Badge>
+                  <div className="mb-2 flex items-center gap-2">
+                    <Badge variant="secondary" className="w-fit text-xs">
+                      {course.category}
+                    </Badge>
+                  </div>
                   <h3 className="mb-2 text-lg font-semibold text-[#0F172A] group-hover:text-[#059669] transition-colors">
                     {course.title}
                   </h3>
-                  <p className="mb-4 flex-1 text-sm text-[#475569] leading-relaxed">
+                  <p className="mb-4 flex-1 text-sm text-[#475569] leading-relaxed line-clamp-3">
                     {course.shortDescription}
                   </p>
 
@@ -119,7 +126,16 @@ export function CoursesGrid({
                       </svg>
                       {course.duration}
                     </span>
-                    <StarRating rating={course.rating} />
+                    {course.batchStartingSoon ? (
+                      <span className="flex items-center gap-1 text-amber-600 font-medium">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        Batch starting soon
+                      </span>
+                    ) : (
+                      <StarRating rating={course.rating} />
+                    )}
                   </div>
 
                   {/* Price + CTA */}
@@ -129,9 +145,14 @@ export function CoursesGrid({
                         ₹{course.price.toLocaleString('en-IN')}
                       </span>
                       {course.originalPrice && (
-                        <span className="text-sm text-[#94A3B8] line-through">
-                          ₹{course.originalPrice.toLocaleString('en-IN')}
-                        </span>
+                        <>
+                          <span className="text-sm text-[#94A3B8] line-through">
+                            ₹{course.originalPrice.toLocaleString('en-IN')}
+                          </span>
+                          <span className="text-xs font-semibold text-green-600">
+                            -{Math.round((1 - course.price / course.originalPrice) * 100)}%
+                          </span>
+                        </>
                       )}
                     </div>
                     <span className="text-sm font-medium text-[#059669] group-hover:underline">

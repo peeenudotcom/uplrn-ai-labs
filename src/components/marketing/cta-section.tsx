@@ -18,6 +18,7 @@ const trustBadges = [
   { icon: '🛠️', label: 'Real Projects' },
   { icon: '🏫', label: 'Offline + Online' },
   { icon: '💳', label: 'EMI Available' },
+  { icon: '🛡️', label: '7-Day Money Back' },
 ]
 
 export function CtaSection() {
