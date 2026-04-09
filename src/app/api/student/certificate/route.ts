@@ -121,8 +121,9 @@ export async function POST(req: NextRequest) {
     });
   } catch (error) {
     console.error('Certificate API error:', error);
+    const message = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { error: 'Failed to generate certificate' },
+      { error: `Failed to generate certificate: ${message}` },
       { status: 500 }
     );
   }
