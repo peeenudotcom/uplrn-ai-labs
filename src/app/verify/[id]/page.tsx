@@ -1,6 +1,7 @@
 import { createServiceClient } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import { siteConfig } from '@/config/site';
+import { PrintButton } from '@/components/shared/print-button';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -80,12 +81,7 @@ export default async function VerifyCertificatePage({ params }: Props) {
 
         {/* Print button */}
         <div className="text-center mt-6 print:hidden">
-          <button
-            onClick={() => window.print()}
-            className="px-6 py-2.5 rounded-lg bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
-          >
-            Print Certificate
-          </button>
+          <PrintButton />
         </div>
       </div>
     </div>
