@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerSupabase } from '@/lib/supabase-server';
+import { createServiceClient } from '@/lib/supabase';
 import { courses } from '@/config/courses';
 
 function generateVerificationId(): string {
@@ -87,8 +88,11 @@ export async function POST(req: NextRequest) {
     const studentName = profile?.name ?? user.email ?? 'Student';
     const verificationId = generateVerificationId();
 
+    // Use service client for inserts (RLS allows service_role only)
+    const db = createServiceClient();
+
     // Create certificate
-    const { data: cert, error } = await supabase
+    const { data: cert, error } = await db
       .from('certificates')
       .insert({
         student_id: user.id,
@@ -106,7 +110,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Mark enrollment as completed
-    await supabase
+    await db
       .from('enrollments')
       .update({ completed_at: new Date().toISOString() })
       .eq('id', enrollment.id);
