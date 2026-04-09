@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Script from 'next/script'
 import { motion } from 'framer-motion'
 import type { Course } from '@/config/courses'
@@ -352,6 +352,103 @@ export function LandingPageContent({ course }: { course: Course }) {
           </motion.div>
         </section>
 
+        {/* ═══════════ PUNJABI HOOK + WHO IS THIS FOR ═══════════ */}
+        <section className="py-14 md:py-20 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#020617] to-[#0a1628]" />
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+            {/* Punjabi hook */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+              <div className="inline-block px-6 py-4 rounded-2xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-400/20">
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-amber-300" style={{ fontFamily: 'var(--font-display), Georgia, serif' }}>
+                  &ldquo;YouTube pe sab free hai...&rdquo;
+                </p>
+                <p className="text-sm sm:text-base text-amber-100/70 mt-1">
+                  ...phir log AI se kama kyu nahi pa rahe?
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Who is this for */}
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-8">
+              <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">This Program Is For</span>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                { emoji: '🎓', title: 'Students', subtitle: '12th pass / College', color: 'from-violet-500/20 to-purple-500/20', border: 'border-violet-400/20' },
+                { emoji: '💼', title: 'Freelancers & Job Seekers', subtitle: 'Want to earn with AI', color: 'from-cyan-500/20 to-blue-500/20', border: 'border-cyan-400/20' },
+                { emoji: '🏪', title: 'Business Owners', subtitle: 'Automate & grow', color: 'from-emerald-500/20 to-teal-500/20', border: 'border-emerald-400/20' },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`text-center p-5 rounded-2xl bg-gradient-to-br ${item.color} border ${item.border} backdrop-blur-sm`}
+                >
+                  <span className="text-3xl">{item.emoji}</span>
+                  <h3 className="text-white font-bold mt-2 text-sm">{item.title}</h3>
+                  <p className="text-gray-400 text-xs mt-1">{item.subtitle}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Before / After */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {/* Header */}
+                <div className="text-center pb-2">
+                  <span className="px-4 py-1.5 rounded-full bg-red-500/15 text-red-400 text-xs font-bold uppercase">Before</span>
+                </div>
+                <div className="text-center pb-2">
+                  <span className="px-4 py-1.5 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold uppercase">After This Course</span>
+                </div>
+                {/* Rows */}
+                {[
+                  { before: '😵 AI se confused', after: '🚀 AI se kaam karwa raha hai' },
+                  { before: '📱 Reels scroll karta hai', after: '🎬 Reels bana raha hai' },
+                  { before: '🔍 Job search', after: '💰 Income create' },
+                ].map((row, i) => (
+                  <React.Fragment key={i}>
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 + i * 0.1 }}
+                      className="p-3 sm:p-4 rounded-xl bg-red-500/5 border border-red-500/10 text-sm text-gray-400"
+                    >
+                      {row.before}
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, x: 10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 + i * 0.1 }}
+                      className="p-3 sm:p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10 text-sm text-white font-medium"
+                    >
+                      {row.after}
+                    </motion.div>
+                  </React.Fragment>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Differentiators */}
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-10 flex flex-wrap justify-center gap-3">
+              {[
+                { icon: '⚡', text: 'In-class execution' },
+                { icon: '🔥', text: 'Live projects' },
+                { icon: '🚫', text: 'No boring lectures' },
+              ].map((d) => (
+                <span key={d.text} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 font-medium">
+                  <span>{d.icon}</span> {d.text}
+                </span>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* ═══════════ TRY IT — Interactive Prompt Improver ═══════════ */}
         <PromptImproverSection />
 
@@ -444,6 +541,123 @@ export function LandingPageContent({ course }: { course: Course }) {
                 )
               })}
             </div>
+          </div>
+        </section>
+
+        {/* ═══════════ HOW YOU WILL EARN ═══════════ */}
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-[#020617]" />
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-10">
+              <span className="text-amber-400 text-sm font-semibold tracking-wider uppercase">Start Earning Early</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+                How You Will{' '}
+                <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Earn</span>
+              </h2>
+              <p className="text-gray-500 mt-2 text-sm">Don&apos;t wait till the last module. You can start earning from Week 2.</p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                {
+                  emoji: '💻',
+                  title: 'Freelancing',
+                  amount: '₹5K — ₹50K/mo',
+                  examples: ['Prompt writing for businesses', 'AI content creation', 'Social media management'],
+                  color: 'from-emerald-500/20 to-teal-500/20',
+                  border: 'border-emerald-400/20',
+                  amountColor: 'text-emerald-400',
+                },
+                {
+                  emoji: '🎬',
+                  title: 'Content Creation',
+                  amount: '₹10K — ₹1L/mo',
+                  examples: ['AI-powered YouTube channel', 'Instagram Reels with AI', 'Blog writing with AI tools'],
+                  color: 'from-violet-500/20 to-purple-500/20',
+                  border: 'border-violet-400/20',
+                  amountColor: 'text-violet-400',
+                },
+                {
+                  emoji: '🏢',
+                  title: 'Business Services',
+                  amount: '₹15K — ₹2L/mo',
+                  examples: ['AI automation for local shops', 'Marketing for small businesses', 'AI consulting & training'],
+                  color: 'from-amber-500/20 to-orange-500/20',
+                  border: 'border-amber-400/20',
+                  amountColor: 'text-amber-400',
+                },
+              ].map((path, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`p-5 rounded-2xl bg-gradient-to-br ${path.color} border ${path.border} backdrop-blur-sm`}
+                >
+                  <span className="text-3xl">{path.emoji}</span>
+                  <h3 className="text-white font-bold mt-3">{path.title}</h3>
+                  <p className={`${path.amountColor} font-bold text-lg mt-1`}>{path.amount}</p>
+                  <ul className="mt-3 space-y-1.5">
+                    {path.examples.map((ex, j) => (
+                      <li key={j} className="text-xs text-gray-400 flex items-start gap-1.5">
+                        <span className="text-gray-600 mt-0.5">•</span>{ex}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ WHAT YOU GET — Value Stack ═══════════ */}
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-[#0B1120]" />
+          <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-10">
+              <span className="text-pink-400 text-sm font-semibold tracking-wider uppercase">Everything Included</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+                What You{' '}
+                <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">Get</span>
+              </h2>
+            </motion.div>
+
+            <div className="space-y-3">
+              {[
+                { icon: '📝', item: '100+ Prompt Library', desc: 'Tested prompts for every use case — business, content, marketing, coding' },
+                { icon: '🎬', item: 'Reel Scripts & Templates', desc: 'Ready-to-use video scripts that you can customize and post' },
+                { icon: '🎨', item: 'Canva Templates Pack', desc: 'Professional social media templates with your branding' },
+                { icon: '💬', item: 'Client Message Templates', desc: 'Cold outreach, follow-up, proposal, and closing messages' },
+                { icon: '📁', item: 'Portfolio Framework', desc: 'Step-by-step guide to build a portfolio that gets clients' },
+                { icon: '📜', item: 'Verified Certificate', desc: 'LinkedIn-shareable certificate with unique verification ID' },
+                { icon: '👥', item: 'Community Access', desc: 'WhatsApp group with alumni, job leads, and ongoing support' },
+                { icon: '🎯', item: '15 Days of Live Training', desc: 'In-class, hands-on, with real projects — not pre-recorded videos' },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/15 transition-colors"
+                >
+                  <span className="text-2xl shrink-0">{item.icon}</span>
+                  <div>
+                    <h3 className="text-white font-semibold text-sm">{item.item}</h3>
+                    <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
+                  </div>
+                  <span className="ml-auto text-emerald-400 shrink-0">✓</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-6 text-center">
+              <p className="text-gray-500 text-xs">
+                Total value: <span className="line-through">₹25,000+</span>{' '}
+                <span className="text-white font-bold">All included in ₹{course.price.toLocaleString('en-IN')}</span>
+              </p>
+            </motion.div>
           </div>
         </section>
 
