@@ -5,6 +5,9 @@ import Script from 'next/script'
 import { motion } from 'framer-motion'
 import type { Course } from '@/config/courses'
 import { siteConfig } from '@/config/site'
+import { WhatsAppFloat } from './whatsapp-float'
+import { ExitIntentPopup } from './exit-intent-popup'
+import { EnrollmentToast } from './enrollment-toast'
 
 declare global {
   interface Window {
@@ -547,6 +550,11 @@ export function CourseLandingShared(props: CourseLandingProps) {
           </a>
         </div>
       </div>
+
+      {/* Conversion boosters */}
+      <WhatsAppFloat courseTitle={course.title} coursePrice={course.price} />
+      <ExitIntentPopup courseTitle={course.title} courseSlug={course.slug} primaryColor={theme.primary} />
+      <EnrollmentToast />
     </>
   )
 }

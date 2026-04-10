@@ -5,6 +5,9 @@ import Script from 'next/script'
 import { motion } from 'framer-motion'
 import type { Course } from '@/config/courses'
 import { siteConfig } from '@/config/site'
+import { WhatsAppFloat } from '@/components/landing/whatsapp-float'
+import { ExitIntentPopup } from '@/components/landing/exit-intent-popup'
+import { EnrollmentToast } from '@/components/landing/enrollment-toast'
 
 declare global {
   interface Window {
@@ -801,6 +804,11 @@ export function DigitalMarketingLanding({ course }: { course: Course }) {
           </a>
         </div>
       </div>
+
+      {/* Conversion boosters */}
+      <WhatsAppFloat courseTitle={course.title} coursePrice={course.price} />
+      <ExitIntentPopup courseTitle={course.title} courseSlug={course.slug} primaryColor="#ec4899" />
+      <EnrollmentToast />
     </>
   )
 }
