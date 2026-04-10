@@ -10,6 +10,7 @@ import { NewsletterSection } from '@/components/marketing/newsletter-section'
 import { PartnerBanner } from '@/components/marketing/partner-banner'
 import { FaqSection } from '@/components/marketing/faq-section'
 import { CtaSection } from '@/components/marketing/cta-section'
+import { EnrollmentToast } from '@/components/landing/enrollment-toast'
 
 export default function HomePage() {
   return (
@@ -26,6 +27,7 @@ export default function HomePage() {
       <PartnerBanner />
       <FaqSection />
       <CtaSection />
+      <EnrollmentToast />
     </>
   )
 }

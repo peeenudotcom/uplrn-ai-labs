@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { CourseSyllabus } from './course-syllabus';
 import { SchoolCourseSyllabus } from './school-course-syllabus';
 import { EnrollmentCard } from './enrollment-card';
+import { EnrollmentToast } from '@/components/landing/enrollment-toast';
 
 const levelColors: Record<string, string> = {
   Beginner: 'bg-emerald-500/15 text-emerald-600',
@@ -233,6 +234,7 @@ export default async function CourseDetailPage({
           </div>
         </div>
       </section>
+      <EnrollmentToast />
     </>
   );
 }

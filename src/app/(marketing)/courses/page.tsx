@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { courses, categories } from '@/config/courses';
 import { CoursesGrid } from './courses-grid';
+import { EnrollmentToast } from '@/components/landing/enrollment-toast';
 
 export const metadata: Metadata = {
   title: 'Our Courses | TARAhut AI Labs',
@@ -26,6 +27,7 @@ export default function CoursesPage() {
         {/* Courses Grid with Client-Side Filter */}
         <CoursesGrid courses={courses} categories={categories} />
       </div>
+      <EnrollmentToast />
     </section>
   );
 }
