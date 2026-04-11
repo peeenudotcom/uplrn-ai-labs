@@ -1,0 +1,60 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { streamText, convertToModelMessages, type UIMessage } from 'ai'
+import { anthropic } from '@ai-sdk/anthropic'
+import { buildSystemPrompt } from '@/lib/chatbot/system-prompt'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
+
+export const runtime = 'nodejs'
+export const maxDuration = 60
+
+interface ChatRequest {
+  messages: UIMessage[]
+  subdomain?: string | null
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    // Rate limit: 20 messages per IP per 10 minutes
+    // Prevents abuse and runaway Claude API costs
+    const ip = getClientIp(req)
+    const limit = rateLimit(`chat:${ip}`, { limit: 20, windowMs: 10 * 60 * 1000 })
+    if (!limit.allowed) {
+      return NextResponse.json(
+        {
+          error:
+            'Too many messages. Please wait a few minutes or WhatsApp us directly at +91 92008-82008.',
+        },
+        { status: 429 }
+      )
+    }
+
+    const body = (await req.json()) as ChatRequest
+    const { messages, subdomain } = body
+
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return NextResponse.json({ error: 'messages array is required' }, { status: 400 })
+    }
+
+    // Cap history to last 20 messages to keep token usage bounded
+    const trimmedMessages = messages.slice(-20)
+
+    // Build the system prompt with page context
+    const systemPrompt = buildSystemPrompt({ subdomain })
+
+    const modelMessages = await convertToModelMessages(trimmedMessages)
+
+    const result = streamText({
+      model: anthropic('claude-haiku-4.5'),
+      system: systemPrompt,
+      messages: modelMessages,
+      maxOutputTokens: 800,
+      temperature: 0.7,
+    })
+
+    return result.toUIMessageStreamResponse()
+  } catch (error) {
+    console.error('Chat API error:', error)
+    const message = error instanceof Error ? error.message : 'Chat failed'
+    return NextResponse.json({ error: message }, { status: 500 })
+  }
+}

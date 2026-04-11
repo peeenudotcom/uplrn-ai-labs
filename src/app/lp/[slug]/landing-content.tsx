@@ -5,9 +5,9 @@ import Script from 'next/script'
 import { motion } from 'framer-motion'
 import type { Course } from '@/config/courses'
 import { siteConfig } from '@/config/site'
-import { WhatsAppFloat } from '@/components/landing/whatsapp-float'
 import { ExitIntentPopup } from '@/components/landing/exit-intent-popup'
 import { EnrollmentToast } from '@/components/landing/enrollment-toast'
+import { AskTara } from '@/components/chatbot/ask-tara'
 import { trackEvent } from '@/components/analytics/meta-pixel'
 
 declare global {
@@ -886,7 +886,7 @@ export function LandingPageContent({ course }: { course: Course }) {
       </div>
 
       {/* Conversion boosters */}
-      <WhatsAppFloat courseTitle={course.title} coursePrice={course.price} />
+      <AskTara />
       <ExitIntentPopup courseTitle={course.title} courseSlug={course.slug} primaryColor="#10b981" />
       <EnrollmentToast />
     </>
