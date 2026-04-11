@@ -44,16 +44,22 @@ export async function POST(req: NextRequest) {
     const modelMessages = await convertToModelMessages(trimmedMessages)
 
     const result = streamText({
-      model: anthropic('claude-haiku-4.5'),
+      // Anthropic native model ID format (hyphens, with date) — matches what /api/assess
+      // and /api/course-tool use. Do NOT use "claude-haiku-4.5" — that's Vercel AI Gateway
+      // slug format and fails against the direct Anthropic provider.
+      model: anthropic('claude-haiku-4-5-20251001'),
       system: systemPrompt,
       messages: modelMessages,
       maxOutputTokens: 800,
       temperature: 0.7,
+      onError: ({ error }) => {
+        console.error('[Ask TARA] streamText error:', error)
+      },
     })
 
     return result.toUIMessageStreamResponse()
   } catch (error) {
-    console.error('Chat API error:', error)
+    console.error('[Ask TARA] Chat API error:', error)
     const message = error instanceof Error ? error.message : 'Chat failed'
     return NextResponse.json({ error: message }, { status: 500 })
   }
