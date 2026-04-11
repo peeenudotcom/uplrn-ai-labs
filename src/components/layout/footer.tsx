@@ -129,7 +129,10 @@ export function Footer() {
             <div className="mt-6 space-y-2">
               <p className="text-sm text-[#94A3B8]">{siteConfig.contact.email}</p>
               <p className="text-sm text-[#94A3B8]">{siteConfig.contact.phone}</p>
-              <p className="text-sm text-[#94A3B8]">Kotkapura, Punjab, India</p>
+              <p className="text-sm text-[#94A3B8] leading-relaxed">
+                Railway Road, Mehta Chowk<br />
+                Kotkapura, Punjab 151204, India
+              </p>
             </div>
           </div>
         </div>

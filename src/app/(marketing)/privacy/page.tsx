@@ -95,7 +95,7 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li><strong>Email:</strong> <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></li>
         <li><strong>Phone/WhatsApp:</strong> {siteConfig.contact.phone}</li>
-        <li><strong>Address:</strong> {siteConfig.contact.address}</li>
+        <li><strong>Address:</strong> {siteConfig.contact.fullAddress}</li>
       </ul>
     </article>
   )

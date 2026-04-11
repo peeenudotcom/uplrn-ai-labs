@@ -79,9 +79,19 @@ export default function ContactPage() {
                       <p className="text-sm font-medium text-[#0F172A]">
                         Address
                       </p>
-                      <p className="text-sm text-[#475569]">
-                        {siteConfig.contact.address}
+                      <p className="text-sm text-[#475569] leading-relaxed">
+                        Railway Road, Mehta Chowk<br />
+                        Kotkapura, Punjab 151204<br />
+                        India
                       </p>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${siteConfig.contact.googleMapsQuery}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 hover:text-emerald-700"
+                      >
+                        Open in Google Maps →
+                      </a>
                     </div>
                   </div>
 
@@ -127,18 +137,32 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Google Maps embed */}
               <div className="overflow-hidden rounded-xl border border-[#E2E8F0] bg-[#F8FAFC]">
-                <div className="flex h-56 items-center justify-center text-sm text-[#475569]">
-                  <div className="text-center">
-                    <svg className="mx-auto mb-2 h-8 w-8 text-[#94A3B8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                    </svg>
-                    <p>Kotkapura, Punjab, India</p>
-                    <p className="mt-1 text-xs text-[#94A3B8]">
-                      Map embed coming soon
-                    </p>
-                  </div>
+                <iframe
+                  src={`https://maps.google.com/maps?q=${siteConfig.contact.googleMapsQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  width="100%"
+                  height="280"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="TARAhut AI Labs location"
+                />
+                <div className="p-4 bg-white border-t border-[#E2E8F0]">
+                  <p className="text-sm font-semibold text-[#0F172A]">
+                    TARAhut AI Labs
+                  </p>
+                  <p className="text-xs text-[#64748B] mt-1">
+                    Railway Road, Mehta Chowk, Kotkapura, Punjab 151204
+                  </p>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${siteConfig.contact.googleMapsQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 hover:text-emerald-700"
+                  >
+                    Get directions →
+                  </a>
                 </div>
               </div>
 

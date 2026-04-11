@@ -13,6 +13,13 @@ export const siteConfig = {
     email: 'hello@tarahutailabs.com',
     phone: '+91-92008-82008',
     address: 'Kotkapura, Punjab, India',
+    fullAddress: 'Railway Road, Mehta Chowk, Kotkapura, Punjab 151204, India',
+    street: 'Railway Road, Mehta Chowk',
+    city: 'Kotkapura',
+    state: 'Punjab',
+    postalCode: '151204',
+    country: 'India',
+    googleMapsQuery: 'TARAhut+AI+Labs+Railway+Road+Mehta+Chowk+Kotkapura+Punjab+151204',
   },
   // Honest facts — verifiable from courses.ts and the Kotkapura center.
   // Removed fake studentsCount / placementRate — TARAhut hasn't launched

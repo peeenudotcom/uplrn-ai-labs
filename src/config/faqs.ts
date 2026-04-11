@@ -102,7 +102,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: 'Where exactly is your center?',
         answer:
-          'Our center is in Kotkapura, Punjab. For the exact address and directions, WhatsApp us at +91 92008-82008 — we\'ll share the location pin directly.',
+          'Our center is at **Railway Road, Mehta Chowk, Kotkapura, Punjab 151204**. WhatsApp us at +91 92008-82008 and we\'ll share the exact Google Maps pin directly to your phone.',
       },
       {
         question: 'I don\'t live in Kotkapura. Can I still join?',

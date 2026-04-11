@@ -20,7 +20,7 @@ export default function TermsPage() {
 
       <h2>1. About Us</h2>
       <p>
-        {siteConfig.name} is an educational service operated from {siteConfig.contact.address}, offering training programs in artificial intelligence tools, prompt engineering, automation, and related technologies.
+        {siteConfig.name} is an educational service operated from {siteConfig.contact.fullAddress}, offering training programs in artificial intelligence tools, prompt engineering, automation, and related technologies.
       </p>
 
       <h2>2. Course Enrollment</h2>
@@ -100,7 +100,7 @@ export default function TermsPage() {
       <ul>
         <li><strong>Email:</strong> <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></li>
         <li><strong>Phone/WhatsApp:</strong> {siteConfig.contact.phone}</li>
-        <li><strong>Address:</strong> {siteConfig.contact.address}</li>
+        <li><strong>Address:</strong> {siteConfig.contact.fullAddress}</li>
       </ul>
     </article>
   )
