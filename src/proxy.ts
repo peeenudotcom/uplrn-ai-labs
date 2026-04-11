@@ -44,9 +44,11 @@ export async function proxy(request: NextRequest) {
     request: { headers: request.headers },
   });
 
-  // Auth logic only runs on dashboard/login routes
+  // Auth logic runs on dashboard, admin, and login routes
   const needsAuth =
-    url.pathname.startsWith('/dashboard') || url.pathname === '/login';
+    url.pathname.startsWith('/dashboard') ||
+    url.pathname.startsWith('/admin') ||
+    url.pathname === '/login';
 
   if (!needsAuth) {
     return response;
@@ -75,8 +77,8 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Protect /dashboard routes — redirect to login if not authenticated
-  if (url.pathname.startsWith('/dashboard') && !user) {
+  // Protect /dashboard and /admin routes — redirect to login if not authenticated
+  if ((url.pathname.startsWith('/dashboard') || url.pathname.startsWith('/admin')) && !user) {
     const loginUrl = new URL('/login', request.url);
     loginUrl.searchParams.set('next', url.pathname);
     return NextResponse.redirect(loginUrl);
