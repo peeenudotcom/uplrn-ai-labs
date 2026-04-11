@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { requireAdmin, AdminAuthError } from '@/lib/admin'
 import { createServiceClient } from '@/lib/supabase'
 import { NewsletterComposer } from './newsletter-composer'
+import { SubscriberImporter } from './subscriber-importer'
 
 export const metadata = {
   title: 'Admin — Newsletter',
@@ -42,7 +43,8 @@ export default async function AdminNewsletterPage() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-6 py-8">
+      <main className="mx-auto max-w-5xl px-6 py-8 space-y-6">
+        <SubscriberImporter />
         <NewsletterComposer subscriberCount={activeSubs ?? 0} />
 
         {/* Recent issues */}
