@@ -194,31 +194,32 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating credibility cards */}
+              {/* Floating credibility cards — positioned INSIDE the photo
+                  container to guarantee visibility regardless of viewport */}
               <motion.div
-                className="absolute -left-4 top-10 md:-left-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 shadow-xl"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1, duration: 0.6 }}
+                className="absolute left-4 top-4 z-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl px-5 py-3 shadow-2xl shadow-emerald-500/50 border border-emerald-300/40"
+                initial={{ opacity: 0, x: -20, y: -10 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.6, type: 'spring', stiffness: 200 }}
               >
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-emerald-300">
+                <p className="text-[9px] font-bold uppercase tracking-widest text-emerald-100">
                   Experience
                 </p>
-                <p className="text-sm font-bold text-white mt-0.5">20+ Years</p>
-                <p className="text-[10px] text-gray-400">Education &amp; Tech</p>
+                <p className="text-2xl font-black text-white mt-0.5 leading-none">25+ Years</p>
+                <p className="text-[10px] text-emerald-100/90 mt-1 font-medium">Education &amp; Tech</p>
               </motion.div>
 
               <motion.div
-                className="absolute -right-2 bottom-24 md:-right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 shadow-xl"
+                className="absolute -right-3 top-1/2 -translate-y-1/2 z-20 bg-white/15 backdrop-blur-md border border-white/30 rounded-2xl px-4 py-3 shadow-2xl"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
+                transition={{ delay: 1.1, duration: 0.6 }}
               >
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-emerald-300">
-                  Based in
+                <p className="text-[9px] font-bold uppercase tracking-widest text-emerald-300">
+                  📍 Based in
                 </p>
                 <p className="text-sm font-bold text-white mt-0.5">Kotkapura</p>
-                <p className="text-[10px] text-gray-400">Punjab, India</p>
+                <p className="text-[10px] text-gray-300">Punjab, India</p>
               </motion.div>
             </div>
           </motion.div>
