@@ -1,75 +1,51 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from '@/components/ui/accordion'
-
-const faqs = [
-  {
-    question: 'Do I need any technical background to join AI courses?',
-    answer:
-      'Not at all. Our beginner courses like AI Tools Mastery are designed for people with zero technical background. We start from the basics and gradually build your skills through hands-on practice. All you need is a laptop and curiosity.',
-  },
-  {
-    question: 'Are the classes online or offline?',
-    answer:
-      'We offer both options. We have offline batches in Kotkapura, Punjab, as well as live online sessions that you can join from anywhere. Recorded sessions are also available for revision.',
-  },
-  {
-    question: 'What is the course fee and are there EMI options?',
-    answer:
-      'Our courses range from INR 4,999 to INR 14,999 depending on the program. We offer flexible EMI options and early-bird discounts. Contact us for current offers and payment plans.',
-  },
-  {
-    question: 'Will I get a certificate after completing the course?',
-    answer:
-      'Yes, you will receive an industry-recognized completion certificate from TARAhut AI Labs after successfully completing the course and submitting all required projects.',
-  },
-  {
-    question: 'Do you provide placement assistance?',
-    answer:
-      'Yes, we have an 85% placement rate. We provide resume building with AI tools, mock interviews, LinkedIn profile optimization, and direct referrals to our hiring partners across Punjab and remote-first companies.',
-  },
-  {
-    question: 'How long are the courses and what is the time commitment?',
-    answer:
-      'Course durations range from 3 to 12 weeks. Most courses require 6-8 hours per week, including live sessions and practice assignments. Weekend batches are available for working professionals.',
-  },
-  {
-    question: 'Can I switch between online and offline batches?',
-    answer:
-      'Yes, we offer flexible batch switching. If you start with an offline batch and need to switch to online (or vice versa), just let us know at least one week in advance and we will accommodate you.',
-  },
-  {
-    question: 'What makes TARAhut AI Labs different from other institutes?',
-    answer:
-      'We focus exclusively on AI skills with a project-based curriculum. Our instructors are industry practitioners, not just academics. Every course includes real-world projects, and we update our curriculum monthly to include the latest AI tools and techniques.',
-  },
-  {
-    question: 'Can I earn after this course?',
-    answer:
-      'Yes — and that is the whole point. Our courses are designed with income in mind. Students have gone on to freelance on platforms like Fiverr and Upwork, get hired at companies that need AI skills, or use AI to grow their own business. The skills you learn have immediate market value.',
-  },
-  {
-    question: 'Is this suitable for non-technical students?',
-    answer:
-      'Absolutely. Most of our students come from non-technical backgrounds — commerce, arts, business, and general graduates. Our beginner courses require no coding knowledge. We start from the basics and build up your skills through hands-on practice with real tools.',
-  },
-  {
-    question: 'How can I start my own AI training center?',
-    answer:
-      'TARAhut AI Labs offers a partnership model for entrepreneurs who want to run their own AI training center. We provide the curriculum, trainer support, branding, and operational system. You bring the space and the drive. Fill out the partnership enquiry form on our Partner page or contact us on WhatsApp to learn more.',
-  },
-]
+import { homepageFaqs, allFaqs } from '@/config/faqs'
 
 export function FaqSection() {
   return (
-    <section className="bg-[#F8FAFC]">
-      <div className="mx-auto max-w-3xl px-6 py-24 lg:px-8">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-emerald-50/30 to-white">
+      {/* Animated gradient orbs — emerald theme */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-[5%] right-[-5%] w-[500px] h-[500px] rounded-full blur-[130px]"
+          style={{ background: 'rgba(16, 185, 129, 0.10)' }}
+          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-[10%] left-[-10%] w-[550px] h-[550px] rounded-full blur-[140px]"
+          style={{ background: 'rgba(13, 148, 136, 0.08)' }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        />
+        <motion.div
+          className="absolute top-[40%] left-[45%] w-[400px] h-[400px] rounded-full blur-[110px]"
+          style={{ background: 'rgba(132, 204, 22, 0.06)' }}
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        />
+      </div>
+
+      {/* Dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.12] pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
+
+      <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -77,25 +53,46 @@ export function FaqSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-sm font-medium tracking-widest uppercase text-[#059669]">
-            Got questions?
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">
-            Frequently Asked Questions
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 backdrop-blur px-4 py-1.5 shadow-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#059669] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#059669]" />
+            </span>
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#059669]">
+              Got Questions?
+            </p>
+          </div>
+          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-[#0F172A] sm:text-5xl">
+            Frequently Asked{' '}
+            <span className="relative inline-block">
+              <span className="relative z-10">Questions</span>
+              <motion.span
+                className="absolute bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-[#10b981]/30 to-[#14b8a6]/30 rounded"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
+                style={{ originX: 0 }}
+              />
+            </span>
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-[#475569]">
+            The most common questions we get from students and parents. Scroll for more.
+          </p>
         </motion.div>
 
+        {/* FAQ accordion */}
         <motion.div
-          className="mt-12"
+          className="mt-14 rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur-sm p-4 sm:p-6 shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
           <Accordion>
-            {faqs.map((faq, i) => (
+            {homepageFaqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left text-base font-medium text-[#0F172A]">
+                <AccordionTrigger className="text-left text-base font-semibold text-[#0F172A] hover:text-[#059669] transition-colors">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent>
@@ -104,6 +101,40 @@ export function FaqSection() {
               </AccordionItem>
             ))}
           </Accordion>
+        </motion.div>
+
+        {/* See all CTA */}
+        <motion.div
+          className="mt-10 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <Link
+            href="/faq"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 backdrop-blur px-5 py-2.5 text-sm font-semibold text-[#059669] transition-all hover:bg-white hover:border-[#059669]/40 hover:shadow-lg"
+          >
+            See all {allFaqs.length} questions
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+          <p className="mt-3 text-xs text-slate-400">
+            Can&apos;t find what you&apos;re looking for?{' '}
+            <Link href="/contact" className="text-[#059669] hover:underline">
+              Contact us
+            </Link>
+            {' '}or{' '}
+            <a
+              href="https://wa.me/919200882008?text=Hi%2C+I+have+a+question+about+TARAhut+AI+Labs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#059669] hover:underline"
+            >
+              WhatsApp us
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>
