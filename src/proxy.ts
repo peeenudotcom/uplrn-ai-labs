@@ -29,6 +29,16 @@ export async function proxy(request: NextRequest) {
   const host = request.headers.get('host') ?? '';
   const url = request.nextUrl;
 
+  // Supabase magic link fix: Supabase sometimes redirects auth codes to the
+  // root path (/?code=...) instead of /auth/callback?code=... depending on
+  // email template settings. Catch it and forward to the callback route
+  // so the session exchange actually happens.
+  if (url.pathname === '/' && url.searchParams.has('code')) {
+    const callbackUrl = url.clone();
+    callbackUrl.pathname = '/auth/callback';
+    return NextResponse.redirect(callbackUrl);
+  }
+
   // Subdomain rewrite: claude.tarahutailabs.com/ → /lp/master-claude-15-days
   if (!ROOT_DOMAINS.has(host)) {
     const subdomain = host.split('.')[0];
