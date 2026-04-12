@@ -67,6 +67,7 @@ function EmailGateModal({
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [success, setSuccess] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -79,7 +80,10 @@ function EmailGateModal({
         body: JSON.stringify({ email, name, resource: resource.id }),
       })
       if (res.ok) {
+        // Trigger the download
+        window.open(resource.downloadUrl, '_blank')
         onSuccess(resource.downloadUrl)
+        setSuccess(true)
       } else {
         const d = await res.json()
         setError(d.error || 'Something went wrong')
@@ -91,49 +95,120 @@ function EmailGateModal({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={onClose}>
       <motion.div
-        className="w-full max-w-md rounded-3xl bg-[#0D1225] border border-white/[0.08] p-8 shadow-2xl shadow-black/50"
+        className="w-full max-w-md rounded-2xl bg-[#0D1225] border border-white/[0.08] p-8 shadow-2xl shadow-black/50"
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${resource.color} text-2xl`}>
-          {resource.icon}
-        </div>
-        <h3 className="text-xl font-bold text-white">Get Your Free Resource</h3>
-        <p className="mt-1 text-sm text-gray-400">{resource.title}</p>
+        <AnimatePresence mode="wait">
+          {success ? (
+            <motion.div
+              key="success"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-4"
+            >
+              {/* Success checkmark */}
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15">
+                <motion.svg
+                  className="h-8 w-8 text-emerald-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <motion.path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  />
+                </motion.svg>
+              </div>
 
-        <form onSubmit={handleSubmit} className="mt-6 space-y-3">
-          <input
-            type="text"
-            placeholder="Your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-2 focus:ring-emerald-400/10"
-          />
-          <input
-            type="email"
-            required
-            placeholder="Your email address *"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-2 focus:ring-emerald-400/10"
-          />
-          {error && <p className="text-sm text-red-400">{error}</p>}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full rounded-lg bg-[#059669] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857] disabled:opacity-60"
-          >
-            {loading ? 'Sending...' : 'Send Me the Free PDF →'}
-          </button>
-        </form>
+              <h3 className="text-xl font-bold text-white">Download Started!</h3>
+              <p className="mt-2 text-sm text-gray-400 leading-relaxed">
+                Your copy of <span className="text-white font-medium">{resource.title}</span> is downloading now.
+              </p>
 
-        <p className="mt-3 text-center text-xs text-gray-600">
-          We&apos;ll also send you weekly AI tips. Unsubscribe anytime.
-        </p>
+              <div className="mt-6 rounded-xl border border-white/[0.06] bg-white/[0.03] p-4">
+                <p className="text-xs text-gray-500 mb-3">While you wait, check these out:</p>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="https://wa.me/919200882008?text=Hi%2C+I+just+downloaded+your+AI+resources.+Can+you+tell+me+more+about+courses%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-lg bg-[#25D366]/10 border border-[#25D366]/20 px-4 py-2.5 text-sm font-medium text-[#25D366] hover:bg-[#25D366]/15 transition-colors"
+                  >
+                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    </svg>
+                    Ask about our courses on WhatsApp
+                  </a>
+                  <a
+                    href="/courses"
+                    className="flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
+                  >
+                    Browse All Courses
+                  </a>
+                </div>
+              </div>
+
+              <button
+                onClick={onClose}
+                className="mt-5 text-xs text-gray-600 hover:text-gray-400 transition-colors"
+              >
+                Close this window
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div key="form" exit={{ opacity: 0 }}>
+              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${resource.color} text-2xl`}>
+                {resource.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white">Get Your Free Resource</h3>
+              <p className="mt-1 text-sm text-gray-400">{resource.title}</p>
+
+              <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-2 focus:ring-emerald-400/10"
+                />
+                <input
+                  type="email"
+                  required
+                  placeholder="Your email address *"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-2 focus:ring-emerald-400/10"
+                />
+                {error && <p className="text-sm text-red-400">{error}</p>}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full rounded-lg bg-[#059669] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857] disabled:opacity-60"
+                >
+                  {loading ? 'Preparing your download...' : 'Download Free PDF'}
+                </button>
+              </form>
+
+              <p className="mt-3 text-center text-xs text-gray-600">
+                We&apos;ll also send you weekly AI tips. Unsubscribe anytime.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </div>
   )
@@ -143,11 +218,9 @@ export default function ResourcesPage() {
   const [activeResource, setActiveResource] = useState<typeof resources[0] | null>(null)
   const [downloaded, setDownloaded] = useState<Set<string>>(new Set())
 
-  function handleDownload(url: string) {
+  function handleDownload() {
     if (activeResource) {
       setDownloaded((prev) => new Set([...prev, activeResource.id]))
-      setActiveResource(null)
-      window.open(url, '_blank')
     }
   }
 
