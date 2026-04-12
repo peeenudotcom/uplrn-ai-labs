@@ -79,7 +79,7 @@ const features = [
 
 export function WhyUplrn() {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
+    <section className="relative py-24 overflow-hidden">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -120,7 +120,7 @@ export function WhyUplrn() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 backdrop-blur px-4 py-1.5 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur px-4 py-1.5">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#e53935] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#e53935]" />
@@ -129,7 +129,7 @@ export function WhyUplrn() {
               Why TARAhut AI Labs
             </p>
           </div>
-          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-[#0F172A] sm:text-5xl">
+          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             Not Just Another{' '}
             <span className="relative inline-block">
               <span className="relative z-10">IT Institute</span>
@@ -143,7 +143,7 @@ export function WhyUplrn() {
               />
             </span>
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-[#475569]">
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-400">
             We built TARAhut AI Labs because we were tired of courses that teach theory but not income. Here&apos;s what makes us different.
           </p>
         </motion.div>
@@ -162,7 +162,7 @@ export function WhyUplrn() {
           {features.map((feature) => (
             <motion.div
               key={feature.title}
-              className="group relative rounded-3xl border border-slate-200/80 bg-white/70 backdrop-blur-sm p-7 transition-all duration-500 hover:-translate-y-2"
+              className="group relative rounded-3xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-7 transition-all duration-500 hover:-translate-y-2"
               style={{
                 boxShadow: '0 1px 2px rgba(0,0,0,0.04)',
               }}
@@ -206,12 +206,12 @@ export function WhyUplrn() {
               </motion.div>
 
               {/* Title */}
-              <h3 className="relative z-10 text-lg font-bold text-[#0F172A]">
+              <h3 className="relative z-10 text-lg font-bold text-white">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="relative z-10 mt-2 text-sm leading-relaxed text-[#475569]">
+              <p className="relative z-10 mt-2 text-sm leading-relaxed text-gray-400">
                 {feature.description}
               </p>
 
@@ -240,7 +240,7 @@ export function WhyUplrn() {
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-gray-500">
             Ready to experience the difference?{' '}
             <a href="/courses" className="font-semibold text-[#e53935] hover:underline">
               Explore our courses →

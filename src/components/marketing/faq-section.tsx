@@ -12,7 +12,7 @@ import { homepageFaqs, allFaqs } from '@/config/faqs'
 
 export function FaqSection() {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-emerald-50/30 to-white">
+    <section className="relative py-24 overflow-hidden">
       {/* Animated gradient orbs — emerald theme */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -53,16 +53,16 @@ export function FaqSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 backdrop-blur px-4 py-1.5 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-white/[0.03] backdrop-blur px-4 py-1.5">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#059669] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#059669]" />
             </span>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#059669]">
+            <p className="text-xs font-semibold tracking-widest uppercase text-emerald-400">
               Got Questions?
             </p>
           </div>
-          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-[#0F172A] sm:text-5xl">
+          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             Frequently Asked{' '}
             <span className="relative inline-block">
               <span className="relative z-10">Questions</span>
@@ -76,14 +76,14 @@ export function FaqSection() {
               />
             </span>
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-[#475569]">
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-400">
             The most common questions we get from students and parents. Scroll for more.
           </p>
         </motion.div>
 
         {/* FAQ accordion */}
         <motion.div
-          className="mt-14 rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur-sm p-4 sm:p-6 shadow-sm"
+          className="mt-14 rounded-3xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-4 sm:p-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -92,11 +92,11 @@ export function FaqSection() {
           <Accordion>
             {homepageFaqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left text-base font-semibold text-[#0F172A] hover:text-[#059669] transition-colors">
+                <AccordionTrigger className="text-left text-base font-semibold text-white hover:text-emerald-400 transition-colors">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-[#475569] leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -113,16 +113,16 @@ export function FaqSection() {
         >
           <Link
             href="/faq"
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 backdrop-blur px-5 py-2.5 text-sm font-semibold text-[#059669] transition-all hover:bg-white hover:border-[#059669]/40 hover:shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-white/[0.03] backdrop-blur px-5 py-2.5 text-sm font-semibold text-emerald-400 transition-all hover:bg-white/[0.08] hover:border-emerald-500/50 hover:shadow-lg"
           >
             See all {allFaqs.length} questions
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-          <p className="mt-3 text-xs text-slate-400">
+          <p className="mt-3 text-xs text-gray-500">
             Can&apos;t find what you&apos;re looking for?{' '}
-            <Link href="/contact" className="text-[#059669] hover:underline">
+            <Link href="/contact" className="text-emerald-400 hover:underline">
               Contact us
             </Link>
             {' '}or{' '}
@@ -130,7 +130,7 @@ export function FaqSection() {
               href="https://wa.me/919200882008?text=Hi%2C+I+have+a+question+about+TARAhut+AI+Labs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#059669] hover:underline"
+              className="text-emerald-400 hover:underline"
             >
               WhatsApp us
             </a>

@@ -118,7 +118,7 @@ export function TestimonialsSection() {
   const displayed = showAll ? testimonials : testimonials.slice(0, 3)
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
+    <section className="relative py-24 overflow-hidden">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -159,7 +159,7 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 backdrop-blur px-4 py-1.5 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur px-4 py-1.5">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#e53935] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#e53935]" />
@@ -168,7 +168,7 @@ export function TestimonialsSection() {
               Trusted by Students
             </p>
           </div>
-          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-[#0F172A] sm:text-5xl">
+          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             What Our Learners Are{' '}
             <span className="relative inline-block">
               <span className="relative z-10">Experiencing</span>
@@ -182,12 +182,12 @@ export function TestimonialsSection() {
               />
             </span>
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-[#475569]">
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-400">
             Real feedback from students who applied AI skills to their work and business.
           </p>
 
           {/* Honest note about early-stage testimonials */}
-          <p className="mt-6 text-xs text-slate-500 max-w-xl mx-auto">
+          <p className="mt-6 text-xs text-gray-500 max-w-xl mx-auto">
             Early feedback from students piloting our curriculum. We&apos;re a new center in
             Kotkapura, building trust one batch at a time.
           </p>
@@ -207,7 +207,7 @@ export function TestimonialsSection() {
           {displayed.map((t) => (
             <motion.div
               key={t.name}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur-sm p-8 transition-all duration-500 hover:-translate-y-2"
+              className="group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-8 transition-all duration-500 hover:-translate-y-2"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
               whileHover={{
                 boxShadow: `0 20px 60px -15px ${t.accent.glow}, 0 0 0 1px ${t.accent.border}`,
@@ -247,11 +247,11 @@ export function TestimonialsSection() {
 
               <Stars count={t.rating} />
 
-              <blockquote className="relative z-10 mt-3 text-sm leading-relaxed text-[#334155]">
+              <blockquote className="relative z-10 mt-3 text-sm leading-relaxed text-gray-300">
                 {t.quote}
               </blockquote>
 
-              <div className="relative z-10 mt-6 flex items-center gap-3 border-t border-slate-200 pt-5">
+              <div className="relative z-10 mt-6 flex items-center gap-3 border-t border-white/[0.08] pt-5">
                 {/* Avatar initials circle */}
                 <div
                   className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white shadow-md"
@@ -263,8 +263,8 @@ export function TestimonialsSection() {
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-[#0F172A]">{t.name}</p>
-                  <p className="text-xs text-slate-500">{t.role}</p>
+                  <p className="text-sm font-bold text-white">{t.name}</p>
+                  <p className="text-xs text-gray-500">{t.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -282,7 +282,7 @@ export function TestimonialsSection() {
           >
             <button
               onClick={() => setShowAll(true)}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 backdrop-blur px-5 py-2.5 text-sm font-semibold text-[#e53935] transition-all hover:bg-white hover:border-[#e53935]/40 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur px-5 py-2.5 text-sm font-semibold text-[#e53935] transition-all hover:bg-white/[0.08] hover:border-[#e53935]/40 hover:shadow-lg"
             >
               See all {testimonials.length} reviews
               <svg
@@ -306,7 +306,7 @@ export function TestimonialsSection() {
           >
             <button
               onClick={() => setShowAll(false)}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 backdrop-blur px-5 py-2.5 text-sm font-semibold text-[#e53935] transition-all hover:bg-white hover:border-[#e53935]/40 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur px-5 py-2.5 text-sm font-semibold text-[#e53935] transition-all hover:bg-white/[0.08] hover:border-[#e53935]/40 hover:shadow-lg"
             >
               Show fewer reviews
               <svg

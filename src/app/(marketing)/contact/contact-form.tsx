@@ -51,22 +51,22 @@ export function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center rounded-xl border border-[#E2E8F0] bg-white p-12 text-center"
+        className="flex flex-col items-center justify-center rounded-xl border border-white/[0.08] bg-[#0D1225] p-12 text-center"
       >
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 text-[#059669]">
+        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
           <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="mb-2 text-xl font-semibold text-[#0F172A]">
+        <h3 className="mb-2 text-xl font-semibold text-white">
           Message Sent!
         </h3>
-        <p className="text-[#475569]">
+        <p className="text-gray-400">
           Thank you for reaching out. We will get back to you within 24 hours.
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="mt-6 text-sm font-medium text-[#059669] hover:underline"
+          className="mt-6 text-sm font-medium text-emerald-400 hover:underline"
         >
           Send another message
         </button>
@@ -80,7 +80,7 @@ export function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-8"
+      className="space-y-6 rounded-xl border border-white/[0.08] bg-[#0D1225] p-6 shadow-sm sm:p-8"
     >
       {/* Honeypot — hidden from humans, bots often fill it */}
       <input
@@ -99,7 +99,7 @@ export function ContactForm() {
             name="name"
             placeholder="Your name"
             required
-            className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+            className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
           />
         </div>
         <div className="space-y-2">
@@ -110,7 +110,7 @@ export function ContactForm() {
             type="email"
             placeholder="you@example.com"
             required
-            className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+            className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
           />
         </div>
       </div>
@@ -123,7 +123,7 @@ export function ContactForm() {
             name="phone"
             type="tel"
             placeholder="+91 99154 24411"
-            className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+            className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
           />
         </div>
         <div className="space-y-2">
@@ -131,7 +131,7 @@ export function ContactForm() {
           <select
             id="course"
             name="course"
-            className="h-10 w-full rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-2.5 text-sm text-[#0F172A] outline-none transition-colors focus-visible:border-[#059669] focus-visible:ring-3 focus-visible:ring-[#059669]/50"
+            className="h-10 w-full rounded-lg border border-white/10 bg-white/[0.04] px-2.5 text-sm text-white outline-none transition-colors focus-visible:border-emerald-400/50 focus-visible:ring-3 focus-visible:ring-emerald-400/10"
           >
             <option value="">Select a course (optional)</option>
             {courses.map((c) => (
@@ -151,7 +151,7 @@ export function ContactForm() {
           rows={5}
           required
           placeholder="Tell us how we can help you..."
-          className="w-full rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-2.5 text-sm text-[#0F172A] outline-none transition-colors placeholder:text-[#94A3B8] focus-visible:border-[#059669] focus-visible:ring-3 focus-visible:ring-[#059669]/50"
+          className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-gray-500 focus-visible:border-emerald-400/50 focus-visible:ring-3 focus-visible:ring-emerald-400/10"
         />
       </div>
 

@@ -22,12 +22,12 @@ function formatDate(dateStr: string) {
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
-  'AI Tools': 'bg-blue-50 text-blue-700',
-  'Industry News': 'bg-orange-50 text-orange-700',
-  'Machine Learning': 'bg-purple-50 text-purple-700',
-  'AI Career': 'bg-green-50 text-green-700',
-  'Generative AI': 'bg-pink-50 text-pink-700',
-  'AI Business': 'bg-amber-50 text-amber-700',
+  'AI Tools': 'bg-blue-500/15 text-blue-400',
+  'Industry News': 'bg-orange-500/15 text-orange-400',
+  'Machine Learning': 'bg-purple-500/15 text-purple-400',
+  'AI Career': 'bg-emerald-500/15 text-emerald-400',
+  'Generative AI': 'bg-pink-500/15 text-pink-400',
+  'AI Business': 'bg-amber-500/15 text-amber-400',
 };
 
 export default async function BlogPostPage({ params }: Props) {
@@ -70,24 +70,24 @@ export default async function BlogPostPage({ params }: Props) {
       </section>
 
       {/* Content */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-white/[0.03]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div
-            className="prose prose-slate prose-lg max-w-none
-              prose-headings:font-bold prose-headings:text-[#0F172A]
+            className="prose prose-invert prose-lg max-w-none
+              prose-headings:font-bold prose-headings:text-white
               prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-              prose-p:text-[#475569] prose-p:leading-relaxed
-              prose-strong:text-[#0F172A]
-              prose-a:text-[#059669] prose-a:no-underline hover:prose-a:underline
-              prose-li:text-[#475569]
+              prose-p:text-gray-400 prose-p:leading-relaxed
+              prose-strong:text-white
+              prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline
+              prose-li:text-gray-400
               prose-ul:my-4 prose-li:my-1"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
 
           {/* CTA */}
           <div className="mt-12 rounded-2xl bg-gradient-to-br from-[#059669]/10 to-[#0D9488]/10 border border-[#059669]/20 p-8 text-center">
-            <h3 className="text-xl font-bold text-[#0F172A] mb-2">Want to master AI skills?</h3>
-            <p className="text-[#475569] mb-5">Join TARAhut AI Labs and learn from expert-led, hands-on courses designed for Indian professionals.</p>
+            <h3 className="text-xl font-bold text-white mb-2">Want to master AI skills?</h3>
+            <p className="text-gray-400 mb-5">Join TARAhut AI Labs and learn from expert-led, hands-on courses designed for Indian professionals.</p>
             <Link
               href="/courses"
               className="inline-block bg-[#059669] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#047857] transition-colors"
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Source credit */}
           {p.source_url && (
-            <p className="mt-8 text-xs text-[#94A3B8] text-center">
+            <p className="mt-8 text-xs text-gray-600 text-center">
               Inspired by:{' '}
               <a href={p.source_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
                 {p.source_title ?? p.source_url}

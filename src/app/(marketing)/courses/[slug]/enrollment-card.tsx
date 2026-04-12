@@ -132,7 +132,7 @@ export function EnrollmentCard({
       <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
 
       <div className="lg:self-start lg:sticky lg:top-24">
-        <div className="overflow-hidden rounded-xl border border-[#E2E8F0] bg-white shadow-lg">
+        <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.03] shadow-lg">
           {/* Price header */}
           <div className="bg-gradient-to-r from-[#059669] to-[#0D9488] p-6 text-white">
             <div className="flex items-baseline gap-3">
@@ -155,16 +155,16 @@ export function EnrollmentCard({
           <div className="p-6">
             {step === 'success' ? (
               <div className="text-center py-4">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#D1FAE5]">
-                  <svg className="h-6 w-6 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/15">
+                  <svg className="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-[#0F172A]">Payment Successful!</h3>
-                <p className="mt-1 text-sm text-[#64748B]">
+                <h3 className="text-lg font-bold text-white">Payment Successful!</h3>
+                <p className="mt-1 text-sm text-gray-500">
                   Payment ID: {paymentId}
                 </p>
-                <p className="mt-2 text-sm text-[#475569]">
+                <p className="mt-2 text-sm text-gray-400">
                   We&apos;ll send your course access details to your email shortly.
                 </p>
                 <a
@@ -186,7 +186,7 @@ export function EnrollmentCard({
                       placeholder="Your name *"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full rounded-lg border border-[#E2E8F0] px-3 py-2.5 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:border-[#059669] focus:outline-none focus:ring-1 focus:ring-[#059669]"
+                      className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-1 focus:ring-emerald-400/10"
                       required
                     />
                   </div>
@@ -196,7 +196,7 @@ export function EnrollmentCard({
                       placeholder="Email address *"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full rounded-lg border border-[#E2E8F0] px-3 py-2.5 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:border-[#059669] focus:outline-none focus:ring-1 focus:ring-[#059669]"
+                      className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-1 focus:ring-emerald-400/10"
                       required
                     />
                   </div>
@@ -206,7 +206,7 @@ export function EnrollmentCard({
                       placeholder="Phone number"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full rounded-lg border border-[#E2E8F0] px-3 py-2.5 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:border-[#059669] focus:outline-none focus:ring-1 focus:ring-[#059669]"
+                      className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-1 focus:ring-emerald-400/10"
                     />
                   </div>
 
@@ -239,9 +239,9 @@ export function EnrollmentCard({
                 </form>
 
                 <div className="my-4 flex items-center gap-3">
-                  <div className="h-px flex-1 bg-[#E2E8F0]" />
-                  <span className="text-xs text-[#94A3B8]">or</span>
-                  <div className="h-px flex-1 bg-[#E2E8F0]" />
+                  <div className="h-px flex-1 bg-white/[0.08]" />
+                  <span className="text-xs text-gray-600">or</span>
+                  <div className="h-px flex-1 bg-white/[0.08]" />
                 </div>
 
                 {/* WhatsApp */}
@@ -261,47 +261,47 @@ export function EnrollmentCard({
                 {/* Email */}
                 <a
                   href={`mailto:${siteConfig.contact.email}?subject=Enquiry: ${courseTitle}`}
-                  className="flex w-full items-center justify-center rounded-lg border border-[#E2E8F0] px-6 py-3 text-sm font-medium text-[#0F172A] transition-colors hover:bg-[#F8FAFC]"
+                  className="flex w-full items-center justify-center rounded-lg border border-white/[0.08] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.04]"
                 >
                   Email Enquiry
                 </a>
 
-                <p className="mt-3 text-center text-xs text-[#94A3B8]">
+                <p className="mt-3 text-center text-xs text-gray-600">
                   Secure payment via Razorpay. UPI, Cards, Net Banking accepted.
                 </p>
               </>
             )}
 
             {/* Course Meta */}
-            <div className="mt-6 space-y-3 border-t border-[#E2E8F0] pt-6 text-sm">
+            <div className="mt-6 space-y-3 border-t border-white/[0.08] pt-6 text-sm">
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Duration</span>
-                <span className="font-medium text-[#0F172A]">{duration}</span>
+                <span className="text-gray-500">Duration</span>
+                <span className="font-medium text-white">{duration}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Level</span>
-                <span className="font-medium text-[#0F172A]">{level}</span>
+                <span className="text-gray-500">Level</span>
+                <span className="font-medium text-white">{level}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Category</span>
-                <span className="font-medium text-[#0F172A]">{category}</span>
+                <span className="text-gray-500">Category</span>
+                <span className="font-medium text-white">{category}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Instructor</span>
-                <span className="font-medium text-[#0F172A]">{instructorName}</span>
+                <span className="text-gray-500">Instructor</span>
+                <span className="font-medium text-white">{instructorName}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Enrolled</span>
-                <span className="font-medium text-[#0F172A]">{enrolledCount} students</span>
+                <span className="text-gray-500">Enrolled</span>
+                <span className="font-medium text-white">{enrolledCount} students</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Modules</span>
-                <span className="font-medium text-[#0F172A]">{modulesCount} modules</span>
+                <span className="text-gray-500">Modules</span>
+                <span className="font-medium text-white">{modulesCount} modules</span>
               </div>
               {isSchoolCourse && (
                 <div className="flex justify-between">
-                  <span className="text-[#64748B]">Batch size</span>
-                  <span className="font-medium text-[#059669]">Max 10 students</span>
+                  <span className="text-gray-500">Batch size</span>
+                  <span className="font-medium text-emerald-400">Max 10 students</span>
                 </div>
               )}
             </div>
@@ -309,8 +309,8 @@ export function EnrollmentCard({
         </div>
 
         {/* Payment Collection Link */}
-        <div className="mt-4 rounded-xl border border-dashed border-[#E2E8F0] bg-[#F8FAFC] p-4 text-center">
-          <p className="text-xs text-[#64748B] mb-2">Share this page to collect payments</p>
+        <div className="mt-4 rounded-xl border border-dashed border-white/[0.08] bg-white/[0.04] p-4 text-center">
+          <p className="text-xs text-gray-500 mb-2">Share this page to collect payments</p>
           <CopyLinkButton courseSlug={courseSlug} />
         </div>
       </div>
@@ -332,11 +332,11 @@ function CopyLinkButton({ courseSlug }: { courseSlug: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="inline-flex items-center gap-1.5 rounded-lg border border-[#E2E8F0] bg-white px-4 py-2 text-xs font-medium text-[#0F172A] transition-colors hover:bg-[#F1F5F9]"
+      className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-white/[0.07]"
     >
       {copied ? (
         <>
-          <svg className="h-3.5 w-3.5 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="h-3.5 w-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
           Link Copied!

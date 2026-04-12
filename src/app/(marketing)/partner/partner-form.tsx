@@ -52,20 +52,20 @@ export function PartnerForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center rounded-xl border border-[#E2E8F0] bg-white p-12 text-center"
+        className="flex flex-col items-center justify-center rounded-xl border border-white/[0.08] bg-[#0D1225] p-12 text-center"
       >
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 text-[#059669]">
+        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
           <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="mb-2 text-xl font-semibold text-[#0F172A]">Enquiry Submitted!</h3>
-        <p className="text-[#475569]">
+        <h3 className="mb-2 text-xl font-semibold text-white">Enquiry Submitted!</h3>
+        <p className="text-gray-400">
           Thank you for your interest in becoming an TARAhut AI Labs partner. Our team will contact you within 24 hours.
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="mt-6 text-sm font-medium text-[#059669] hover:underline"
+          className="mt-6 text-sm font-medium text-emerald-400 hover:underline"
         >
           Submit another enquiry
         </button>
@@ -79,7 +79,7 @@ export function PartnerForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-8"
+      className="space-y-6 rounded-xl border border-white/[0.08] bg-[#0D1225] p-6 shadow-sm sm:p-8"
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="space-y-2">
@@ -87,7 +87,7 @@ export function PartnerForm() {
           <Input
             id="name" name="name" required placeholder="Your full name"
             value={form.name} onChange={handleChange}
-            className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+            className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
           />
         </div>
         <div className="space-y-2">
@@ -95,7 +95,7 @@ export function PartnerForm() {
           <Input
             id="phone" name="phone" type="tel" required placeholder="+91 99154 24411"
             value={form.phone} onChange={handleChange}
-            className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+            className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
           />
         </div>
       </div>
@@ -106,7 +106,7 @@ export function PartnerForm() {
           <Input
             id="email" name="email" type="email" required placeholder="you@example.com"
             value={form.email} onChange={handleChange}
-            className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+            className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
           />
         </div>
         <div className="space-y-2">
@@ -114,7 +114,7 @@ export function PartnerForm() {
           <select
             id="investment" name="investment" required
             value={form.investment} onChange={handleChange}
-            className="h-10 w-full rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-2.5 text-sm text-[#0F172A] outline-none transition-colors focus-visible:border-[#059669] focus-visible:ring-3 focus-visible:ring-[#059669]/50"
+            className="h-10 w-full rounded-lg border border-white/10 bg-white/[0.04] px-2.5 text-sm text-white outline-none transition-colors focus-visible:border-emerald-400/50 focus-visible:ring-3 focus-visible:ring-emerald-400/10"
           >
             <option value="">How much can you invest?</option>
             {investmentRanges.map((r) => (
@@ -130,7 +130,7 @@ export function PartnerForm() {
           <Input
             id="floorArea" name="floorArea" type="number" placeholder="e.g. 500"
             value={form.floorArea} onChange={handleChange}
-            className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+            className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
           />
         </div>
         <div className="space-y-2">
@@ -138,7 +138,7 @@ export function PartnerForm() {
           <select
             id="state" name="state" required
             value={form.state} onChange={handleChange}
-            className="h-10 w-full rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-2.5 text-sm text-[#0F172A] outline-none transition-colors focus-visible:border-[#059669] focus-visible:ring-3 focus-visible:ring-[#059669]/50"
+            className="h-10 w-full rounded-lg border border-white/10 bg-white/[0.04] px-2.5 text-sm text-white outline-none transition-colors focus-visible:border-emerald-400/50 focus-visible:ring-3 focus-visible:ring-emerald-400/10"
           >
             <option value="">Select State</option>
             {indianStates.map((s) => (
@@ -153,7 +153,7 @@ export function PartnerForm() {
         <Input
           id="city" name="city" required placeholder="Your city"
           value={form.city} onChange={handleChange}
-          className="h-10 border-[#E2E8F0] bg-[#F8FAFC] text-[#0F172A] placeholder:text-[#94A3B8]"
+          className="h-10 border-white/10 bg-white/[0.04] text-white placeholder-gray-500 focus:border-emerald-400/50 focus:ring-emerald-400/10"
         />
       </div>
 
@@ -163,7 +163,7 @@ export function PartnerForm() {
           id="comments" name="comments" rows={4}
           placeholder="Tell us about your background, experience, or any questions..."
           value={form.comments} onChange={handleChange}
-          className="w-full rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-2.5 text-sm text-[#0F172A] outline-none transition-colors placeholder:text-[#94A3B8] focus-visible:border-[#059669] focus-visible:ring-3 focus-visible:ring-[#059669]/50"
+          className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-gray-500 focus-visible:border-emerald-400/50 focus-visible:ring-3 focus-visible:ring-emerald-400/10"
         />
       </div>
 
@@ -174,7 +174,7 @@ export function PartnerForm() {
         Submit Enquiry
       </button>
 
-      <p className="text-center text-xs text-[#94A3B8]">
+      <p className="text-center text-xs text-gray-600">
         By submitting, you agree to be contacted by our partnership team.
       </p>
     </motion.form>

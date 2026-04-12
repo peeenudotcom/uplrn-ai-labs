@@ -53,7 +53,7 @@ export default async function CourseDetailPage({
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#059669] to-[#0D9488] py-16 text-white border-b border-[#E2E8F0]">
+      <section className="bg-gradient-to-br from-[#059669] to-[#0D9488] py-16 text-white border-b border-white/[0.08]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/courses"
@@ -104,7 +104,7 @@ export default async function CourseDetailPage({
                 {course.rating} rating
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 text-emerald-600 font-semibold">
+              <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -121,7 +121,7 @@ export default async function CourseDetailPage({
       </section>
 
       {/* Content */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/[0.03]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_380px]">
             {/* Left Column */}
@@ -129,20 +129,20 @@ export default async function CourseDetailPage({
 
               {/* About This Course */}
               <div className="mb-12">
-                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">About This Course</h2>
-                <p className="text-[#475569] leading-relaxed whitespace-pre-line">{course.description}</p>
+                <h2 className="mb-4 text-2xl font-bold text-white">About This Course</h2>
+                <p className="text-gray-400 leading-relaxed whitespace-pre-line">{course.description}</p>
               </div>
 
               {/* Learning Outcomes */}
               <div className="mb-12">
-                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">What You&apos;ll Achieve</h2>
+                <h2 className="mb-4 text-2xl font-bold text-white">What You&apos;ll Achieve</h2>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {course.learningOutcomes.map((outcome, i) => (
-                    <div key={i} className="flex items-start gap-3 rounded-xl border border-[#D1FAE5] bg-[#F0FDF4] p-3">
-                      <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <div key={i} className="flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/15 p-3">
+                      <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-sm text-[#475569]">{outcome}</span>
+                      <span className="text-sm text-gray-400">{outcome}</span>
                     </div>
                   ))}
                 </div>
@@ -151,12 +151,12 @@ export default async function CourseDetailPage({
               {/* Highlights — school courses only */}
               {schoolCourse && (
                 <div className="mb-12">
-                  <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">Course Highlights</h2>
+                  <h2 className="mb-4 text-2xl font-bold text-white">Course Highlights</h2>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {schoolCourse.highlights.map((h, i) => (
-                      <div key={i} className="flex items-start gap-3 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-3">
+                      <div key={i} className="flex items-start gap-3 rounded-xl border border-white/[0.08] bg-white/[0.04] p-3">
                         <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#059669] text-white text-[10px] font-bold">{i + 1}</span>
-                        <span className="text-sm text-[#475569]">{h}</span>
+                        <span className="text-sm text-gray-400">{h}</span>
                       </div>
                     ))}
                   </div>
@@ -165,10 +165,10 @@ export default async function CourseDetailPage({
 
               {/* Syllabus */}
               <div className="mb-12">
-                <h2 className="mb-2 text-2xl font-bold text-[#0F172A]">Course Syllabus</h2>
+                <h2 className="mb-2 text-2xl font-bold text-white">Course Syllabus</h2>
                 {schoolCourse ? (
                   <>
-                    <p className="mb-4 text-sm text-[#64748B]">{schoolCourse.modules} modules · 12 sessions × 2 hours · 24 hours total</p>
+                    <p className="mb-4 text-sm text-gray-500">{schoolCourse.modules} modules · 12 sessions × 2 hours · 24 hours total</p>
                     <SchoolCourseSyllabus syllabus={schoolCourse.syllabus} />
                   </>
                 ) : (
@@ -178,10 +178,10 @@ export default async function CourseDetailPage({
 
               {/* Tools */}
               <div className="mb-12">
-                <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">Tools You Will Master</h2>
+                <h2 className="mb-4 text-2xl font-bold text-white">Tools You Will Master</h2>
                 <div className="flex flex-wrap gap-2">
                   {(schoolCourse?.tools ?? course.tools).map((tool) => (
-                    <span key={tool} className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-1.5 text-sm font-medium text-[#0F172A]">
+                    <span key={tool} className="rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-1.5 text-sm font-medium text-white">
                       {tool}
                     </span>
                   ))}
@@ -191,14 +191,14 @@ export default async function CourseDetailPage({
               {/* Who is this for — school courses only */}
               {schoolCourse && (
                 <div className="mb-12">
-                  <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">Who Is This For?</h2>
+                  <h2 className="mb-4 text-2xl font-bold text-white">Who Is This For?</h2>
                   <ul className="space-y-3">
                     {schoolCourse.whoIsThisFor.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
-                        <span className="text-[#475569]">{item}</span>
+                        <span className="text-gray-400">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -208,14 +208,14 @@ export default async function CourseDetailPage({
               {/* What you get — school courses only */}
               {schoolCourse && (
                 <div className="mb-12 rounded-2xl bg-gradient-to-br from-[#059669]/5 to-[#0D9488]/5 border border-[#059669]/10 p-6">
-                  <h2 className="mb-4 text-2xl font-bold text-[#0F172A]">What You Get</h2>
+                  <h2 className="mb-4 text-2xl font-bold text-white">What You Get</h2>
                   <ul className="space-y-3">
                     {schoolCourse.whatYouGet.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-[#475569] font-medium">{item}</span>
+                        <span className="text-gray-400 font-medium">{item}</span>
                       </li>
                     ))}
                   </ul>

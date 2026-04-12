@@ -36,7 +36,7 @@ export function NewsletterSection() {
   }
 
   return (
-    <section className="bg-gradient-to-br from-[#F0FDF4] to-[#ECFDF5] border-y border-[#D1FAE5]">
+    <section className="border-y border-white/[0.08]">
       <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
         <motion.div
           className="text-center"
@@ -52,25 +52,25 @@ export function NewsletterSection() {
             </svg>
           </div>
 
-          <p className="text-sm font-medium tracking-widest uppercase text-[#059669]">Stay Ahead</p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">
+          <p className="text-sm font-medium tracking-widest uppercase text-emerald-400">Stay Ahead</p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Weekly AI Insights — Free
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[#475569]">
+          <p className="mx-auto mt-4 max-w-xl text-gray-400">
             Every Monday: one practical AI tip, one new tool breakdown, and one real use case from Indian businesses. No fluff, just actionable insights.
           </p>
 
           {/* Social proof */}
-          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-[#64748B]">
+          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
             <div className="flex -space-x-2">
               {['H', 'A', 'G', 'R'].map((l, i) => (
-                <div key={i} className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-white text-xs font-bold text-white"
+                <div key={i} className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-white/10 text-xs font-bold text-white"
                   style={{ backgroundColor: ['#059669', '#10B981', '#F59E0B', '#EF4444'][i] }}>
                   {l}
                 </div>
               ))}
             </div>
-            <span>Join <strong className="text-[#0F172A]">200+</strong> professionals already subscribed</span>
+            <span>Join <strong className="text-white">200+</strong> professionals already subscribed</span>
           </div>
 
           {status === 'success' ? (
@@ -91,7 +91,7 @@ export function NewsletterSection() {
                 placeholder="Your name (optional)"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="flex-1 rounded-xl border border-[#D1FAE5] bg-white px-4 py-3 text-sm text-[#0F172A] placeholder-[#94A3B8] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20"
+                className="flex-1 rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-emerald-500/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
               />
               <input
                 type="email"
@@ -99,12 +99,12 @@ export function NewsletterSection() {
                 placeholder="Your email address *"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 rounded-xl border border-[#D1FAE5] bg-white px-4 py-3 text-sm text-[#0F172A] placeholder-[#94A3B8] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20"
+                className="flex-1 rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-emerald-500/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="rounded-xl bg-[#059669] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#10B981] disabled:opacity-60"
+                className="rounded-xl bg-[#059669] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#10B981] disabled:opacity-60"
               >
                 {status === 'loading' ? 'Subscribing...' : 'Subscribe Free →'}
               </button>
@@ -113,7 +113,7 @@ export function NewsletterSection() {
 
           {error && <p className="mt-3 text-sm text-red-500">{error}</p>}
 
-          <p className="mt-4 text-xs text-[#94A3B8]">No spam. Unsubscribe anytime. We respect your privacy.</p>
+          <p className="mt-4 text-xs text-gray-600">No spam. Unsubscribe anytime. We respect your privacy.</p>
         </motion.div>
       </div>
     </section>

@@ -71,7 +71,7 @@ const stats = [
 
 export function StatsCounter() {
   return (
-    <section className="border-y border-[#E2E8F0] bg-gradient-to-b from-[#F0FDF4] via-white to-[#F0FDF4]">
+    <section className="border-y border-white/[0.08]">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -80,10 +80,10 @@ export function StatsCounter() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs font-bold tracking-widest uppercase text-emerald-600">
+          <p className="text-xs font-bold tracking-widest uppercase text-emerald-400">
             What You Get
           </p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Real Training, Real Numbers, Real Value
           </h2>
         </motion.div>
@@ -101,7 +101,7 @@ export function StatsCounter() {
           {stats.map((stat) => (
             <motion.div
               key={stat.label}
-              className="relative group bg-white rounded-2xl border border-emerald-100 p-6 shadow-sm hover:shadow-lg hover:border-emerald-200 transition-all duration-300 text-center"
+              className="relative group bg-white/[0.03] rounded-2xl border border-emerald-500/30 p-6 hover:border-emerald-500/50 transition-all duration-300 text-center"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -111,7 +111,7 @@ export function StatsCounter() {
               <div className="text-3xl mb-3">{stat.icon}</div>
 
               {/* Number */}
-              <p className="text-4xl sm:text-5xl font-black tracking-tight text-[#0F172A] leading-none">
+              <p className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-none">
                 {stat.isNumber ? (
                   <AnimatedNumber value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 ) : (
@@ -122,10 +122,10 @@ export function StatsCounter() {
               </p>
 
               {/* Label */}
-              <p className="mt-3 text-sm font-bold text-[#0F172A]">
+              <p className="mt-3 text-sm font-bold text-white">
                 {stat.label}
               </p>
-              <p className="mt-1 text-xs text-[#64748B]">
+              <p className="mt-1 text-xs text-gray-500">
                 {stat.subLabel}
               </p>
 
@@ -139,14 +139,14 @@ export function StatsCounter() {
 
         {/* Honest footnote */}
         <motion.p
-          className="mt-8 text-center text-xs text-slate-500"
+          className="mt-8 text-center text-xs text-gray-500"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
           Just launched — be among the first students. All facts verifiable on our{' '}
-          <a href="/courses" className="text-emerald-600 hover:underline font-semibold">
+          <a href="/courses" className="text-emerald-400 hover:underline font-semibold">
             courses page
           </a>
           .

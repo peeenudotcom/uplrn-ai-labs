@@ -63,7 +63,7 @@ export function CtaSection() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-xl text-lg text-slate-400">
+          <p className="mx-auto mt-5 max-w-xl text-lg text-gray-400">
             Learn practical AI skills you can apply immediately — to earn, grow, or build something of your own.
           </p>
 
@@ -99,12 +99,12 @@ export function CtaSection() {
           </div>
 
           {/* Audience line */}
-          <p className="mt-5 text-sm text-slate-600">
+          <p className="mt-5 text-sm text-gray-500">
             For Students &nbsp;•&nbsp; For Business Owners &nbsp;•&nbsp; For Future Partners
           </p>
 
           {/* Phone */}
-          <p className="mt-6 text-sm text-slate-500">
+          <p className="mt-6 text-sm text-gray-500">
             Prefer talking? Call us directly:{' '}
             <a href="tel:+919200882008" className="font-semibold text-white transition-colors hover:text-emerald-400">
               +91-9200882008
@@ -114,7 +114,7 @@ export function CtaSection() {
           {/* Trust badges */}
           <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
             {trustBadges.map((b) => (
-              <div key={b.label} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-400">
+              <div key={b.label} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-400">
                 <span>{b.icon}</span>
                 {b.label}
               </div>

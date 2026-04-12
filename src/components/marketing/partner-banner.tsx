@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export function PartnerBanner() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-0 lg:grid-cols-2 items-stretch rounded-2xl overflow-hidden shadow-lg border border-[#E2E8F0]">
+        <div className="grid gap-0 lg:grid-cols-2 items-stretch rounded-2xl overflow-hidden border border-white/[0.08]">
 
           {/* Left: 2×2 visual grid */}
           <div className="grid grid-cols-2 grid-rows-2 min-h-[360px]">
@@ -43,14 +43,14 @@ export function PartnerBanner() {
           </div>
 
           {/* Right: CTA card */}
-          <div className="bg-[#F8FAF5] flex flex-col justify-center px-10 py-12">
-            <span className="inline-block rounded-full bg-[#059669]/10 px-3 py-1 text-xs font-semibold text-[#059669] mb-5 w-fit">
+          <div className="bg-white/[0.04] flex flex-col justify-center px-10 py-12">
+            <span className="inline-block rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-400 mb-5 w-fit">
               Business Opportunity
             </span>
-            <h2 className="text-3xl font-bold text-[#0F172A] leading-tight mb-4">
+            <h2 className="text-3xl font-bold text-white leading-tight mb-4">
               Start Your Own AI Learning Center
             </h2>
-            <p className="text-[#475569] mb-8">
+            <p className="text-gray-400 mb-8">
               Launch your own AI training center with a structured system designed for practical learning and scalable growth.
             </p>
             <Link
