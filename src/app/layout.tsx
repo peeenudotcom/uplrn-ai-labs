@@ -3,6 +3,7 @@ import { Inter, Geist_Mono, Playfair_Display } from 'next/font/google';
 import Script from 'next/script';
 import { siteConfig } from '@/config/site';
 import { MetaPixel } from '@/components/analytics/meta-pixel';
+import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import './globals.css';
 
 const inter = Inter({
@@ -52,6 +53,7 @@ export default function RootLayout({
 }>) {
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
     <html
@@ -70,6 +72,7 @@ export default function RootLayout({
           </Script>
         )}
         {metaPixelId && <MetaPixel pixelId={metaPixelId} />}
+        {gaMeasurementId && <GoogleAnalytics measurementId={gaMeasurementId} />}
       </body>
     </html>
   );
