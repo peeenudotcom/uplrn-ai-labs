@@ -55,7 +55,7 @@ export function PartnerBanner() {
             </p>
             <Link
               href="/partner"
-              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#059669] to-[#0D9488] px-7 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 w-fit"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#059669] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#047857] w-fit"
             >
               Apply for Partnership →
             </Link>

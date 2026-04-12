@@ -169,7 +169,7 @@ export function PartnerForm() {
 
       <button
         type="submit"
-        className="inline-flex h-11 w-full items-center justify-center rounded-lg bg-gradient-to-r from-[#059669] to-[#0D9488] px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        className="inline-flex h-11 w-full items-center justify-center rounded-lg bg-[#059669] px-8 text-sm font-semibold text-white transition-colors hover:bg-[#047857]"
       >
         Submit Enquiry
       </button>

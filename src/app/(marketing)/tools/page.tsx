@@ -210,7 +210,7 @@ function ToolCard({ tool }: { tool: typeof tools[0] }) {
         <button
           onClick={handleRun}
           disabled={loading}
-          className="mt-3 w-full rounded-xl py-3 text-sm font-semibold text-white shadow-sm transition-all hover:brightness-105 disabled:opacity-60"
+          className="mt-3 w-full rounded-lg py-3 text-sm font-semibold text-white shadow-sm transition-all hover:brightness-105 disabled:opacity-60"
           style={{ background: tool.gradient }}
         >
           {loading ? (
@@ -452,7 +452,7 @@ export default function ToolsPage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/courses"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-[#0F172A] shadow-sm transition-all hover:bg-slate-100"
+              className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-[#0F172A] shadow-sm transition-all hover:bg-slate-100"
             >
               Explore AI Career Programs →
             </Link>
@@ -460,7 +460,7 @@ export default function ToolsPage() {
               href="https://wa.me/919200882008?text=Hi%2C+I+just+tried+your+AI+tools.+Can+you+suggest+the+right+course+for+me%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               Ask on WhatsApp
             </a>

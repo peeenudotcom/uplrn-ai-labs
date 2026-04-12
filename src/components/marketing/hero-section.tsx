@@ -113,12 +113,9 @@ export function HeroSection() {
                 href="https://wa.me/919200882008?text=Hi%2C+I+want+to+book+a+free+demo+class+at+TARAhut+AI+Labs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-xl
-                           bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-500
-                           text-black font-semibold
-                           shadow-[0_10px_40px_rgba(16,185,129,0.35)]
-                           hover:scale-105 hover:shadow-[0_20px_60px_rgba(16,185,129,0.5)]
-                           transition-all duration-300"
+                className="px-7 py-3.5 text-sm rounded-lg
+                           bg-[#059669] text-black font-semibold
+                           hover:bg-[#047857] transition-colors"
               >
                 📅 Book Free Demo
               </a>
@@ -126,10 +123,9 @@ export function HeroSection() {
               {/* Secondary */}
               <Link
                 href="/courses"
-                className="px-8 py-4 rounded-xl
+                className="px-7 py-3.5 text-sm rounded-lg
                            border border-white/10 text-gray-300
-                           hover:bg-white/5 hover:text-white
-                           transition-all duration-300"
+                           hover:bg-white/5 hover:text-white transition-colors"
               >
                 Explore Courses →
               </Link>

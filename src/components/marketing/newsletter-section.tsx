@@ -104,7 +104,7 @@ export function NewsletterSection() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="rounded-xl bg-[#059669] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#10B981] disabled:opacity-60"
+                className="rounded-lg bg-[#059669] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857] disabled:opacity-60"
               >
                 {status === 'loading' ? 'Subscribing...' : 'Subscribe Free →'}
               </button>

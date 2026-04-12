@@ -273,7 +273,7 @@ export function CourseHighlights() {
       >
         <Link
           href="/courses"
-          className="inline-flex items-center gap-2 rounded-full border-2 border-emerald-400 px-8 py-3 text-sm font-semibold text-emerald-400 transition-all hover:bg-emerald-400 hover:text-white"
+          className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-6 py-3 text-sm font-semibold text-emerald-400 hover:bg-white/5 hover:text-emerald-300 transition-colors"
         >
           View All Courses
           <span>&rarr;</span>

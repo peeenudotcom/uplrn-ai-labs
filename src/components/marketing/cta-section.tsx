@@ -86,13 +86,13 @@ export function CtaSection() {
               href="https://wa.me/919200882008?text=Hi%2C+I+want+to+book+a+free+demo+class+at+TARAhut+AI+Labs"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-9 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:brightness-110 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center rounded-lg bg-[#059669] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[#047857] transition-colors"
             >
               📅 Book Free Demo Class
             </a>
             <a
               href="/partner"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center rounded-lg border border-white/10 text-gray-300 px-7 py-3.5 text-sm font-semibold hover:bg-white/5 hover:text-white transition-colors"
             >
               Start AI Center →
             </a>

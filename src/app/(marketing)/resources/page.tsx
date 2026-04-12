@@ -125,7 +125,7 @@ function EmailGateModal({
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all hover:brightness-110 disabled:opacity-60"
+            className="w-full rounded-lg bg-[#059669] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857] disabled:opacity-60"
           >
             {loading ? 'Sending...' : 'Send Me the Free PDF →'}
           </button>
@@ -241,10 +241,10 @@ export default function ResourcesPage() {
 
               <button
                 onClick={() => setActiveResource(r)}
-                className={`mt-5 w-full rounded-xl py-3 text-sm font-semibold transition-all ${
+                className={`mt-5 w-full rounded-lg py-3 text-sm font-semibold transition-colors ${
                   downloaded.has(r.id)
                     ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
-                    : `bg-gradient-to-r ${r.color} text-white shadow-sm hover:brightness-105`
+                    : 'bg-[#059669] text-white hover:bg-[#047857]'
                 }`}
               >
                 {downloaded.has(r.id) ? '✓ Downloaded — Download Again' : 'Download Free PDF →'}
@@ -267,7 +267,7 @@ export default function ResourcesPage() {
             href="https://wa.me/919200882008?text=Hi%2C+I+downloaded+your+AI+resources+and+want+to+know+more+about+courses"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all hover:brightness-110"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#059669] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857]"
           >
             📅 Book a Free Demo Class
           </a>
