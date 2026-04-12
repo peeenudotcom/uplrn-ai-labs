@@ -42,8 +42,8 @@ function DesktopDropdown({ entry, pathname }: { entry: NavDropdown; pathname: st
     >
       <button
         className={cn(
-          'flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-emerald-400',
-          isActive ? 'text-emerald-400' : 'text-gray-400'
+          'flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-[#059669]',
+          isActive ? 'text-[#059669]' : 'text-[#475569]'
         )}
       >
         {entry.label}
@@ -52,17 +52,17 @@ function DesktopDropdown({ entry, pathname }: { entry: NavDropdown; pathname: st
 
       {open && (
         <div className="absolute top-full left-0 pt-1 z-50">
-          <div className="min-w-[200px] rounded-xl border border-white/[0.08] bg-[#0D1225] py-2 shadow-lg">
+          <div className="min-w-[200px] rounded-xl border border-[#E2E8F0] bg-white py-2 shadow-lg">
             {entry.items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  'block px-4 py-2.5 text-sm transition-colors hover:bg-white/[0.06] hover:text-emerald-400',
+                  'block px-4 py-2.5 text-sm transition-colors hover:bg-[#F0FDF4] hover:text-[#059669]',
                   pathname === item.href
-                    ? 'text-emerald-400 bg-white/[0.04]'
-                    : 'text-gray-400'
+                    ? 'text-[#059669] bg-[#F0FDF4]'
+                    : 'text-[#475569]'
                 )}
               >
                 {item.label}
@@ -134,8 +134,8 @@ export function Header() {
       className={cn(
         'fixed top-0 right-0 left-0 z-50 transition-all duration-300',
         scrolled
-          ? 'border-b border-white/[0.08] bg-[#0D1225]/95 shadow-sm backdrop-blur-lg'
-          : 'border-b border-white/[0.08] bg-[#0D1225]/95 backdrop-blur-lg'
+          ? 'border-b border-[#E2E8F0]/10 bg-white shadow-sm backdrop-blur-lg'
+          : 'border-b border-transparent bg-white backdrop-blur-lg'
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -159,10 +159,10 @@ export function Header() {
                 key={entry.href}
                 href={entry.href}
                 className={cn(
-                  'rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-emerald-400',
+                  'rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-[#059669]',
                   pathname === entry.href
-                    ? 'text-emerald-400'
-                    : 'text-gray-400'
+                    ? 'text-[#059669]'
+                    : 'text-[#475569]'
                 )}
               >
                 {entry.label}
@@ -175,7 +175,7 @@ export function Header() {
         <div className="hidden items-center gap-2 lg:flex">
           <Link
             href={navCta.href}
-            className="inline-flex h-9 items-center justify-center rounded-full border border-emerald-500 px-4 text-sm font-medium text-emerald-400 transition-all hover:bg-white/[0.06]"
+            className="inline-flex h-9 items-center justify-center rounded-full border border-emerald-600 px-4 text-sm font-medium text-emerald-600 transition-all hover:bg-emerald-50"
           >
             {navCta.label}
           </Link>
@@ -195,7 +195,7 @@ export function Header() {
             <SheetTrigger
               render={
                 <Button variant="ghost" size="icon">
-                  <Menu className="size-5 text-white" />
+                  <Menu className="size-5 text-[#0F172A]" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               }

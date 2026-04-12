@@ -10,7 +10,7 @@ export default function MarketingLayout({
   return (
     <>
       <Header />
-      <main className="flex-1 pt-16">{children}</main>
+      <main className="flex-1 pt-16 bg-[#0A0F1C]">{children}</main>
       <Footer />
       <AskTara />
     </>
