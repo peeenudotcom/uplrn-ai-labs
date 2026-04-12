@@ -14,7 +14,7 @@ const resources = [
     badgeColor: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
     pages: '18 pages',
     format: 'PDF',
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=1_PROMPT_GUIDE_ID',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1E8FzYnrmB6bl39v5EdNuz8u7e-UYUiLu',
   },
   {
     id: 'career-roadmap',
@@ -26,7 +26,7 @@ const resources = [
     badgeColor: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
     pages: '24 pages',
     format: 'PDF',
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=2_CAREER_ROADMAP_ID',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1WJfjACMAkedxR3VdJxaV6oCKuatw6aMq',
   },
   {
     id: 'tools-cheatsheet',
@@ -38,7 +38,7 @@ const resources = [
     badgeColor: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
     pages: '8 pages',
     format: 'PDF',
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=3_TOOLS_CHEATSHEET_ID',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1y6a7CLQcJ_er7QooooUvOeOIc6GUFurf',
   },
   {
     id: 'business-ai',
@@ -50,7 +50,7 @@ const resources = [
     badgeColor: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
     pages: '14 pages',
     format: 'PDF',
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=4_BUSINESS_AI_ID',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1nflAOHOr8AHLeS2kJh30CUT7sGQ8Lf4n',
   },
 ]
 
