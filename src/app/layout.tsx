@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { siteConfig } from '@/config/site';
 import { MetaPixel } from '@/components/analytics/meta-pixel';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
+import { OrganizationSchema } from '@/components/seo/structured-data';
 import './globals.css';
 
 const inter = Inter({
@@ -61,6 +62,7 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <OrganizationSchema />
         {children}
         {clarityId && (
           <Script id="clarity-tracker" strategy="afterInteractive">

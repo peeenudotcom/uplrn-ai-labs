@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { faqCategories, allFaqs } from '@/config/faqs'
 import { siteConfig } from '@/config/site'
 import { FaqPageClient } from './faq-page-client'
+import { FAQSchema } from '@/components/seo/structured-data'
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <div className="relative min-h-screen bg-[#0A0F1C]">
+      <FAQSchema faqs={allFaqs} />
       {/* Dark Hero */}
       <section className="relative overflow-hidden" style={{ backgroundColor: '#020617' }}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -3,11 +3,13 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { courses } from '@/config/courses';
 import { schoolCourses } from '@/config/school-courses';
+import { siteConfig } from '@/config/site';
 import { Badge } from '@/components/ui/badge';
 import { CourseSyllabus } from './course-syllabus';
 import { SchoolCourseSyllabus } from './school-course-syllabus';
 import { EnrollmentCard } from './enrollment-card';
 import { EnrollmentToast } from '@/components/landing/enrollment-toast';
+import { CourseSchema } from '@/components/seo/structured-data';
 
 const levelColors: Record<string, string> = {
   Beginner: 'bg-emerald-500/15 text-emerald-600',
@@ -33,6 +35,17 @@ export async function generateMetadata({
   return {
     title: `${course.title} | TARAhut AI Labs`,
     description: course.shortDescription,
+    openGraph: {
+      title: course.title,
+      description: course.shortDescription,
+      images: [{ url: `${siteConfig.url}${course.thumbnail}` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: course.title,
+      description: course.shortDescription,
+      images: [`${siteConfig.url}${course.thumbnail}`],
+    },
   };
 }
 
@@ -52,6 +65,7 @@ export default async function CourseDetailPage({
 
   return (
     <>
+      <CourseSchema course={course} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#059669] to-[#0D9488] py-16 text-white border-b border-white/[0.08]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
