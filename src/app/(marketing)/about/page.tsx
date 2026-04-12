@@ -65,13 +65,40 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#059669] to-[#0D9488] py-20 text-white border-b border-[#E2E8F0]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section
+        className="relative py-24 overflow-hidden"
+        style={{ backgroundColor: '#020617' }}
+      >
+        {/* Glow orbs */}
+        <div
+          className="pointer-events-none absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full blur-3xl"
+          style={{ background: 'rgba(16,185,129,0.12)' }}
+        />
+        <div
+          className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full blur-3xl"
+          style={{ background: 'rgba(16,185,129,0.08)' }}
+        />
+        {/* Grid overlay */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px',
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
+            {/* Pill badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Our Story &amp; Mission
+            </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              About TARAhut AI Labs
+              <span className="bg-gradient-to-r from-white via-white to-emerald-400 bg-clip-text text-transparent">
+                About TARAhut AI Labs
+              </span>
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-white/80">
+            <p className="mt-4 max-w-2xl text-lg text-gray-400">
               We are building India&apos;s most practical AI education platform
               — one student, one skill, one breakthrough at a time.
             </p>
@@ -80,27 +107,27 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0A0F1C]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-6 text-3xl font-bold text-[#0F172A]">
+              <h2 className="mb-6 text-3xl font-bold text-white">
                 Our Story
               </h2>
-              <p className="mb-4 text-[#475569] leading-relaxed">
+              <p className="mb-4 text-gray-400 leading-relaxed">
                 TARAhut AI Labs was born in Kotkapura, Punjab, from a simple
                 observation: while AI was transforming industries worldwide,
                 access to quality, hands-on AI education remained limited in
                 tier-2 and tier-3 cities across India.
               </p>
-              <p className="mb-4 text-[#475569] leading-relaxed">
+              <p className="mb-4 text-gray-400 leading-relaxed">
                 Founded by Parveen Sukhija — a technologist with over 25 years
                 of experience in IT, marketing, and education — TARAhut AI Labs
                 set out to bridge this gap. We believe that every student,
                 professional, and entrepreneur deserves the tools and knowledge
                 to thrive in the AI era.
               </p>
-              <p className="text-[#475569] leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 Today, we offer 9 hands-on courses across AI tools, marketing,
                 development, and business — all taught in-person at our
                 Kotkapura center with real-world projects and direct instructor
@@ -114,14 +141,15 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-[#F8FAFC] py-20">
+      <section className="bg-[#020617] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="grid gap-12 md:grid-cols-2">
-              <div className="rounded-xl border border-[#E2E8F0] bg-white p-8 shadow-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#059669]/15">
+              {/* Mission */}
+              <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-8 backdrop-blur-sm transition-colors hover:border-emerald-500/30 hover:bg-white/[0.06]">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/15">
                   <svg
-                    className="h-6 w-6 text-[#059669]"
+                    className="h-6 w-6 text-emerald-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -134,20 +162,21 @@ export default function AboutPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-[#0F172A]">
+                <h3 className="mb-3 text-xl font-bold text-white">
                   Our Mission
                 </h3>
-                <p className="text-[#475569] leading-relaxed">
+                <p className="text-gray-400 leading-relaxed">
                   To bring real, practical AI education to every serious learner
                   in India — not just in big cities — so they can build skills
                   that actually work, solve real-world problems, and grow in
                   their careers and businesses.
                 </p>
               </div>
-              <div className="rounded-xl border border-[#E2E8F0] bg-white p-8 shadow-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#0D9488]/15">
+              {/* Vision */}
+              <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-8 backdrop-blur-sm transition-colors hover:border-emerald-500/30 hover:bg-white/[0.06]">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/15">
                   <svg
-                    className="h-6 w-6 text-[#0D9488]"
+                    className="h-6 w-6 text-emerald-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -165,10 +194,10 @@ export default function AboutPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-[#0F172A]">
+                <h3 className="mb-3 text-xl font-bold text-white">
                   Our Vision
                 </h3>
-                <p className="text-[#475569] leading-relaxed">
+                <p className="text-gray-400 leading-relaxed">
                   To become India&apos;s most trusted AI learning brand — known
                   for creating job-ready professionals who don&apos;t just
                   understand AI, but use it to build real solutions, create
@@ -181,14 +210,14 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0A0F1C]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold text-[#0F172A]">
+              <h2 className="text-3xl font-bold text-white">
                 What We Stand For
               </h2>
-              <p className="mt-3 text-[#475569]">
+              <p className="mt-3 text-gray-400">
                 Four principles that guide everything we build and teach.
               </p>
             </div>
@@ -196,14 +225,14 @@ export default function AboutPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 0.1}>
-                <div className="flex flex-col items-center rounded-xl border border-[#E2E8F0] bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md hover:shadow-[#059669]/5 h-full">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#059669]/10 text-[#059669]">
+                <div className="flex flex-col items-center rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 text-center backdrop-blur-sm transition-colors hover:border-emerald-500/30 hover:bg-white/[0.06] h-full">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400">
                     {v.icon}
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-[#0F172A]">
+                  <h3 className="mb-2 text-lg font-semibold text-white">
                     {v.title}
                   </h3>
-                  <p className="text-sm text-[#475569] leading-relaxed">
+                  <p className="text-sm text-gray-400 leading-relaxed">
                     {v.desc}
                   </p>
                 </div>
@@ -214,14 +243,14 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-[#F8FAFC] py-20">
+      <section className="bg-[#020617] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold text-[#0F172A]">
+              <h2 className="text-3xl font-bold text-white">
                 Meet the Team
               </h2>
-              <p className="mt-3 text-[#475569]">
+              <p className="mt-3 text-gray-400">
                 The people behind TARAhut AI Labs.
               </p>
             </div>
@@ -229,26 +258,26 @@ export default function AboutPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-start">
             {team.map((member, i) => (
               <AnimatedSection key={member.name} delay={i * 0.1}>
-                <div className="flex flex-col items-center rounded-xl border border-[#E2E8F0] bg-white p-8 text-center shadow-sm">
+                <div className="flex flex-col items-center rounded-xl border border-white/[0.08] bg-white/[0.03] p-8 text-center backdrop-blur-sm transition-colors hover:border-emerald-500/30 hover:bg-white/[0.06]">
                   {'photo' in member ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={member.photo}
                       alt={member.name}
-                      className="mb-4 h-24 w-24 rounded-full object-cover object-top shadow-md bg-[#F0FDF4]"
+                      className="mb-4 h-24 w-24 rounded-full object-cover object-top shadow-md bg-emerald-500/10"
                     />
                   ) : (
-                    <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#059669] to-[#0D9488] text-2xl font-bold text-white">
+                    <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-2xl font-bold text-white">
                       {member.initials}
                     </div>
                   )}
-                  <h3 className="text-lg font-semibold text-[#0F172A]">
+                  <h3 className="text-lg font-semibold text-white">
                     {member.name}
                   </h3>
-                  <p className="mb-3 text-sm font-medium text-[#059669]">
+                  <p className="mb-3 text-sm font-medium text-emerald-400">
                     {member.role}
                   </p>
-                  <p className="text-sm text-[#475569] leading-relaxed">
+                  <p className="text-sm text-gray-400 leading-relaxed">
                     {member.bio}
                   </p>
                 </div>

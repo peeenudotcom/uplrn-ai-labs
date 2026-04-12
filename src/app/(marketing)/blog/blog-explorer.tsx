@@ -9,12 +9,12 @@ import { cn } from '@/lib/utils'
 // ─── Constants ───────────────────────────────────────────────────────────────
 
 const CATEGORY_COLORS: Record<string, { bg: string; text: string; border: string; dot: string }> = {
-  'AI Tools':         { bg: 'bg-blue-50',   text: 'text-blue-700',   border: 'border-blue-200',   dot: 'bg-blue-500' },
-  'Industry News':    { bg: 'bg-orange-50', text: 'text-orange-700', border: 'border-orange-200', dot: 'bg-orange-500' },
-  'Machine Learning': { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', dot: 'bg-purple-500' },
-  'AI Career':        { bg: 'bg-green-50',  text: 'text-green-700',  border: 'border-green-200',  dot: 'bg-green-500' },
-  'Generative AI':    { bg: 'bg-pink-50',   text: 'text-pink-700',   border: 'border-pink-200',   dot: 'bg-pink-500' },
-  'AI Business':      { bg: 'bg-amber-50',  text: 'text-amber-700',  border: 'border-amber-200',  dot: 'bg-amber-500' },
+  'AI Tools':         { bg: 'bg-blue-500/15',   text: 'text-blue-400',   border: 'border-blue-500/30',   dot: 'bg-blue-400' },
+  'Industry News':    { bg: 'bg-orange-500/15', text: 'text-orange-400', border: 'border-orange-500/30', dot: 'bg-orange-400' },
+  'Machine Learning': { bg: 'bg-purple-500/15', text: 'text-purple-400', border: 'border-purple-500/30', dot: 'bg-purple-400' },
+  'AI Career':        { bg: 'bg-green-500/15',  text: 'text-green-400',  border: 'border-green-500/30',  dot: 'bg-green-400' },
+  'Generative AI':    { bg: 'bg-pink-500/15',   text: 'text-pink-400',   border: 'border-pink-500/30',   dot: 'bg-pink-400' },
+  'AI Business':      { bg: 'bg-amber-500/15',  text: 'text-amber-400',  border: 'border-amber-500/30',  dot: 'bg-amber-400' },
 }
 
 const POSTS_PER_PAGE = 12
@@ -69,7 +69,7 @@ function getReadMinutes(readTime: string): number {
 }
 
 function getCategoryStyle(category: string) {
-  return CATEGORY_COLORS[category] || { bg: 'bg-gray-50', text: 'text-gray-600', border: 'border-gray-200', dot: 'bg-gray-400' }
+  return CATEGORY_COLORS[category] || { bg: 'bg-gray-500/15', text: 'text-gray-400', border: 'border-gray-500/30', dot: 'bg-gray-400' }
 }
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -154,24 +154,24 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
     <div>
       {/* ── Stats Bar ── */}
       <div className="mb-8 flex flex-wrap items-center gap-4">
-        <div className="flex items-center gap-6 rounded-xl border border-[#E2E8F0] bg-white px-5 py-3">
+        <div className="flex items-center gap-6 rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-3">
           <div className="text-center">
-            <p className="text-lg font-bold text-[#059669]">{totalPosts}</p>
-            <p className="text-[10px] text-[#64748B] font-medium">Articles</p>
+            <p className="text-lg font-bold text-emerald-400">{totalPosts}</p>
+            <p className="text-[10px] text-gray-500 font-medium">Articles</p>
           </div>
-          <div className="h-8 w-px bg-[#E2E8F0]" />
+          <div className="h-8 w-px bg-white/[0.08]" />
           <div className="text-center">
-            <p className="text-lg font-bold text-[#0F172A]">{totalCategories}</p>
-            <p className="text-[10px] text-[#64748B] font-medium">Topics</p>
+            <p className="text-lg font-bold text-white">{totalCategories}</p>
+            <p className="text-[10px] text-gray-500 font-medium">Topics</p>
           </div>
-          <div className="h-8 w-px bg-[#E2E8F0]" />
+          <div className="h-8 w-px bg-white/[0.08]" />
           <div className="text-center">
-            <p className="text-lg font-bold text-[#0F172A]">Daily</p>
-            <p className="text-[10px] text-[#64748B] font-medium">New posts</p>
+            <p className="text-lg font-bold text-white">Daily</p>
+            <p className="text-[10px] text-gray-500 font-medium">New posts</p>
           </div>
         </div>
         {oldestPost && (
-          <p className="text-xs text-[#94A3B8]">
+          <p className="text-xs text-gray-600">
             Archive since {formatDate(oldestPost.created_at)}
           </p>
         )}
@@ -182,7 +182,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
         {/* Search bar */}
         <div className="relative">
           <svg
-            className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#94A3B8]"
+            className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -198,12 +198,12 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
               setVisibleCount(POSTS_PER_PAGE)
             }}
             placeholder="Search articles by title, topic, or keyword..."
-            className="w-full rounded-xl border border-[#E2E8F0] bg-white py-3 pl-11 pr-4 text-sm text-[#0F172A] placeholder-[#94A3B8] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20 transition-all"
+            className="w-full rounded-xl border border-white/10 bg-white/[0.04] py-3 pl-11 pr-4 text-sm text-white placeholder-gray-500 focus:border-emerald-400/50 focus:outline-none focus:ring-2 focus:ring-emerald-400/10 transition-all"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-[#94A3B8] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-gray-500 hover:text-white hover:bg-white/10 transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -219,8 +219,8 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
             className={cn(
               'rounded-full px-4 py-2 text-xs font-semibold transition-all',
               selectedCategory === 'all'
-                ? 'bg-[#0F172A] text-white shadow-sm'
-                : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#059669] hover:text-[#059669]'
+                ? 'bg-emerald-500 text-white shadow-sm shadow-emerald-500/25'
+                : 'bg-white/[0.04] border border-white/10 text-gray-400 hover:border-emerald-500/30 hover:text-emerald-400'
             )}
           >
             All ({totalPosts})
@@ -235,8 +235,8 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                 className={cn(
                   'inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold transition-all',
                   isActive
-                    ? `${style.bg} ${style.text} border ${style.border} shadow-sm`
-                    : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#059669] hover:text-[#059669]'
+                    ? `${style.bg} ${style.text} border ${style.border}`
+                    : 'bg-white/[0.04] border border-white/10 text-gray-400 hover:border-emerald-500/30 hover:text-emerald-400'
                 )}
               >
                 <span className={cn('h-2 w-2 rounded-full', style.dot)} />
@@ -246,10 +246,10 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
           })}
 
           {/* Separator */}
-          <div className="h-6 w-px bg-[#E2E8F0] mx-1 hidden sm:block" />
+          <div className="h-6 w-px bg-white/[0.08] mx-1 hidden sm:block" />
 
           {/* Read time filter */}
-          <div className="flex items-center rounded-full border border-[#E2E8F0] bg-white p-0.5">
+          <div className="flex items-center rounded-full border border-white/10 bg-white/[0.04] p-0.5">
             {([
               { id: 'all' as ReadFilter, label: 'All' },
               { id: 'quick' as ReadFilter, label: 'Quick reads' },
@@ -261,8 +261,8 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                 className={cn(
                   'rounded-full px-3 py-1.5 text-[11px] font-semibold transition-all',
                   readFilter === rf.id
-                    ? 'bg-[#059669] text-white'
-                    : 'text-[#64748B] hover:text-[#0F172A]'
+                    ? 'bg-emerald-500 text-white'
+                    : 'text-gray-500 hover:text-white'
                 )}
               >
                 {rf.label}
@@ -275,12 +275,12 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
       {/* ── Active filters indicator ── */}
       {(selectedCategory !== 'all' || searchQuery || readFilter !== 'all') && (
         <div className="mb-6 flex items-center gap-2">
-          <span className="text-xs text-[#64748B]">
+          <span className="text-xs text-gray-500">
             Showing {filteredPosts.length} of {totalPosts} articles
           </span>
           <button
             onClick={resetFilters}
-            className="text-xs font-medium text-[#059669] hover:underline"
+            className="text-xs font-medium text-emerald-400 hover:underline"
           >
             Clear all filters
           </button>
@@ -289,16 +289,16 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
 
       {/* ── Posts by date group ── */}
       {filteredPosts.length === 0 ? (
-        <div className="text-center py-16 rounded-2xl border border-dashed border-[#E2E8F0] bg-white">
-          <p className="text-lg font-semibold text-[#0F172A] mb-2">No articles found</p>
-          <p className="text-sm text-[#64748B] mb-4">
+        <div className="text-center py-16 rounded-2xl border border-dashed border-white/[0.08] bg-white/[0.02]">
+          <p className="text-lg font-semibold text-white mb-2">No articles found</p>
+          <p className="text-sm text-gray-500 mb-4">
             {searchQuery
               ? `No results for "${searchQuery}". Try a different search.`
               : 'No articles match the selected filters.'}
           </p>
           <button
             onClick={resetFilters}
-            className="rounded-lg bg-[#059669] px-5 py-2 text-sm font-semibold text-white hover:bg-[#047857] transition-colors"
+            className="rounded-lg bg-emerald-500 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-600 transition-colors"
           >
             Show all articles
           </button>
@@ -309,9 +309,9 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
             <div key={group.label}>
               {/* Date group header */}
               <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-sm font-bold text-[#0F172A] whitespace-nowrap">{group.label}</h3>
-                <div className="flex-1 h-px bg-[#E2E8F0]" />
-                <span className="text-[10px] text-[#94A3B8] font-medium whitespace-nowrap">
+                <h3 className="text-sm font-bold text-white whitespace-nowrap">{group.label}</h3>
+                <div className="flex-1 h-px bg-white/[0.06]" />
+                <span className="text-[10px] text-gray-600 font-medium whitespace-nowrap">
                   {group.posts.length} article{group.posts.length !== 1 ? 's' : ''}
                 </span>
               </div>
@@ -330,7 +330,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                         transition={{ duration: 0.3, delay: i * 0.05 }}
                       >
                         <Link href={`/blog/${post.slug}`} className="group block h-full">
-                          <article className="flex h-full flex-col rounded-xl border border-[#E2E8F0] bg-white p-5 transition-all hover:shadow-md hover:shadow-[#059669]/5 hover:-translate-y-0.5 hover:border-[#059669]/30">
+                          <article className="flex h-full flex-col rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-5 transition-all hover:shadow-md hover:shadow-emerald-500/10 hover:-translate-y-0.5 hover:border-emerald-500/30">
                             {/* Category + meta row */}
                             <div className="flex items-center justify-between mb-3">
                               <span className={cn(
@@ -340,25 +340,25 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                                 <span className={cn('h-1.5 w-1.5 rounded-full', style.dot)} />
                                 {post.category}
                               </span>
-                              <span className="text-[10px] text-[#94A3B8]">{post.read_time}</span>
+                              <span className="text-[10px] text-gray-600">{post.read_time}</span>
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-sm font-bold text-[#0F172A] leading-snug group-hover:text-[#059669] transition-colors mb-2 line-clamp-2">
+                            <h3 className="text-sm font-bold text-white leading-snug group-hover:text-emerald-400 transition-colors mb-2 line-clamp-2">
                               {post.title}
                             </h3>
 
                             {/* Excerpt */}
-                            <p className="text-xs text-[#64748B] leading-relaxed mb-4 flex-1 line-clamp-3">
+                            <p className="text-xs text-gray-500 leading-relaxed mb-4 flex-1 line-clamp-3">
                               {post.excerpt}
                             </p>
 
                             {/* Footer */}
-                            <div className="flex items-center justify-between pt-3 border-t border-[#F1F5F9]">
-                              <span className="text-[10px] text-[#94A3B8]">
+                            <div className="flex items-center justify-between pt-3 border-t border-white/[0.06]">
+                              <span className="text-[10px] text-gray-600">
                                 {getRelativeDate(post.created_at)}
                               </span>
-                              <span className="text-xs font-medium text-[#059669] opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span className="text-xs font-medium text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
                                 Read →
                               </span>
                             </div>
@@ -379,10 +379,10 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
         <div className="mt-10 text-center">
           <button
             onClick={() => setVisibleCount((v) => v + POSTS_PER_PAGE)}
-            className="inline-flex items-center gap-2 rounded-xl border border-[#E2E8F0] bg-white px-8 py-3 text-sm font-semibold text-[#0F172A] shadow-sm transition-all hover:border-[#059669] hover:text-[#059669] hover:shadow-md"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-8 py-3 text-sm font-semibold text-white transition-all hover:border-emerald-500/30 hover:text-emerald-400 hover:bg-white/[0.06]"
           >
             Load More Articles
-            <span className="text-xs text-[#94A3B8]">
+            <span className="text-xs text-gray-500">
               ({filteredPosts.length - visibleCount} remaining)
             </span>
           </button>
@@ -391,8 +391,8 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
 
       {/* ── End of archive ── */}
       {!hasMore && filteredPosts.length > 0 && (
-        <div className="mt-10 text-center py-6 rounded-xl border border-dashed border-[#E2E8F0]">
-          <p className="text-xs text-[#94A3B8]">
+        <div className="mt-10 text-center py-6 rounded-xl border border-dashed border-white/[0.08]">
+          <p className="text-xs text-gray-600">
             You&apos;ve reached the end — {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''} total
           </p>
         </div>

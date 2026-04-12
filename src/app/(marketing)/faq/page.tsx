@@ -11,49 +11,49 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-white via-emerald-50/30 to-white">
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-slate-200">
+    <div className="relative min-h-screen bg-[#0A0F1C]">
+      {/* Dark Hero */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#020617' }}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
             className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[130px]"
-            style={{ background: 'rgba(16, 185, 129, 0.12)' }}
+            style={{ background: 'rgba(16, 185, 129, 0.10)' }}
           />
           <div
             className="absolute bottom-[-20%] right-[-10%] w-[550px] h-[550px] rounded-full blur-[140px]"
-            style={{ background: 'rgba(13, 148, 136, 0.10)' }}
+            style={{ background: 'rgba(13, 148, 136, 0.08)' }}
           />
         </div>
 
         <div
-          className="absolute inset-0 opacity-[0.12] pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
-            backgroundSize: '24px 24px',
+            backgroundImage: 'linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px)',
+            backgroundSize: '40px 40px',
           }}
         />
 
         <div className="relative mx-auto max-w-4xl px-6 py-20 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 backdrop-blur px-4 py-1.5 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-white/5 backdrop-blur-md px-4 py-1.5">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#059669] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#059669]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#059669]">
+            <p className="text-xs font-semibold tracking-widest uppercase text-emerald-400">
               Help Center
             </p>
           </div>
 
-          <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-[#0F172A] sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             Frequently Asked{' '}
-            <span className="bg-gradient-to-r from-[#10b981] to-[#14b8a6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
               Questions
             </span>
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-[#475569]">
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-400">
             Everything you need to know about TARAhut AI Labs — courses, pricing, certification, placements, and more.
           </p>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-gray-600">
             {allFaqs.length} questions across {faqCategories.length} categories
           </p>
         </div>
@@ -63,10 +63,10 @@ export default function FaqPage() {
       <FaqPageClient categories={faqCategories} />
 
       {/* Still have questions? */}
-      <section className="border-t border-slate-200 bg-white">
+      <section className="border-t border-white/[0.06] bg-[#020617]">
         <div className="mx-auto max-w-3xl px-6 py-16 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-[#0F172A]">Still have questions?</h2>
-          <p className="mt-3 text-[#475569]">
+          <h2 className="text-2xl font-bold text-white">Still have questions?</h2>
+          <p className="mt-3 text-gray-400">
             Can&apos;t find what you&apos;re looking for? We&apos;re happy to help — reach out and we&apos;ll respond within 24 hours.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -83,7 +83,7 @@ export default function FaqPage() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-gray-300 hover:bg-white/[0.06] hover:text-white transition-colors"
             >
               Contact Form
             </Link>
