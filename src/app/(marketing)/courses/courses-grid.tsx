@@ -11,13 +11,6 @@ const levelColors: Record<string, string> = {
   Advanced: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
 };
 
-const categoryIcons: Record<string, string> = {
-  'AI Tools': '🤖',
-  Marketing: '📈',
-  Development: '💻',
-  Kids: '🎮',
-};
-
 export function CoursesGrid({
   courses,
   categories,
@@ -67,33 +60,18 @@ export function CoursesGrid({
                 href={`/courses/${course.slug}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/30 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
               >
-                {/* Card header gradient */}
+                {/* Card header with photo */}
                 <div className="relative h-44 w-full overflow-hidden">
-                  {/* Background gradient based on level */}
-                  <div className={`absolute inset-0 ${
-                    course.level === 'Advanced'
-                      ? 'bg-gradient-to-br from-rose-900/40 via-purple-900/30 to-slate-900'
-                      : course.level === 'Intermediate'
-                        ? 'bg-gradient-to-br from-amber-900/40 via-orange-900/20 to-slate-900'
-                        : 'bg-gradient-to-br from-emerald-900/40 via-teal-900/20 to-slate-900'
-                  }`} />
-
-                  {/* Category icon watermark */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-6xl opacity-20 group-hover:opacity-30 transition-opacity group-hover:scale-110 transform duration-500">
-                      {categoryIcons[course.category] || '🤖'}
-                    </span>
-                  </div>
-
-                  {/* Grid pattern on card header */}
-                  <div
-                    className="absolute inset-0 opacity-30"
-                    style={{
-                      backgroundImage:
-                        'linear-gradient(to right,rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.05) 1px,transparent 1px)',
-                      backgroundSize: '24px 24px',
-                    }}
+                  {/* Course thumbnail */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={course.thumbnail}
+                    alt={course.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+
+                  {/* Dark overlay for readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1225] via-black/40 to-black/20" />
 
                   {/* Badges */}
                   <div className="absolute top-3 left-3 flex gap-2 z-10">
@@ -126,7 +104,7 @@ export function CoursesGrid({
                   {/* Category tag */}
                   <div className="mb-3">
                     <span className="inline-flex items-center gap-1.5 rounded-md bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium text-gray-400 border border-white/[0.06]">
-                      {categoryIcons[course.category] || '📚'} {course.category}
+                      {course.category}
                     </span>
                   </div>
 
