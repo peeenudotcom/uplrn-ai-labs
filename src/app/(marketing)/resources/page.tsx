@@ -80,8 +80,6 @@ function EmailGateModal({
         body: JSON.stringify({ email, name, resource: resource.id }),
       })
       if (res.ok) {
-        // Trigger the download
-        window.open(resource.downloadUrl, '_blank')
         onSuccess(resource.downloadUrl)
         setSuccess(true)
       } else {
@@ -134,13 +132,21 @@ function EmailGateModal({
                 </motion.svg>
               </div>
 
-              <h3 className="text-xl font-bold text-white">Download Started!</h3>
+              {/* Email icon */}
+              <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-white/[0.06]">
+                <svg className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+
+              <h3 className="text-xl font-bold text-white">Check Your Email!</h3>
               <p className="mt-2 text-sm text-gray-400 leading-relaxed">
-                Your copy of <span className="text-white font-medium">{resource.title}</span> is downloading now.
+                We&apos;ve sent <span className="text-white font-medium">{resource.title}</span> to your inbox. Click the download button in the email to save your copy.
               </p>
+              <p className="mt-1 text-xs text-gray-600">Don&apos;t see it? Check your spam folder.</p>
 
               <div className="mt-6 rounded-xl border border-white/[0.06] bg-white/[0.03] p-4">
-                <p className="text-xs text-gray-500 mb-3">While you wait, check these out:</p>
+                <p className="text-xs text-gray-500 mb-3">While you&apos;re here:</p>
                 <div className="flex flex-col gap-2">
                   <a
                     href="https://wa.me/919200882008?text=Hi%2C+I+just+downloaded+your+AI+resources.+Can+you+tell+me+more+about+courses%3F"
@@ -199,7 +205,7 @@ function EmailGateModal({
                   disabled={loading}
                   className="w-full rounded-lg bg-[#059669] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857] disabled:opacity-60"
                 >
-                  {loading ? 'Preparing your download...' : 'Download Free PDF'}
+                  {loading ? 'Sending to your inbox...' : 'Send Free PDF to My Email'}
                 </button>
               </form>
 

@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top 50 AI Prompts for Indian Professionals — TARAhut AI Labs</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.65;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 24px 28px;
+    }
+
+    /* ── Colors ── */
+    :root {
+      --green: #059669;
+      --green-light: #d1fae5;
+      --green-mid: #6ee7b7;
+      --gray-bg: #f3f4f6;
+      --gray-border: #e5e7eb;
+      --text-muted: #6b7280;
+      --accent-dark: #064e3b;
+    }
+
+    /* ── Cover / Header ── */
+    .cover {
+      text-align: center;
+      padding: 40px 20px 32px;
+      border-bottom: 3px solid var(--green);
+      margin-bottom: 32px;
+      page-break-after: always;
+    }
+
+    .brand-logo {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 10px 22px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    .brand-tagline {
+      font-size: 9.5pt;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .cover h1 {
+      font-size: 26pt;
+      font-weight: 900;
+      color: var(--accent-dark);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .cover h1 span {
+      color: var(--green);
+    }
+
+    .cover-sub {
+      font-size: 12pt;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--accent-dark);
+      font-size: 10pt;
+      font-weight: 600;
+      padding: 6px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--green-mid);
+      margin-bottom: 20px;
+    }
+
+    .cover-footer-note {
+      font-size: 9pt;
+      color: var(--text-muted);
+      margin-top: 20px;
+    }
+
+    /* ── Table of Contents ── */
+    .toc {
+      background: var(--gray-bg);
+      border-left: 4px solid var(--green);
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin-bottom: 32px;
+      page-break-after: always;
+    }
+
+    .toc h2 {
+      font-size: 13pt;
+      color: var(--accent-dark);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .toc ol {
+      padding-left: 18px;
+    }
+
+    .toc li {
+      margin-bottom: 5px;
+      font-size: 10.5pt;
+      color: #374151;
+    }
+
+    .toc .toc-count {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ── Category Section ── */
+    .category {
+      page-break-inside: avoid;
+      margin-bottom: 36px;
+    }
+
+    .category-header {
+      background: var(--green);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 6px 6px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      page-break-after: avoid;
+    }
+
+    .category-number {
+      background: rgba(255,255,255,0.25);
+      font-size: 9pt;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    .category-header h2 {
+      font-size: 13pt;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .category-body {
+      border: 1px solid var(--gray-border);
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+      overflow: hidden;
+    }
+
+    /* ── Individual Prompt Card ── */
+    .prompt-card {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--gray-border);
+      page-break-inside: avoid;
+    }
+
+    .prompt-card:last-child {
+      border-bottom: none;
+    }
+
+    .prompt-number {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--accent-dark);
+      font-size: 8.5pt;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+    }
+
+    .prompt-title {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .prompt-box {
+      background: var(--gray-bg);
+      border: 1px solid var(--gray-border);
+      border-left: 3px solid var(--green);
+      border-radius: 4px;
+      padding: 12px 15px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
+      line-height: 1.7;
+      color: #1f2937;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-bottom: 9px;
+    }
+
+    .placeholder {
+      background: #fef3c7;
+      color: #92400e;
+      border-radius: 3px;
+      padding: 0 3px;
+      font-weight: 600;
+    }
+
+    .pro-tip {
+      font-size: 9.5pt;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .pro-tip strong {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    /* ── Section Footer ── */
+    .section-footer {
+      text-align: center;
+      font-size: 8.5pt;
+      color: var(--text-muted);
+      padding: 8px 0 2px;
+      border-top: 1px solid var(--gray-border);
+      margin-top: 14px;
+    }
+
+    /* ── Print Footer (repeating) ── */
+    .print-footer {
+      text-align: center;
+      font-size: 8pt;
+      color: var(--text-muted);
+      margin-top: 10px;
+      padding-top: 6px;
+      border-top: 1px solid var(--gray-border);
+    }
+
+    /* ── CTA Page ── */
+    .cta-page {
+      page-break-before: always;
+      text-align: center;
+      padding: 60px 30px 40px;
+      border: 3px solid var(--green);
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .cta-page h2 {
+      font-size: 20pt;
+      font-weight: 900;
+      color: var(--accent-dark);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .cta-page h2 span {
+      color: var(--green);
+    }
+
+    .cta-page p {
+      font-size: 11.5pt;
+      color: #374151;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .cta-highlight {
+      background: var(--green);
+      color: #fff;
+      font-size: 13pt;
+      font-weight: 700;
+      padding: 16px 28px;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 20px auto 10px;
+      line-height: 1.6;
+    }
+
+    .cta-contact {
+      font-size: 11pt;
+      margin-top: 20px;
+      color: #374151;
+    }
+
+    .cta-contact a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cta-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .cta-feature {
+      background: var(--green-light);
+      color: var(--accent-dark);
+      border-radius: 16px;
+      padding: 5px 14px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      border: 1px solid var(--green-mid);
+    }
+
+    /* ── Print Styles ── */
+    @media print {
+      body {
+        padding: 0;
+        font-size: 10.5pt;
+      }
+
+      .cover {
+        padding-top: 60px;
+      }
+
+      .prompt-card {
+        page-break-inside: avoid;
+      }
+
+      .category {
+        page-break-inside: avoid;
+      }
+
+      .cta-page {
+        page-break-before: always;
+      }
+
+      @page {
+        margin: 18mm 15mm;
+        size: A4;
+      }
+
+      @page :footer {
+        content: "TARAhut AI Labs | tarahutailabs.com | +91 92008-82008";
+        font-size: 8pt;
+        color: #9ca3af;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════════ -->
+<div class="cover">
+  <div class="brand-logo">TARAhut AI Labs</div>
+  <div class="brand-tagline">India's First Offline AI Training Center</div>
+
+  <h1>Top <span>50 AI Prompts</span><br />for Indian Professionals</h1>
+  <p class="cover-sub">Copy. Paste. Customize. Get results — in minutes.</p>
+  <div class="cover-badge">Free Resource | April 2026 Edition</div>
+
+  <p style="font-size:10pt; color:#374151; max-width:500px; margin:0 auto 16px;">
+    Whether you run a small business, work in HR, handle sales, manage a classroom,
+    or just want to get more done — these 50 ready-to-use prompts will save you
+    hours every week using AI tools like ChatGPT, Gemini, or Copilot.
+  </p>
+
+  <p class="cover-footer-note">
+    TARAhut AI Labs &nbsp;|&nbsp; tarahutailabs.com &nbsp;|&nbsp; +91 92008-82008
+  </p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     TABLE OF CONTENTS
+══════════════════════════════════════════ -->
+<div class="toc">
+  <h2>What's Inside</h2>
+  <ol>
+    <li><strong>Marketing &amp; Content</strong> &nbsp;<span class="toc-count">(10 prompts)</span> — Social media, WhatsApp, ads, SEO &amp; more</li>
+    <li><strong>HR &amp; Recruitment</strong> &nbsp;<span class="toc-count">(8 prompts)</span> — Job descriptions, interviews, onboarding</li>
+    <li><strong>Sales &amp; Client Management</strong> &nbsp;<span class="toc-count">(8 prompts)</span> — Cold outreach, proposals, follow-ups</li>
+    <li><strong>Finance &amp; Accounting</strong> &nbsp;<span class="toc-count">(6 prompts)</span> — Invoices, GST, budgets, tax tips</li>
+    <li><strong>Education &amp; Training</strong> &nbsp;<span class="toc-count">(6 prompts)</span> — Lesson plans, quizzes, reports</li>
+    <li><strong>Customer Service</strong> &nbsp;<span class="toc-count">(6 prompts)</span> — Complaints, FAQs, refunds, escalations</li>
+    <li><strong>Personal Productivity</strong> &nbsp;<span class="toc-count">(6 prompts)</span> — Task prioritization, goals, decisions</li>
+  </ol>
+  <div class="print-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 1 — MARKETING & CONTENT
+══════════════════════════════════════════ -->
+<div class="category">
+  <div class="category-header">
+    <span class="category-number">Category 1</span>
+    <h2>Marketing &amp; Content</h2>
+  </div>
+  <div class="category-body">
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 01</span>
+      <div class="prompt-title">Social Media Post Generator for Indian Festivals</div>
+      <div class="prompt-box">Write 3 engaging social media posts for <span class="placeholder">[Diwali / Holi / Eid / Navratri / Onam]</span> for my
+<span class="placeholder">[business type, e.g., clothing boutique in Jaipur]</span>.
+Each post should include a warm festival greeting, a subtle offer
+(<span class="placeholder">[e.g., 20% off on ethnic wear]</span>), a call-to-action, and
+2 relevant hashtags in Hindi and English. Keep tone warm and festive.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask the AI to write one post each for Instagram, Facebook, and WhatsApp — different lengths work best on each platform.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 02</span>
+      <div class="prompt-title">WhatsApp Broadcast Message Writer</div>
+      <div class="prompt-box">Write a WhatsApp broadcast message for my <span class="placeholder">[business type]</span> to send
+to existing customers about <span class="placeholder">[new product launch / sale / event]</span>.
+Keep it under 160 words. Start with the customer's first name placeholder
+<span class="placeholder">{Name}</span>. Use a friendly, conversational tone suitable for
+Indian WhatsApp audiences. End with a clear CTA and my contact number
+<span class="placeholder">[your phone number]</span>.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add "Avoid any formal or corporate tone — write like a trusted local shopkeeper" to make the message feel more personal.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 03</span>
+      <div class="prompt-title">Google My Business Description Optimizer</div>
+      <div class="prompt-box">Write an optimized Google My Business description for my business:
+Name: <span class="placeholder">[Business Name]</span>
+Type: <span class="placeholder">[e.g., CA firm / tutoring center / salon]</span>
+Location: <span class="placeholder">[City, State]</span>
+Key services: <span class="placeholder">[list 3–5 services]</span>
+USP: <span class="placeholder">[what makes you different]</span>
+Include local keywords, keep it under 750 characters, and end with a
+clear call to action. Write for Google search visibility in India.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Include nearby landmarks or area names (e.g., "near Koramangala Metro") to rank better in local searches.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 04</span>
+      <div class="prompt-title">Instagram Reel Script Writer for Local Businesses</div>
+      <div class="prompt-box">Write a 30-second Instagram Reel script for my <span class="placeholder">[business type]</span>
+located in <span class="placeholder">[City]</span>. Topic: <span class="placeholder">[e.g., 3 tips for saving money on groceries /
+how we make handmade [product]]</span>. Include a hook in the first 3 seconds,
+value-packed middle content, and a strong CTA at the end. Add notes for
+visuals/transitions. Tone: <span class="placeholder">[energetic / calm / humorous]</span>.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a bilingual version (Hindi + English) for better reach with regional audiences on Instagram.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 05</span>
+      <div class="prompt-title">Email Newsletter for Indian SMEs</div>
+      <div class="prompt-box">Write a monthly email newsletter for my <span class="placeholder">[business type]</span>.
+This month's theme: <span class="placeholder">[e.g., Diwali preparations / year-end offers / new product]</span>.
+Include: a warm opening, 1 featured product/service, 1 customer success story
+placeholder, 1 useful tip for subscribers, and a closing CTA.
+Subject line options: provide 3. Audience: <span class="placeholder">[Indian SME owners / homemakers /
+IT professionals]</span>. Keep total length under 400 words.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a PS line at the end — emails with a PS have 30% higher click-through rates because readers often jump to it first.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 06</span>
+      <div class="prompt-title">Facebook Ad Copy for Regional Audiences</div>
+      <div class="prompt-box">Write a Facebook ad for my <span class="placeholder">[product/service]</span> targeting
+<span class="placeholder">[city/region, e.g., Tier-2 cities in Maharashtra]</span>.
+Target audience: <span class="placeholder">[age group, profession, interest]</span>.
+Offer: <span class="placeholder">[e.g., ₹500 off on first order / free demo / limited seats]</span>.
+Write 3 versions: one emotional, one logical, one curiosity-driven.
+Each under 100 words. Include a headline, body, and CTA button text.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Mention "Use INR pricing and reference local context like 'before the festive rush'" for ads that feel locally relevant.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 07</span>
+      <div class="prompt-title">Product Description Writer (E-commerce)</div>
+      <div class="prompt-box">Write an SEO-optimized product description for:
+Product: <span class="placeholder">[product name]</span>
+Category: <span class="placeholder">[e.g., handloom saree / Ayurvedic supplement / electronics accessory]</span>
+Key features: <span class="placeholder">[list 4–5 features]</span>
+Target buyer: <span class="placeholder">[e.g., Indian women aged 30–50]</span>
+Platform: <span class="placeholder">[Amazon India / Flipkart / own website]</span>
+Include: headline, 3-line description, bullet points, and a closing
+line that builds urgency. Use INR pricing context naturally.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add "Include one culturally relevant use case, like gifting during Diwali or wedding season" to connect with Indian buyers emotionally.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 08</span>
+      <div class="prompt-title">Blog Post Outline for Niche Topics</div>
+      <div class="prompt-box">Create a detailed blog post outline for the topic:
+"<span class="placeholder">[topic, e.g., How Indian freelancers can save tax using Section 44ADA]</span>"
+Target audience: <span class="placeholder">[e.g., Indian freelancers, small business owners]</span>
+Goal: <span class="placeholder">[educate / drive traffic / build authority]</span>
+Include: SEO-friendly title, meta description (155 chars), introduction hook,
+5–7 main headings with sub-points, FAQ section (3 questions), and
+a conclusion with CTA. Tone: <span class="placeholder">[conversational / professional]</span>.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask the AI to suggest 5 long-tail keywords to include naturally throughout the article for better Google ranking in India.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 09</span>
+      <div class="prompt-title">Customer Testimonial Request Message</div>
+      <div class="prompt-box">Write a polite, friendly message asking a happy customer to leave a
+Google review or share a testimonial for my <span class="placeholder">[business name]</span>.
+The customer purchased: <span class="placeholder">[product/service]</span>
+Channel: <span class="placeholder">[WhatsApp / email / SMS]</span>
+Include a direct link placeholder <span class="placeholder">[REVIEW_LINK]</span> and keep the
+message under 100 words. The tone should feel personal, not automated.
+Add a small incentive mention: <span class="placeholder">[e.g., next visit discount / free sample]</span>.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Send this within 24–48 hours of purchase when the experience is fresh — response rates are 3x higher than delayed requests.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 10</span>
+      <div class="prompt-title">Festival Offer Announcement Template</div>
+      <div class="prompt-box">Create a festival offer announcement for <span class="placeholder">[festival name]</span> for my
+<span class="placeholder">[business type]</span>. Offer details: <span class="placeholder">[e.g., Buy 2 Get 1 Free /
+Flat ₹1000 off / Free delivery above ₹500]</span>.
+Validity: <span class="placeholder">[start date to end date]</span>
+Write versions for: (1) WhatsApp status/story, (2) Instagram caption,
+(3) SMS (under 160 chars). Each should have urgency, excitement,
+and a clear next step (visit store / call / order online).</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a version in your regional language (Tamil, Marathi, Bengali, etc.) — regional language posts get 2x more engagement in local markets.</p>
+    </div>
+
+  </div>
+  <div class="section-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 2 — HR & RECRUITMENT
+══════════════════════════════════════════ -->
+<div class="category">
+  <div class="category-header">
+    <span class="category-number">Category 2</span>
+    <h2>HR &amp; Recruitment</h2>
+  </div>
+  <div class="category-body">
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 11</span>
+      <div class="prompt-title">Job Description Writer (Indian Market)</div>
+      <div class="prompt-box">Write a job description for a <span class="placeholder">[Job Title]</span> position at my company.
+Company type: <span class="placeholder">[startup / SME / MNC / NGO]</span>
+Location: <span class="placeholder">[City or Remote]</span>
+Salary range: ₹<span class="placeholder">[X LPA to Y LPA]</span>
+Key responsibilities: <span class="placeholder">[list 4–5]</span>
+Required skills: <span class="placeholder">[list 5–6]</span>
+Include: role overview, responsibilities, qualifications, perks,
+and an equal opportunity statement. Format for Naukri.com / LinkedIn India
+style. Keep it professional yet approachable for Indian job seekers.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add "Avoid jargon — write for candidates from Tier-2 cities who may not be familiar with startup buzzwords" for wider applicant reach.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 12</span>
+      <div class="prompt-title">Interview Question Generator by Role</div>
+      <div class="prompt-box">Generate a structured interview question set for a <span class="placeholder">[Job Title]</span> role.
+Experience level: <span class="placeholder">[fresher / 2–5 years / senior]</span>
+Industry: <span class="placeholder">[e.g., IT, FMCG, education, finance]</span>
+Include:
+- 5 technical/skill-based questions
+- 3 situational/behavioral questions (STAR format)
+- 2 culture-fit questions for an Indian workplace
+- 2 questions to assess problem-solving
+Also provide ideal answer pointers for each question.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for "red flag answers to watch out for" — this helps interviewers spot poor candidates quickly during high-volume hiring drives.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 13</span>
+      <div class="prompt-title">Employee Onboarding Checklist Creator</div>
+      <div class="prompt-box">Create a comprehensive employee onboarding checklist for a new
+<span class="placeholder">[Job Title]</span> joining my <span class="placeholder">[company type / industry]</span>.
+Cover: Day 1, Week 1, and Month 1 milestones.
+Include: documentation (Aadhaar, PAN, bank account), IT setup,
+team introductions, HR policy briefing, role training plan,
+and first performance check-in. Format as a printable checklist
+with checkboxes. Add responsible person column (HR / Manager / IT).</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "buddy system guide" add-on — pairing new hires with a peer buddy reduces early attrition significantly in Indian workplaces.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 14</span>
+      <div class="prompt-title">Performance Review Template</div>
+      <div class="prompt-box">Create a half-yearly performance review template for a <span class="placeholder">[Job Title]</span>
+in my <span class="placeholder">[company/industry]</span>.
+Include sections for:
+- Key achievements vs. goals set
+- Skill development areas
+- Manager feedback (strengths + improvement areas)
+- Employee self-assessment
+- Ratings on: communication, output quality, teamwork, initiative
+- Goals for next 6 months
+Format: structured form with rating scale 1–5 and comment boxes.
+Keep language clear, constructive, and bias-free.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add "Suggest phrasing that is direct but culturally sensitive — Indian employees often find blunt criticism demotivating" for better team relations.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 15</span>
+      <div class="prompt-title">Salary Negotiation Email Helper</div>
+      <div class="prompt-box">Write a professional salary negotiation email for a <span class="placeholder">[Job Title]</span>
+position. Offered CTC: ₹<span class="placeholder">[X LPA]</span>. Expected CTC: ₹<span class="placeholder">[Y LPA]</span>.
+My current CTC: ₹<span class="placeholder">[Z LPA]</span>. Years of experience: <span class="placeholder">[N years]</span>.
+Key skills/achievements to mention: <span class="placeholder">[list 2–3]</span>.
+Tone: confident but respectful — not aggressive. Include a counter-offer
+with justification, express genuine interest in joining, and keep
+the door open for discussion. Under 200 words.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a follow-up call script in case HR calls back — being prepared for a live conversation is often more important than the written email.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 16</span>
+      <div class="prompt-title">Rejection Email (Polite, Professional)</div>
+      <div class="prompt-box">Write a polite rejection email for a candidate who applied for
+<span class="placeholder">[Job Title]</span> at <span class="placeholder">[Company Name]</span>.
+Reason for rejection: <span class="placeholder">[not enough experience / better candidate found /
+role on hold]</span> — do NOT state the reason bluntly.
+Tone: warm, respectful, encouraging. Thank them for their time,
+acknowledge their effort, wish them well, and leave a door open
+for future opportunities. Keep it under 150 words.
+Do not use hollow corporate phrases like "we'll keep your CV on file."</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a LinkedIn connection invite message to send alongside the rejection — top candidates remember companies that treated them well.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 17</span>
+      <div class="prompt-title">Team Meeting Agenda Generator</div>
+      <div class="prompt-box">Create a structured agenda for a <span class="placeholder">[30-min / 1-hour]</span> team meeting.
+Meeting purpose: <span class="placeholder">[weekly sync / project review / brainstorm / retrospective]</span>
+Team size: <span class="placeholder">[N people]</span>, Department: <span class="placeholder">[Sales / Marketing / Tech / HR]</span>
+Key topics to cover: <span class="placeholder">[list 3–5]</span>
+Include: time slots for each item, designated speaker, decision
+required or FYI note, and a 5-minute AOB slot. Add pre-meeting
+prep instructions participants should complete before joining.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add "Indian teams often need buffer time for late arrivals — suggest how to start productively even if 2–3 people join late" for practical tips.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 18</span>
+      <div class="prompt-title">Leave Policy Explainer</div>
+      <div class="prompt-box">Write a clear, simple explainer for our company's leave policy for
+new employees. Our policy includes:
+- Casual Leave: <span class="placeholder">[N days/year]</span>
+- Sick Leave: <span class="placeholder">[N days/year]</span>
+- Earned/Privilege Leave: <span class="placeholder">[N days/year]</span>
+- Maternity/Paternity Leave: <span class="placeholder">[as per policy]</span>
+- National/Festival holidays: <span class="placeholder">[list key ones]</span>
+Format it as an easy-to-read FAQ with practical examples.
+Include how to apply for leave, notice required, and carry-forward rules.
+Make it friendly, not legal-jargon-heavy.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a one-page visual summary version — a simple table employees can pin at their desk reduces repeated HR queries by 50%.</p>
+    </div>
+
+  </div>
+  <div class="section-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 3 — SALES & CLIENT MANAGEMENT
+══════════════════════════════════════════ -->
+<div class="category">
+  <div class="category-header">
+    <span class="category-number">Category 3</span>
+    <h2>Sales &amp; Client Management</h2>
+  </div>
+  <div class="category-body">
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 19</span>
+      <div class="prompt-title">Cold Outreach Email for B2B India</div>
+      <div class="prompt-box">Write a cold outreach email to a potential B2B client in India.
+My company: <span class="placeholder">[Company Name]</span>, offering: <span class="placeholder">[product/service]</span>
+Target company type: <span class="placeholder">[e.g., manufacturing SME / IT company / school chain]</span>
+Their likely pain point: <span class="placeholder">[describe the problem you solve]</span>
+CTA: <span class="placeholder">[15-min call / free demo / send brochure]</span>
+Keep it under 150 words. No salesy hype. Lead with value.
+Sound like a human, not a template. Include a subject line (A/B variants: 2).</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Personalize with "Mention a recent news about their company or industry to show you did your research — Indian decision-makers respond better to tailored outreach."</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 20</span>
+      <div class="prompt-title">Proposal Writer for Freelancers</div>
+      <div class="prompt-box">Write a professional project proposal for a freelance project.
+My name/brand: <span class="placeholder">[Your Name / Studio Name]</span>
+Service: <span class="placeholder">[e.g., web design / content writing / digital marketing]</span>
+Client's requirement: <span class="placeholder">[describe the project briefly]</span>
+Timeline: <span class="placeholder">[X weeks]</span>. Budget quoted: ₹<span class="placeholder">[amount]</span>
+Include: executive summary, scope of work, deliverables, timeline,
+pricing breakdown, payment terms (advance + milestone), and T&C snippet.
+Format professionally. Tone: confident, client-friendly, Indian context.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "what's NOT included" section — clearly scoping exclusions prevents scope creep, which is the #1 freelancer problem in India.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 21</span>
+      <div class="prompt-title">Follow-Up Message Sequence</div>
+      <div class="prompt-box">Write a 3-part follow-up sequence for a prospect who:
+- Showed interest in <span class="placeholder">[product/service]</span> but hasn't responded
+- Was contacted first on <span class="placeholder">[date/channel]</span>
+
+Message 1 (Day 3): Gentle reminder, add new value
+Message 2 (Day 7): Share a case study or testimonial
+Message 3 (Day 14): Breakup message with soft CTA
+
+Channel: <span class="placeholder">[WhatsApp / email / LinkedIn]</span>
+Tone: persistent but never pushy. Each message under 80 words.
+Indian professional context.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add "Include one line asking if the timing is wrong rather than assuming disinterest — this opens a conversation rather than closing one."</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 22</span>
+      <div class="prompt-title">Pricing Objection Handler</div>
+      <div class="prompt-box">Write a response to a client who says:
+"<span class="placeholder">[Your price is too high / I found someone cheaper / Budget is tight right now]</span>"
+My offering: <span class="placeholder">[product/service]</span> priced at ₹<span class="placeholder">[amount]</span>
+My key differentiators: <span class="placeholder">[list 2–3]</span>
+Do NOT discount immediately. Instead: acknowledge concern, reinforce value,
+offer alternatives (<span class="placeholder">[e.g., EMI / phased payment / smaller package]</span>),
+and redirect to ROI. Keep under 150 words. Channel: <span class="placeholder">[WhatsApp / call / email]</span>.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a version that uses a "cost of NOT acting" angle — showing the price of inaction often converts better than defending your pricing.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 23</span>
+      <div class="prompt-title">Client Onboarding Welcome Message</div>
+      <div class="prompt-box">Write a warm onboarding welcome message for a new client who just
+signed up for <span class="placeholder">[service/product]</span> at <span class="placeholder">[Company Name]</span>.
+Include: a personal welcome, what they can expect in the first 7 days,
+who their point of contact is (<span class="placeholder">[Name, phone/email]</span>),
+1–2 quick-start tips, and a reassurance that you're here to help.
+Channel: <span class="placeholder">[WhatsApp / email]</span>. Tone: warm, professional, excited.
+Under 200 words. Make them feel they made the right decision.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a follow-up check-in message for Day 7 — a proactive check-in within the first week dramatically increases client retention and referrals.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 24</span>
+      <div class="prompt-title">Quotation Email Template</div>
+      <div class="prompt-box">Write a professional quotation email for a client inquiry.
+Client name: <span class="placeholder">[Name]</span>, Company: <span class="placeholder">[Company]</span>
+They asked for: <span class="placeholder">[service/product details]</span>
+Quoted price: ₹<span class="placeholder">[amount]</span> + GST (<span class="placeholder">[%]</span>%)
+Validity: <span class="placeholder">[X days]</span>
+Include: brief intro, itemized scope summary, pricing table,
+GST break-up, payment terms, and next steps.
+Mention Proforma Invoice or GST invoice will be issued upon confirmation.
+Professional but not cold. Under 250 words.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask to add "a one-line note about why this price reflects quality" — it positions you as a premium provider, not just the cheapest option.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 25</span>
+      <div class="prompt-title">Upsell Suggestion Generator</div>
+      <div class="prompt-box">Generate a polite upsell message for an existing customer.
+They currently use: <span class="placeholder">[current product/plan]</span>
+Upsell to: <span class="placeholder">[higher plan / add-on service / complementary product]</span>
+Why it benefits them: <span class="placeholder">[specific reason tied to their usage/need]</span>
+Offer: <span class="placeholder">[e.g., upgrade now at ₹X only / limited time / free trial of add-on]</span>
+Channel: <span class="placeholder">[WhatsApp / email]</span>. Tone: helpful advisor, not pushy salesperson.
+Under 120 words. Make it feel like a recommendation, not a sales pitch.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Frame the upsell around a problem they've already expressed — "Since you mentioned X last time..." personalizes it and increases conversion significantly.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 26</span>
+      <div class="prompt-title">Thank You Note After Deal Closure</div>
+      <div class="prompt-box">Write a heartfelt thank you note to a client after closing a deal for
+<span class="placeholder">[product/service]</span> worth ₹<span class="placeholder">[amount]</span>.
+Include: genuine appreciation, excitement about working together,
+a brief mention of what comes next (<span class="placeholder">[onboarding / delivery date / kickoff call]</span>),
+and an open invitation to reach out anytime.
+Channel: <span class="placeholder">[handwritten card / WhatsApp / email]</span>.
+Tone: warm, personal, sincere — not corporate-automated.
+Under 120 words. The client should feel valued, not just processed.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a version to also send to the client's team or the internal champion who championed the deal — it builds powerful long-term relationships.</p>
+    </div>
+
+  </div>
+  <div class="section-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 4 — FINANCE & ACCOUNTING
+══════════════════════════════════════════ -->
+<div class="category">
+  <div class="category-header">
+    <span class="category-number">Category 4</span>
+    <h2>Finance &amp; Accounting</h2>
+  </div>
+  <div class="category-body">
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 27</span>
+      <div class="prompt-title">Invoice Reminder Message (Polite)</div>
+      <div class="prompt-box">Write a polite payment reminder for an overdue invoice.
+Client name: <span class="placeholder">[Name]</span>, Invoice #: <span class="placeholder">[XXXX]</span>
+Amount due: ₹<span class="placeholder">[amount]</span> + GST. Due date: <span class="placeholder">[date]</span>
+Overdue by: <span class="placeholder">[X days]</span>
+Write 3 versions: (1) Friendly first reminder, (2) Firm second reminder
+at 15 days, (3) Final notice at 30 days.
+Each under 100 words. Do NOT threaten legal action in reminders 1–2.
+Keep professional relationship intact. Mention UPI/bank details
+placeholder for easy payment.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add a UPI QR code or payment link in the message — reducing friction in payment collection can cut follow-up time by 60%.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 28</span>
+      <div class="prompt-title">GST Filing Checklist Generator</div>
+      <div class="prompt-box">Create a monthly GST filing checklist for a <span class="placeholder">[business type]</span>
+registered under GST. Category: <span class="placeholder">[Regular / Composition scheme]</span>
+State: <span class="placeholder">[State Name]</span>
+Include: documents to collect, sales and purchase reconciliation steps,
+input tax credit (ITC) verification, GSTR-<span class="placeholder">[1/3B/2B]</span> filing steps,
+deadline reminders, and common errors to avoid.
+Format as a numbered checklist with responsible person (Owner/Accountant/CA).
+Add note about interest on late filing (18% p.a.).</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for "a 5-minute daily bookkeeping habit" add-on — businesses that record transactions daily cut GST filing time from days to hours.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 29</span>
+      <div class="prompt-title">Expense Report Summarizer</div>
+      <div class="prompt-box">Summarize the following business expenses for <span class="placeholder">[month/quarter]</span>
+and categorize them for GST and income tax purposes:
+
+<span class="placeholder">[Paste your raw expense list here — vendor name, amount, date, category]</span>
+
+For each expense, identify: category (office supplies / travel / marketing
+/ utilities / software / staff), whether GST ITC is claimable,
+and if it's a deductible business expense under Indian tax law.
+Output as a clean summary table. Highlight any unusual or large items.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask the AI to also flag "personal expenses that might have been mixed in" — this is the most common issue during income tax scrutiny for Indian SMEs.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 30</span>
+      <div class="prompt-title">Budget Planning Template</div>
+      <div class="prompt-box">Create a <span class="placeholder">[monthly / quarterly / annual]</span> budget plan for my
+<span class="placeholder">[business type / department / personal finances]</span>.
+Expected revenue: ₹<span class="placeholder">[amount]</span>
+Fixed costs: <span class="placeholder">[list: rent, salaries, subscriptions, etc.]</span>
+Variable costs: <span class="placeholder">[list: raw materials, marketing, logistics, etc.]</span>
+Financial goal: <span class="placeholder">[e.g., 20% profit margin / ₹X savings / fund new equipment]</span>
+Output: a structured budget table with actuals vs. planned columns,
+variance tracking, and 3 cost-saving suggestions specific to Indian SMEs.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "cash flow forecast" version separately — profit on paper and cash in hand are often very different for Indian businesses.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 31</span>
+      <div class="prompt-title">Payment Terms Explainer for Clients</div>
+      <div class="prompt-box">Write a clear, professional payment terms document for my
+<span class="placeholder">[business type]</span> to share with clients.
+Our terms: <span class="placeholder">[e.g., 50% advance, 50% on delivery / Net 30 days / milestone-based]</span>
+Late payment penalty: <span class="placeholder">[e.g., 2% per month after due date]</span>
+Accepted payment modes: <span class="placeholder">[UPI / NEFT / cheque / cash]</span>
+Include: clear language on GST (18% extra), when invoices are raised,
+and dispute resolution process. Write in plain English, not legal language.
+1 page maximum. Can be attached to every quotation/proposal.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a shorter WhatsApp-friendly version (under 100 words) to quickly communicate terms during initial negotiations over chat.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 32</span>
+      <div class="prompt-title">Tax-Saving Tips Summary for Salaried Professionals</div>
+      <div class="prompt-box">Summarize the top tax-saving options for a salaried Indian professional.
+Annual CTC: ₹<span class="placeholder">[X LPA]</span>. Tax regime: <span class="placeholder">[Old / New]</span>
+Current investments: <span class="placeholder">[PPF / LIC / ELSS / NPS / none]</span>
+Home loan: <span class="placeholder">[Yes / No]</span>. HRA: <span class="placeholder">[Yes / No]</span>
+List: top 5–7 deductions available under the old regime (80C, 80D, HRA, etc.),
+estimated tax saved for each, and recommended action before March 31st.
+Format as a simple action table. Note: this is educational, not CA advice.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "March-end tax checklist" — most Indian salaried professionals scramble in February, and having a checklist prevents last-minute rushed decisions.</p>
+    </div>
+
+  </div>
+  <div class="section-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 5 — EDUCATION & TRAINING
+══════════════════════════════════════════ -->
+<div class="category">
+  <div class="category-header">
+    <span class="category-number">Category 5</span>
+    <h2>Education &amp; Training</h2>
+  </div>
+  <div class="category-body">
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 33</span>
+      <div class="prompt-title">Lesson Plan Creator</div>
+      <div class="prompt-box">Create a detailed lesson plan for teaching <span class="placeholder">[topic]</span>
+to <span class="placeholder">[class/grade level, e.g., Class 9 / college first year / working adults]</span>.
+Subject: <span class="placeholder">[e.g., Mathematics / English / Digital Literacy / AI basics]</span>
+Duration: <span class="placeholder">[45 minutes / 1 hour]</span>
+Board/Framework: <span class="placeholder">[CBSE / ICSE / NEP 2020 / vocational]</span>
+Include: learning objectives, warm-up activity, main teaching steps,
+student activity/exercise, assessment method, and homework.
+Add differentiation tips for mixed-ability classrooms.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask to include "a relatable real-life Indian example or scenario" for each concept — contextual examples dramatically improve student retention.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 34</span>
+      <div class="prompt-title">Quiz Question Generator</div>
+      <div class="prompt-box">Generate a quiz on the topic: <span class="placeholder">[topic name]</span>
+For: <span class="placeholder">[class level / certification exam / corporate training]</span>
+Difficulty: <span class="placeholder">[easy / medium / hard / mixed]</span>
+Number of questions: <span class="placeholder">[N]</span>
+Question types: <span class="placeholder">[MCQ / true-false / fill-in-the-blank / short answer]</span>
+Include the correct answer and a one-line explanation for each.
+Align with <span class="placeholder">[CBSE syllabus / NEP 2020 / custom curriculum]</span> where relevant.
+Avoid trick questions — focus on conceptual understanding.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "common mistake" note per question — telling students what wrong thinking leads to each wrong answer is more valuable than just the right answer.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 35</span>
+      <div class="prompt-title">Student Progress Report Writer</div>
+      <div class="prompt-box">Write a student progress report for:
+Student name: <span class="placeholder">[Name]</span>, Class: <span class="placeholder">[Grade/Section]</span>
+Term: <span class="placeholder">[Term 1 / Mid-year / Annual]</span>
+Performance summary: <span class="placeholder">[paste marks or brief notes]</span>
+Behaviour/participation: <span class="placeholder">[describe]</span>
+Areas of strength: <span class="placeholder">[list 2–3]</span>
+Areas needing improvement: <span class="placeholder">[list 1–2]</span>
+Write in warm, encouraging language suitable for Indian parents.
+Include a specific recommendation for home support. 150–200 words.
+Avoid generic filler phrases like "doing well overall."</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a bilingual version (English + parent's regional language) — many Indian parents understand feedback better in their mother tongue.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 36</span>
+      <div class="prompt-title">Parent Communication Template</div>
+      <div class="prompt-box">Write a communication to parents regarding:
+Topic: <span class="placeholder">[upcoming exam / school event / fee reminder / student behavior concern /
+holiday homework]</span>
+School name: <span class="placeholder">[School Name]</span>, Class: <span class="placeholder">[Grade]</span>
+Key details: <span class="placeholder">[dates, actions needed, contact person]</span>
+Channel: <span class="placeholder">[circular letter / WhatsApp message / email]</span>
+Tone: professional yet warm — the way a respected Indian teacher communicates.
+Under 150 words. Include a clear action item for parents if needed.
+Avoid overly formal or bureaucratic language.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask to end with "a positive note about the students" — parents respond better and cooperate more when communication doesn't feel like complaint-only outreach.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 37</span>
+      <div class="prompt-title">Course Curriculum Outline</div>
+      <div class="prompt-box">Create a course curriculum outline for:
+Course title: <span class="placeholder">[Course Name]</span>
+Target learners: <span class="placeholder">[e.g., school students / working professionals / homemakers]</span>
+Duration: <span class="placeholder">[e.g., 4 weeks / 3 months / 10 sessions]</span>
+Mode: <span class="placeholder">[offline / online / hybrid]</span>
+Learning goal: <span class="placeholder">[what learners will be able to do after the course]</span>
+Include: module-wise breakdown, topics per module, learning outcomes,
+suggested activities/projects, assessment plan, and certificate criteria.
+Align with NEP 2020 competency framework if applicable.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for "micro-credential milestones" at each module end — learners stay motivated when they earn badges or mini-certificates along the way.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 38</span>
+      <div class="prompt-title">Assignment Rubric Creator</div>
+      <div class="prompt-box">Create an assessment rubric for the following assignment:
+Assignment: <span class="placeholder">[describe task — e.g., research report / presentation / project]</span>
+Subject: <span class="placeholder">[Subject]</span>, Class: <span class="placeholder">[Grade/Level]</span>
+Total marks: <span class="placeholder">[N]</span>
+Key criteria to assess: <span class="placeholder">[e.g., content accuracy, creativity, presentation,
+originality, language]</span>
+Format as a grid: criteria vs. performance levels
+(Excellent / Good / Satisfactory / Needs Improvement).
+Include marks per criterion and descriptors for each level.
+Keep language clear enough for students to self-evaluate.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "student-friendly" version of the same rubric — when students understand exactly how they're being judged, submission quality improves dramatically.</p>
+    </div>
+
+  </div>
+  <div class="section-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 6 — CUSTOMER SERVICE
+══════════════════════════════════════════ -->
+<div class="category">
+  <div class="category-header">
+    <span class="category-number">Category 6</span>
+    <h2>Customer Service</h2>
+  </div>
+  <div class="category-body">
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 39</span>
+      <div class="prompt-title">Complaint Response Template</div>
+      <div class="prompt-box">Write a professional response to a customer complaint.
+Customer name: <span class="placeholder">[Name]</span>
+Their complaint: <span class="placeholder">[describe the issue — e.g., delayed delivery / wrong item /
+rude staff / service not working]</span>
+What actually happened: <span class="placeholder">[internal context — optional]</span>
+Resolution offered: <span class="placeholder">[refund / replacement / apology + fix / escalation]</span>
+Channel: <span class="placeholder">[WhatsApp / email / Google review reply]</span>
+Tone: empathetic, accountable, solution-focused. Do NOT be defensive.
+Acknowledge, apologize, act. Under 150 words.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> For Google review responses, ask for a version that acknowledges the feedback publicly — good responses to bad reviews build more trust than the complaint ever hurt.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 40</span>
+      <div class="prompt-title">FAQ Answer Generator</div>
+      <div class="prompt-box">Generate comprehensive FAQ answers for my <span class="placeholder">[business type]</span>.
+List of common questions customers ask:
+1. <span class="placeholder">[Question 1]</span>
+2. <span class="placeholder">[Question 2]</span>
+3. <span class="placeholder">[Question 3]</span>
+(Add up to 10 questions)
+For each, write a clear, concise answer (under 80 words), in a tone matching
+<span class="placeholder">[friendly / formal / technical]</span>. Include relevant details like
+pricing in INR, GST, delivery timelines, or location where applicable.
+Format for website FAQ section and WhatsApp auto-reply use.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "meta description" for each FAQ — these can be used directly in your website's structured data to appear in Google's featured snippets.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 41</span>
+      <div class="prompt-title">Refund / Exchange Policy Explainer</div>
+      <div class="prompt-box">Write a clear, customer-friendly refund and exchange policy for
+my <span class="placeholder">[business type, e.g., online clothing store / coaching institute /
+software product]</span>.
+Refund window: <span class="placeholder">[e.g., 7 days / 30 days / no refund after X]</span>
+Conditions: <span class="placeholder">[describe]</span>
+Process: <span class="placeholder">[how to initiate — WhatsApp / email / app]</span>
+Exceptions: <span class="placeholder">[sale items / customized orders / digital products]</span>
+Write in plain, simple English. No legal jargon. The goal is to build
+customer trust, not frighten them. Under 300 words. Format with headers.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a "TL;DR summary" in 3 bullet points for the top of the policy — most Indian customers skim, and a clear summary prevents disputes.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 42</span>
+      <div class="prompt-title">Product Usage Guide Creator</div>
+      <div class="prompt-box">Create a simple product usage guide for: <span class="placeholder">[product name]</span>
+Audience: <span class="placeholder">[first-time users / non-tech-savvy customers / professionals]</span>
+Key steps to cover:
+1. <span class="placeholder">[Step 1 — e.g., unboxing / account setup / first use]</span>
+2. <span class="placeholder">[Step 2]</span>
+3. <span class="placeholder">[Continue as needed]</span>
+Include: what to do if something goes wrong (2–3 common issues + fixes),
+care/maintenance tips, and support contact details.
+Format: numbered steps with short descriptions. Language: simple, jargon-free,
+suitable for Indian users with basic literacy.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a WhatsApp-shareable version — a simple text-based guide customers can forward to friends is free word-of-mouth product education.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 43</span>
+      <div class="prompt-title">Feedback Collection Survey</div>
+      <div class="prompt-box">Create a short customer feedback survey for <span class="placeholder">[business/product/service name]</span>.
+Purpose: <span class="placeholder">[measure satisfaction / collect testimonials / improve product]</span>
+Customer type: <span class="placeholder">[walk-in / online buyer / course student / B2B client]</span>
+Channel: <span class="placeholder">[Google Form / WhatsApp / paper form]</span>
+Include: 5–7 questions (mix of rating scale + open-ended), NPS question
+("How likely are you to recommend us — 0 to 10?"), and one question
+about what we can improve. Keep total completion time under 3 minutes.
+Add a thank-you message at the end with a small incentive mention.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask to include one "permission question" at the end: "May we share your feedback as a testimonial?" — this turns good responses into marketing assets legally.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 44</span>
+      <div class="prompt-title">Escalation Email Template</div>
+      <div class="prompt-box">Write an internal escalation email for a customer issue that has not
+been resolved at Level 1 support.
+Customer: <span class="placeholder">[Name, contact]</span>
+Issue raised on: <span class="placeholder">[date]</span>
+Issue description: <span class="placeholder">[what the problem is]</span>
+Actions taken so far: <span class="placeholder">[list steps already tried]</span>
+Escalating to: <span class="placeholder">[Senior Manager / Technical Team / Operations Head]</span>
+Expected resolution by: <span class="placeholder">[date]</span>
+Tone: factual, urgent but professional. Include a summary table.
+No blame language — focus on resolution path forward.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask for a parallel customer-facing update message — keeping the customer informed during escalation prevents them from posting angry reviews while you work on a fix.</p>
+    </div>
+
+  </div>
+  <div class="section-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 7 — PERSONAL PRODUCTIVITY
+══════════════════════════════════════════ -->
+<div class="category">
+  <div class="category-header">
+    <span class="category-number">Category 7</span>
+    <h2>Personal Productivity</h2>
+  </div>
+  <div class="category-body">
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 45</span>
+      <div class="prompt-title">Daily Task Prioritizer</div>
+      <div class="prompt-box">Here is my task list for today:
+<span class="placeholder">[Paste your full task list — as many items as you have]</span>
+
+Please help me prioritize these using the Eisenhower Matrix
+(Urgent+Important / Important not Urgent / Urgent not Important / Neither).
+Also suggest:
+- Which 3 tasks to focus on first and why
+- Which tasks to delegate or defer
+- A realistic time estimate for each priority task
+- A suggested daily schedule in time blocks (considering <span class="placeholder">[my working hours]</span>)
+Factor in breaks and include a 30-min buffer for unexpected tasks.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Add your energy levels — "I'm most focused from 9–11am and low energy post-lunch" — for a schedule that matches your natural productivity rhythm.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 46</span>
+      <div class="prompt-title">Meeting Notes Summarizer</div>
+      <div class="prompt-box">Summarize the following meeting notes/transcript into a structured
+action-ready document:
+
+<span class="placeholder">[Paste your raw notes or transcript here]</span>
+
+Output format:
+1. Meeting summary (3–5 bullet points)
+2. Key decisions made
+3. Action items (who / what / by when)
+4. Unresolved questions or follow-ups needed
+5. Next meeting date/agenda suggestions
+
+Flag any commitments made that need immediate attention today.
+Keep language clear and professional for sharing with the team.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask to also generate a "WhatsApp-friendly summary" — a short 5-bullet version you can paste directly into the team group chat right after the meeting.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 47</span>
+      <div class="prompt-title">Decision-Making Pros &amp; Cons Analyzer</div>
+      <div class="prompt-box">Help me make a decision about: <span class="placeholder">[describe the decision clearly]</span>
+Context: <span class="placeholder">[relevant background information]</span>
+Options I'm considering:
+Option A: <span class="placeholder">[describe]</span>
+Option B: <span class="placeholder">[describe]</span>
+Option C (if any): <span class="placeholder">[describe]</span>
+My key priorities: <span class="placeholder">[e.g., financial security / growth / work-life balance / family]</span>
+Provide: pros and cons for each option, a risk assessment,
+what information I still need before deciding, and your recommendation
+with reasoning. Be direct — don't hedge everything.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask "What would you do if you were in my position, knowing only what I've told you?" — this forces the AI to commit to a recommendation, which is often what you actually need.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 48</span>
+      <div class="prompt-title">Weekly Goal Setter</div>
+      <div class="prompt-box">Help me set meaningful goals for this week.
+My main areas of focus: <span class="placeholder">[Work / Family / Health / Learning / Finance / Side project]</span>
+What I accomplished last week: <span class="placeholder">[brief summary]</span>
+What's pending or rolling over: <span class="placeholder">[list]</span>
+Big deadlines this week: <span class="placeholder">[list with dates]</span>
+Set 1 primary goal and 2–3 supporting goals per focus area.
+Format as a weekly planner with daily mini-targets (Mon–Sat).
+Include one "wildcard" — something small I can do this week to
+create a positive surprise for myself or someone I care about.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Do this every Sunday evening — the act of planning your week takes 10 minutes but saves 2+ hours of daily confusion and reactive decision-making.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 49</span>
+      <div class="prompt-title">Email Drafting Assistant</div>
+      <div class="prompt-box">Help me write a professional email.
+To: <span class="placeholder">[recipient and their relationship to me]</span>
+Purpose: <span class="placeholder">[e.g., requesting a meeting / following up / sending a report /
+apologizing for a delay / requesting a recommendation]</span>
+Key points to include: <span class="placeholder">[list 3–5]</span>
+Tone needed: <span class="placeholder">[formal / semi-formal / warm / assertive]</span>
+Length: <span class="placeholder">[short under 100 words / medium / detailed]</span>
+Give me 2 versions: one direct and one more diplomatic.
+Also suggest 3 subject line options.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> For important emails, ask "What could go wrong with this email? What might the reader misunderstand?" — fixing issues before sending prevents miscommunication.</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="prompt-number">Prompt 50</span>
+      <div class="prompt-title">Learning Roadmap Creator</div>
+      <div class="prompt-box">Create a personal learning roadmap for me to develop skills in:
+Skill/field: <span class="placeholder">[e.g., AI tools / digital marketing / data analysis / public speaking /
+financial planning / Python programming]</span>
+Current level: <span class="placeholder">[complete beginner / some basics / intermediate]</span>
+Time available: <span class="placeholder">[30 min / 1 hour / 2 hours per day]</span>
+Goal: <span class="placeholder">[get a job / freelance / personal growth / start a business]</span>
+Timeline: <span class="placeholder">[3 months / 6 months / 1 year]</span>
+Include: weekly milestones, free + paid resources (Indian context),
+projects to build, and how to measure progress. Be realistic, not motivational-poster vague.</div>
+      <p class="pro-tip"><strong>Pro Tip:</strong> Ask to include "one Indian community or forum to join" per skill — learning with peers (WhatsApp groups, Discord, LinkedIn communities) accelerates progress 5x.</p>
+    </div>
+
+  </div>
+  <div class="section-footer">TARAhut AI Labs | tarahutailabs.com | +91 92008-82008</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CALL TO ACTION PAGE
+══════════════════════════════════════════ -->
+<div class="cta-page">
+  <div class="brand-logo" style="margin-bottom:12px;">TARAhut AI Labs</div>
+  <p style="font-size:9.5pt; color:var(--text-muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:20px;">India's First Offline AI Training Center</p>
+
+  <h2>Want to Master<br /><span>These Prompts?</span></h2>
+
+  <p>
+    You've just seen 50 prompts that can save you hours every week.<br />
+    But the real power of AI comes when you know <strong>how to think in prompts</strong> —
+    how to ask the right question, get the right answer, and apply it to your
+    specific business or career in India.
+  </p>
+
+  <div class="cta-features">
+    <span class="cta-feature">Hands-on Offline Training</span>
+    <span class="cta-feature">100+ Real Business Use Cases</span>
+    <span class="cta-feature">Indian Context &amp; Language</span>
+    <span class="cta-feature">GST, WhatsApp &amp; Local Tools</span>
+    <span class="cta-feature">Certificates Included</span>
+    <span class="cta-feature">Beginner Friendly</span>
+  </div>
+
+  <div class="cta-highlight">
+    Join TARAhut AI Labs<br />
+    Learn AI. Stay Relevant. Grow Faster.
+  </div>
+
+  <div class="cta-contact">
+    <p style="margin-top:20px; font-size:12pt; font-weight:700; color:#111827;">
+      Visit: <a href="https://tarahutailabs.com">tarahutailabs.com</a>
+    </p>
+    <p style="font-size:12pt; font-weight:700; color:#111827; margin-top:8px;">
+      WhatsApp: <a href="https://wa.me/919200882008">+91 92008-82008</a>
+    </p>
+    <p style="margin-top:16px; font-size:10pt; color:var(--text-muted);">
+      Batch starting soon &nbsp;·&nbsp; Limited seats &nbsp;·&nbsp; Offline &amp; Online options available
+    </p>
+  </div>
+
+  <div style="margin-top:30px; padding-top:16px; border-top:1px solid var(--gray-border); font-size:8.5pt; color:var(--text-muted);">
+    &copy; 2026 TARAhut AI Labs. All rights reserved. &nbsp;|&nbsp; tarahutailabs.com &nbsp;|&nbsp; +91 92008-82008<br />
+    This document is for educational purposes. Prompts may be used freely for personal and professional use.
+  </div>
+</div>
+
+</body>
+</html>

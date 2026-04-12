@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI for Small Business — 10 Quick Wins Guide | TARAhut AI Labs</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.65;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    /* ===== LAYOUT ===== */
+    .page {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    /* ===== PRINT SETUP ===== */
+    @media print {
+      @page {
+        size: A4;
+        margin: 18mm 16mm 18mm 16mm;
+      }
+
+      body { font-size: 10.5pt; }
+
+      .page {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+
+      .no-break {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .cover-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    /* ===== COLOURS ===== */
+    :root {
+      --brand: #059669;
+      --brand-dark: #047857;
+      --brand-light: #d1fae5;
+      --brand-bg: #f0fdf4;
+      --accent: #1d4ed8;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-200: #e5e7eb;
+      --gray-50: #f9fafb;
+    }
+
+    /* ===== COVER PAGE ===== */
+    .cover-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 40px;
+      background: linear-gradient(160deg, #f0fdf4 0%, #fff 60%);
+      position: relative;
+      border-left: 8px solid var(--brand);
+    }
+
+    .cover-logo {
+      font-size: 13pt;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: 0.5px;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+    }
+
+    .cover-logo span {
+      color: var(--gray-700);
+      font-weight: 400;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+
+    .cover-title {
+      font-size: 30pt;
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .cover-title .highlight {
+      color: var(--brand);
+    }
+
+    .cover-subtitle {
+      font-size: 13pt;
+      color: var(--gray-700);
+      line-height: 1.6;
+      max-width: 560px;
+      margin-bottom: 50px;
+    }
+
+    .cover-meta {
+      font-size: 10pt;
+      color: var(--gray-500);
+      border-top: 2px solid var(--brand-light);
+      padding-top: 20px;
+      margin-top: auto;
+    }
+
+    .cover-wins-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      margin-bottom: 40px;
+    }
+
+    .cover-wins-list .win-item {
+      font-size: 10pt;
+      color: var(--gray-700);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .win-num {
+      background: var(--brand);
+      color: #fff;
+      font-size: 8pt;
+      font-weight: 700;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-header {
+      border-left: 5px solid var(--brand);
+      padding: 18px 20px;
+      background: var(--brand-bg);
+      margin-bottom: 28px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .section-label {
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--brand);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 16pt;
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    /* ===== CONTENT ELEMENTS ===== */
+    h2 {
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 24px 0 10px;
+    }
+
+    h3 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 16px 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: var(--gray-700);
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      color: var(--gray-700);
+    }
+
+    strong { color: var(--gray-900); }
+
+    /* ===== CALLOUT BOXES ===== */
+    .box-problem {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin: 14px 0;
+    }
+
+    .box-problem .box-label {
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #dc2626;
+      margin-bottom: 4px;
+    }
+
+    .box-solution {
+      background: var(--brand-bg);
+      border-left: 4px solid var(--brand);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin: 14px 0;
+    }
+
+    .box-solution .box-label {
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--brand-dark);
+      margin-bottom: 4px;
+    }
+
+    .box-prompt {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .box-prompt .prompt-label {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .box-impact {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 14px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .box-impact .impact-icon {
+      font-size: 16pt;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .box-impact .impact-text {
+      font-size: 10pt;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    .box-impact .impact-label {
+      font-size: 8pt;
+      color: #60a5fa;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .tools-bar {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-top: 14px;
+      font-size: 9.5pt;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .tools-bar .tools-label {
+      font-weight: 700;
+      color: var(--gray-500);
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-right: 4px;
+    }
+
+    .tool-pill {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      font-weight: 700;
+      font-size: 8.5pt;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ===== STEP LIST ===== */
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+      margin: 12px 0;
+    }
+
+    .step-list li {
+      counter-increment: step;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .step-list li:last-child { border-bottom: none; }
+
+    .step-list li::before {
+      content: counter(step);
+      background: var(--brand);
+      color: #fff;
+      font-size: 9pt;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===== ACTION PLAN TABLE ===== */
+    .plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 10pt;
+    }
+
+    .plan-table th {
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 9.5pt;
+    }
+
+    .plan-table th:first-child { border-radius: 6px 0 0 0; }
+    .plan-table th:last-child { border-radius: 0 6px 0 0; }
+
+    .plan-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      vertical-align: top;
+    }
+
+    .plan-table tr:nth-child(even) td { background: var(--gray-50); }
+    .plan-table tr:last-child td { border-bottom: none; }
+
+    .plan-table td:first-child {
+      font-weight: 700;
+      color: var(--brand-dark);
+      white-space: nowrap;
+    }
+
+    /* ===== CTA PAGE ===== */
+    .cta-page {
+      text-align: center;
+      padding: 60px 40px;
+      background: linear-gradient(160deg, #f0fdf4 0%, #fff 100%);
+      border-top: 6px solid var(--brand);
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cta-page .cta-eyebrow {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 16px;
+    }
+
+    .cta-page h2 {
+      font-size: 22pt;
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .cta-page p {
+      font-size: 12pt;
+      color: var(--gray-700);
+      max-width: 520px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .cta-contact {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .cta-link {
+      background: var(--brand);
+      color: #fff;
+      font-size: 13pt;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-whatsapp {
+      font-size: 13pt;
+      font-weight: 600;
+      color: var(--brand-dark);
+    }
+
+    .cta-footer {
+      margin-top: 50px;
+      font-size: 9pt;
+      color: var(--gray-500);
+      border-top: 1px solid var(--gray-200);
+      padding-top: 18px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ===== INTRO PAGE ===== */
+    .intro-highlight {
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--brand);
+      background: var(--brand-bg);
+      border-radius: 8px;
+      padding: 18px 22px;
+      line-height: 1.5;
+      margin: 20px 0 24px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .intro-stat {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-top: 3px solid var(--brand);
+      border-radius: 6px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .intro-stat .stat-num {
+      font-size: 20pt;
+      font-weight: 800;
+      color: var(--brand);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .intro-stat .stat-label {
+      font-size: 8.5pt;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== PAGE FOOTER ===== */
+    .page-footer {
+      margin-top: 40px;
+      padding-top: 12px;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8.5pt;
+      color: var(--gray-500);
+    }
+
+    .page-footer .brand { color: var(--brand); font-weight: 600; }
+
+    @media print {
+      .page-footer { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======================== COVER PAGE ======================== -->
+<div class="page">
+  <div class="cover-page">
+    <div class="cover-logo">TARAhut <span>AI Labs</span></div>
+
+    <div class="cover-badge">Free Guide — April 2026</div>
+
+    <div class="cover-title">
+      AI for Small Business —<br />
+      <span class="highlight">10 Quick Wins</span><br />
+      Guide
+    </div>
+
+    <div class="cover-subtitle">
+      How Indian SMEs are using AI right now to cut costs, automate tasks, and win more customers — no tech team needed.
+    </div>
+
+    <div class="cover-wins-list">
+      <div class="win-item"><span class="win-num">1</span> Write a week's social posts in 10 min</div>
+      <div class="win-item"><span class="win-num">2</span> Create graphics without a designer</div>
+      <div class="win-item"><span class="win-num">3</span> Reply to customers 3x faster</div>
+      <div class="win-item"><span class="win-num">4</span> Boost Google My Business visibility</div>
+      <div class="win-item"><span class="win-num">5</span> Product descriptions that sell</div>
+      <div class="win-item"><span class="win-num">6</span> Automate payment reminders</div>
+      <div class="win-item"><span class="win-num">7</span> Train new staff 50% faster</div>
+      <div class="win-item"><span class="win-num">8</span> Analyze 100s of reviews instantly</div>
+      <div class="win-item"><span class="win-num">9</span> Build a website in 1 hour for ₹0</div>
+      <div class="win-item"><span class="win-num">10</span> Run your first paid ad with AI</div>
+    </div>
+
+    <div class="cover-meta">
+      <strong>TARAhut AI Labs</strong> &nbsp;|&nbsp; tarahutailabs.com &nbsp;|&nbsp; April 2026 &nbsp;|&nbsp; For Indian SME Owners
+    </div>
+  </div>
+</div>
+
+<!-- ======================== INTRODUCTION ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Introduction</div>
+    <div class="section-title">You Already Have Everything You Need</div>
+  </div>
+
+  <div class="intro-highlight">
+    You don't need a tech team. You don't need a big budget.<br />
+    You need 30 minutes and a free AI tool.
+  </div>
+
+  <p>
+    This guide shows you <strong>10 things any small business owner in India can do with AI today</strong> — with step-by-step instructions, exact prompts you can copy-paste, and real examples from businesses like yours.
+  </p>
+
+  <p>
+    Every tool mentioned in this guide has a <strong>free tier</strong>. You do not need to spend a single rupee to get started.
+  </p>
+
+  <div class="intro-grid">
+    <div class="intro-stat">
+      <div class="stat-num">₹0</div>
+      <div class="stat-label">Cost to start</div>
+    </div>
+    <div class="intro-stat">
+      <div class="stat-num">30 min</div>
+      <div class="stat-label">Time to first win</div>
+    </div>
+    <div class="intro-stat">
+      <div class="stat-num">10</div>
+      <div class="stat-label">Quick wins inside</div>
+    </div>
+  </div>
+
+  <h3>Who This Guide Is For</h3>
+  <ul>
+    <li>Shop owners, restaurant and salon operators, traders, freelancers</li>
+    <li>Small manufacturers and service providers across India</li>
+    <li>Anyone who wants to work smarter without hiring more people</li>
+    <li>Business owners curious about AI but not sure where to begin</li>
+  </ul>
+
+  <h3>How To Use This Guide</h3>
+  <p>
+    Each Quick Win is one page. Read it, try it the same day. By the end of Week 1 you will have saved hours and impressed your customers. By Week 4 you will have a competitive advantage most businesses around you don't have yet.
+  </p>
+  <p>
+    <strong>Start with Quick Win 1 today.</strong> It takes 10 minutes and the results are immediate.
+  </p>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>AI for Small Business — 10 Quick Wins Guide</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 1 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 1</div>
+    <div class="section-title">Write All Your Social Media Posts in 10 Minutes</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>You spend 2+ hours daily thinking about what to post on Instagram, Facebook, and WhatsApp Status. Some days you post nothing because you ran out of time. Inconsistency is costing you followers and customers.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>Use <strong>ChatGPT or Claude</strong> to batch-create an entire week's worth of social media posts in one sitting. Instead of writing one post at a time every day, you create 7 posts on Monday morning and schedule or post them through the week.</p>
+  </div>
+
+  <h3>Exact Prompt to Use</h3>
+  <div class="box-prompt"><span class="prompt-label">Copy this prompt into ChatGPT or Claude (free):</span>I run a clothing store in Kotkapura, Punjab. We sell ladies' suits, lehengas, and daily wear for all ages. Our customers are women aged 18–50.
+
+Create 7 social media posts for this week — one for each day. Mix in: a product highlight, a customer tip, a festive offer, a behind-the-scenes post, and 2 engagement posts (questions/polls). Write in a warm, friendly tone. Include relevant emojis. Add 5 hashtags to each post in Hindi and English.</div>
+
+  <p>Replace the business type and location with your own. That's it. ChatGPT will give you 7 ready-to-post captions in under 30 seconds.</p>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#9200;</div>
+    <div>
+      <div class="impact-label">Time Saved</div>
+      <div class="impact-text">8+ hours per week. That's 32+ hours every month — given back to you.</div>
+    </div>
+  </div>
+
+  <h3>Step-by-Step</h3>
+  <ol class="step-list">
+    <li>Go to chat.openai.com or claude.ai — sign up free</li>
+    <li>Paste the prompt above with your business details</li>
+    <li>Copy the posts into a Notes app or Google Sheet</li>
+    <li>Add your own product photos in Canva (see Quick Win 2)</li>
+    <li>Post or schedule — done for the week</li>
+  </ol>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">ChatGPT (free)</span>
+    <span class="tool-pill">Claude (free)</span>
+    <span class="tool-pill">Canva AI (free)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 1 — Social Media</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 2 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 2</div>
+    <div class="section-title">Create Professional Graphics Without a Designer</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>You pay ₹500–2,000 per poster or banner to a local designer. For a sale, a new product, or a festival offer — every post needs a graphic. It adds up to ₹5,000–15,000 per month, plus days of waiting and endless revisions.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p><strong>Canva's Magic Design</strong> generates professional, on-brand graphics from a text description in seconds. Describe what you need, and Canva builds a design you can edit and download in minutes — for free.</p>
+  </div>
+
+  <h3>Step-by-Step: Canva Magic Design</h3>
+  <ol class="step-list">
+    <li>Go to canva.com — sign up free with Google</li>
+    <li>Click <strong>"Create a design"</strong> → choose "Instagram Post" or "Poster"</li>
+    <li>In the editor, click <strong>"Magic Design"</strong> in the left panel</li>
+    <li>Type a description: <em>"Diwali sale poster for a clothing store. Gold and green theme. 40% off. Festive and elegant."</em></li>
+    <li>Choose from 8 instant design options</li>
+    <li>Replace placeholder text with your store name, phone number, and offer details</li>
+    <li>Download as JPG or PNG — ready to post</li>
+  </ol>
+
+  <h3>Pro Tips</h3>
+  <ul>
+    <li>Use <strong>Canva Brand Kit</strong> (free) to save your logo, brand colours, and fonts so every design looks consistent</li>
+    <li>Try <strong>Magic Write</strong> (inside Canva) to auto-generate headlines and taglines</li>
+    <li>Use <strong>Background Remover</strong> to cut out product photos cleanly — no Photoshop needed</li>
+  </ul>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#8377;</div>
+    <div>
+      <div class="impact-label">Money Saved</div>
+      <div class="impact-text">₹5,000–15,000 per month. Designs ready in minutes instead of days.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">Canva AI (free tier)</span>
+    <span class="tool-pill">Canva Magic Design</span>
+    <span class="tool-pill">Canva Magic Write</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 2 — Graphic Design</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 3 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 3</div>
+    <div class="section-title">Reply to Customer Messages in Seconds</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>Customers message you on WhatsApp asking about prices, availability, timings, and complaints. Slow responses feel unprofessional and send customers to your competition. But you can't always stop what you're doing to type a thoughtful reply.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>Use <strong>ChatGPT</strong> to draft a warm, professional reply in 5 seconds. Paste the customer's message, add context about your business, and get a perfect reply you can send immediately — in Hindi, English, or both.</p>
+  </div>
+
+  <h3>Exact Prompt to Use</h3>
+  <div class="box-prompt"><span class="prompt-label">Copy this prompt — fill in the brackets:</span>I'm a [business type] in [city]. A customer sent this WhatsApp message: "[paste the customer's message here]"
+
+Write a warm, professional reply in Hindi/English (mixed is fine). Be helpful, polite, and end with an offer to assist further. Keep it under 4 lines.</div>
+
+  <h3>Example: Handling a Complaint</h3>
+  <div class="box-prompt"><span class="prompt-label">Example input:</span>I'm a restaurant owner in Ludhiana. A customer sent: "The parcel I got today was cold and the roti was hard. Very disappointed."
+
+Write a warm, professional reply...</div>
+
+  <h3>More Use Cases</h3>
+  <ul>
+    <li><strong>Price inquiry:</strong> "What is the price of [product]?"</li>
+    <li><strong>Availability:</strong> "Do you have [item] in stock?"</li>
+    <li><strong>Booking:</strong> "Can I book an appointment for Saturday?"</li>
+    <li><strong>Review follow-up:</strong> Thanking customers who left good reviews</li>
+  </ul>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#9889;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">3x faster response time. Customers feel heard. Fewer lost sales from slow replies.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">ChatGPT (free)</span>
+    <span class="tool-pill">Claude (free)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 3 — Customer Replies</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 4 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 4</div>
+    <div class="section-title">Write Google My Business Posts That Attract Customers</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>Your Google My Business profile is empty or last updated months ago. Customers searching for your type of business in your area see outdated information or nothing at all — and walk into a competitor's shop instead.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>Google My Business lets you post updates, offers, and news directly to your search listing. <strong>AI writes these posts for you</strong> in 30 seconds — boosting your local visibility and driving more walk-ins every week.</p>
+  </div>
+
+  <h3>Exact Prompts by Business Type</h3>
+
+  <div class="box-prompt"><span class="prompt-label">Restaurant:</span>Write a Google My Business post for my restaurant in Amritsar. We're running a weekend special: Unlimited Langar Thali for ₹199. Write in a warm, inviting tone. Max 150 words. Include a call-to-action to visit or call.</div>
+
+  <div class="box-prompt"><span class="prompt-label">Salon:</span>Write a GMB post for my beauty salon in Chandigarh. We offer a free eyebrow threading with any facial this month. Target women. Friendly and professional tone. Max 120 words.</div>
+
+  <div class="box-prompt"><span class="prompt-label">Clinic:</span>Write a Google My Business update for my physiotherapy clinic in Jalandhar. We've added evening slots for working professionals. Reassuring, trustworthy tone. Max 130 words.</div>
+
+  <h3>How to Post on Google My Business</h3>
+  <ol class="step-list">
+    <li>Search your business name on Google — click "Edit profile"</li>
+    <li>Click <strong>"Add update"</strong> or <strong>"Add offer"</strong></li>
+    <li>Paste the AI-written text, add a photo</li>
+    <li>Publish — visible in search results instantly</li>
+  </ol>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#128205;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">More local visibility in Google Search and Maps. More walk-ins from people searching nearby.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">ChatGPT (free)</span>
+    <span class="tool-pill">Google My Business (free)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 4 — Google My Business</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 5 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 5</div>
+    <div class="section-title">Create Product Descriptions That Sell</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>Your product listings on your website, Instagram Shop, Meesho, or Flipkart say things like "Beautiful suit, good quality, available in all sizes." Boring descriptions don't sell. Customers scroll past and buy from a competitor with better copy.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>AI writes <strong>compelling, emotionally engaging product descriptions</strong> that highlight benefits, create desire, and include keywords so customers can actually find your products online.</p>
+  </div>
+
+  <h3>Exact Prompt — Punjab Handicraft Example</h3>
+  <div class="box-prompt"><span class="prompt-label">Copy and adapt this prompt:</span>Write a product description for an online listing.
+
+Product: Hand-embroidered Phulkari dupatta from Punjab
+Material: Pure cotton with traditional gota patti work
+Colors: Mustard yellow with red and green embroidery
+Target customer: Women aged 25–45 who love ethnic wear and authentic handicrafts
+Platform: Meesho / Instagram Shop
+
+Write 3 versions: (1) Short 2-line caption for Instagram, (2) 80-word listing description, (3) 150-word detailed description with care instructions. Include 1-2 emotional hooks about heritage and craftsmanship.</div>
+
+  <h3>Use This For</h3>
+  <ul>
+    <li>Any product on Flipkart, Amazon, Meesho, or your own website</li>
+    <li>Menu item descriptions for restaurants</li>
+    <li>Service descriptions for clinics, salons, tutors</li>
+    <li>Real estate listing copy for brokers</li>
+  </ul>
+
+  <h3>Why This Works</h3>
+  <p>Good product descriptions answer three questions a customer has: <em>What is it? Why do I want it? Why should I trust this seller?</em> AI is trained on thousands of successful product listings and knows how to answer all three.</p>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#128200;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">Higher conversion rates. Better search rankings. Products that sell themselves.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">ChatGPT (free)</span>
+    <span class="tool-pill">Claude (free)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 5 — Product Descriptions</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 6 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 6</div>
+    <div class="section-title">Automate Invoice and Payment Reminders</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>You have money owed to you — but chasing payments is awkward and time-consuming. You don't want to damage customer relationships by being too aggressive, but staying silent means waiting weeks or months to get paid.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>Use AI to draft a <strong>polite, professional reminder sequence</strong> that escalates gently over time. Send via WhatsApp or email. The messages are firm but friendly — preserving the relationship while getting you paid faster.</p>
+  </div>
+
+  <h3>Your 3-Message Reminder Sequence</h3>
+
+  <div class="box-prompt"><span class="prompt-label">Day 1 — Friendly Reminder:</span>Hi [Customer Name], this is a friendly reminder that Invoice #[XXX] for ₹[Amount] was due on [Date]. Please let us know if you need any clarification. Payment can be made to our UPI: [ID]. Thank you!</div>
+
+  <div class="box-prompt"><span class="prompt-label">Day 7 — Follow-Up:</span>Hi [Customer Name], we wanted to follow up on Invoice #[XXX] for ₹[Amount], now 7 days overdue. We value our relationship and would appreciate payment at your earliest convenience. If there's any issue, please let us know and we'll work it out. Thank you.</div>
+
+  <div class="box-prompt"><span class="prompt-label">Day 15 — Final Notice:</span>Hi [Customer Name], this is our final reminder for Invoice #[XXX] of ₹[Amount], now 15 days past due. Please make payment today to avoid any disruption to our services. We're available to discuss if needed. Thank you for your prompt attention.</div>
+
+  <h3>How to Use AI for Custom Reminders</h3>
+  <p>Ask ChatGPT: <em>"Write a polite payment reminder for a [B2B/B2C] client. Amount: ₹[X]. Overdue by [N] days. Tone: professional but warm. Under 5 lines. WhatsApp format."</em></p>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#128181;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">Get paid up to 40% faster. Less awkward conversations. Better cash flow.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">ChatGPT (free)</span>
+    <span class="tool-pill">WhatsApp</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 6 — Payment Reminders</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 7 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 7</div>
+    <div class="section-title">Train New Employees Faster</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>Every time you hire someone new, you spend weeks explaining the same things — how to greet customers, what to do in different situations, your shop rules, how to handle cash. There is no written manual, so every new hire learns differently.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>Use AI to create a professional <strong>Training Manual and Standard Operating Procedures (SOPs)</strong> for your business in one afternoon. Give this document to every new hire — they know exactly what to do from Day 1.</p>
+  </div>
+
+  <h3>Exact Prompt to Create Your Training Manual</h3>
+  <div class="box-prompt"><span class="prompt-label">Copy and adapt:</span>Create a training manual for a new [ROLE] at a [BUSINESS TYPE] in India.
+
+Include:
+1. Welcome message from the owner
+2. Daily opening and closing tasks
+3. How to greet and handle customers (including difficult ones)
+4. Common customer questions and answers
+5. Do's and don'ts
+6. How to handle cash and billing
+7. Emergency procedures
+8. Performance expectations for Week 1 and Month 1
+
+Write in simple Hindi-friendly English. Keep each section clear and numbered.
+
+Example: "Create a training manual for a new sales assistant at a ladies' clothing boutique in Patiala."</div>
+
+  <h3>Other SOP Prompts</h3>
+  <ul>
+    <li><em>"Write a step-by-step opening checklist for my restaurant kitchen."</em></li>
+    <li><em>"Create a complaint resolution process for my salon staff."</em></li>
+    <li><em>"Write hygiene and safety protocols for a food delivery business."</em></li>
+  </ul>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#128241;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">Training time cut by 50%. Consistent customer experience. You stop repeating yourself.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">ChatGPT (free)</span>
+    <span class="tool-pill">Claude (free)</span>
+    <span class="tool-pill">Google Docs (free)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 7 — Staff Training</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 8 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 8</div>
+    <div class="section-title">Analyze Customer Feedback at Scale</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>You have hundreds of Google reviews, Zomato ratings, or customer WhatsApp messages — but no time to read them all. Problems keep repeating that you don't even know about, and you're missing what customers love most so you can do more of it.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>Paste all your reviews into <strong>Claude</strong> (which handles very long text) and ask it to find patterns, problems, and opportunities. In minutes you'll have an actionable analysis that would have taken days to do manually.</p>
+  </div>
+
+  <h3>Exact Prompt for Review Analysis</h3>
+  <div class="box-prompt"><span class="prompt-label">Copy this prompt — paste your reviews below it:</span>Below are customer reviews for my business. Please analyze them and give me:
+
+1. Top 3 things customers love (with examples)
+2. Top 3 recurring complaints or problems
+3. Any specific staff members or products mentioned often
+4. Patterns in negative reviews (time of day, specific items, etc.)
+5. 5 specific action items I can implement this week to improve
+
+Be specific. Quote actual customer phrases where relevant.
+
+[PASTE YOUR REVIEWS HERE]</div>
+
+  <h3>Where to Get Your Reviews</h3>
+  <ul>
+    <li><strong>Google:</strong> Search your business → Reviews tab → Copy all visible reviews</li>
+    <li><strong>Zomato/Swiggy:</strong> Partner dashboard → Reviews section</li>
+    <li><strong>Facebook:</strong> Business Page → Reviews tab</li>
+    <li><strong>WhatsApp feedback:</strong> Screenshots or typed summaries work too</li>
+  </ul>
+
+  <p><strong>Tip:</strong> Use Claude (claude.ai) for this task — it handles much longer text than ChatGPT's free tier.</p>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#128269;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">Fix problems you didn't know existed. Double down on what customers love. Better ratings, more loyalty.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">Claude (free — handles long text)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 8 — Review Analysis</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 9 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 9</div>
+    <div class="section-title">Create a Simple Business Website in 1 Hour</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>Your business has no website. Web developers quote ₹20,000–50,000 and take 2–4 weeks. Customers searching online can't find you, and you lose credibility when someone asks "do you have a website?"</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>AI-powered website builders like <strong>Gamma</strong> can create a professional business website from a simple text description in under 5 minutes. No coding. No designer. No monthly fees on the free tier.</p>
+  </div>
+
+  <h3>Step-by-Step with Gamma (gamma.app)</h3>
+  <ol class="step-list">
+    <li>Go to <strong>gamma.app</strong> — sign up free</li>
+    <li>Click <strong>"Create new"</strong> → select <strong>"Webpage"</strong></li>
+    <li>Describe your business: <em>"A family-run dhaba in Bathinda serving authentic Punjabi food. Specialties: Sarson da Saag, Makki di Roti, Lassi. Open daily 7am–10pm."</em></li>
+    <li>Gamma generates a full website with sections, images, and layout</li>
+    <li>Edit text, add your phone number, address, and photos</li>
+    <li>Click <strong>"Publish"</strong> — your site is live at a free gamma.app link</li>
+    <li>Share this link on WhatsApp, Google My Business, and Instagram bio</li>
+  </ol>
+
+  <h3>What to Include on Your Page</h3>
+  <ul>
+    <li>Business name, tagline, and a clear description</li>
+    <li>Your top products or services with prices</li>
+    <li>Address, phone number, WhatsApp link, and opening hours</li>
+    <li>3–5 photos (your shop, products, or team)</li>
+    <li>A few customer testimonials or your star rating</li>
+  </ul>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#127760;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">Online presence for ₹0. More credibility. Customers can find and contact you from anywhere.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">Gamma (free)</span>
+    <span class="tool-pill">Notion (free)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 9 — Business Website</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== QUICK WIN 10 ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Quick Win 10</div>
+    <div class="section-title">Run Your First Meta/Google Ad With AI</div>
+  </div>
+
+  <div class="box-problem no-break">
+    <div class="box-label">The Problem</div>
+    <p>You know you should be running ads on Facebook or Instagram to reach new customers — but you don't know what to write, who to target, or how to set it up. Hiring an agency costs ₹10,000+ per month. So you do nothing and miss out.</p>
+  </div>
+
+  <div class="box-solution no-break">
+    <div class="box-label">The AI Solution</div>
+    <p>AI writes your ad copy, suggests targeting, and even recommends your budget split — in 30 seconds. You just set it up in Meta Ads Manager. Your first ad can be live today for as little as ₹500.</p>
+  </div>
+
+  <h3>Exact Prompt to Write Your Ad</h3>
+  <div class="box-prompt"><span class="prompt-label">Copy and fill in the brackets:</span>Write a Facebook/Instagram ad for a [BUSINESS TYPE] in [CITY/AREA].
+
+Target audience: [describe your ideal customer — age, gender, interests]
+Offer: [what you're promoting — product, discount, service]
+Budget: ₹500/day
+Goal: [more customers / more orders / more bookings]
+
+Write:
+1. A scroll-stopping headline (under 8 words)
+2. Ad body copy (under 80 words, conversational Hindi-English mix)
+3. A strong call-to-action
+4. Recommended targeting interests for Meta Ads Manager</div>
+
+  <h3>Setting Up Your First Ad (5 Steps)</h3>
+  <ol class="step-list">
+    <li>Go to <strong>facebook.com/adsmanager</strong> — connect your business page</li>
+    <li>Click <strong>"Create"</strong> → choose goal: "Traffic" or "Leads"</li>
+    <li>Set location (your city/area), age range, and interests from AI suggestions</li>
+    <li>Paste the AI-written headline and body copy. Add your best photo or video</li>
+    <li>Set budget ₹500/day → Review → Publish. Done.</li>
+  </ol>
+
+  <div class="box-impact no-break">
+    <div class="impact-icon">&#128640;</div>
+    <div>
+      <div class="impact-label">Impact</div>
+      <div class="impact-text">Your first paying customers from digital ads. Reach thousands of local people for ₹500/day.</div>
+    </div>
+  </div>
+
+  <div class="tools-bar">
+    <span class="tools-label">Free Tools:</span>
+    <span class="tool-pill">ChatGPT (free)</span>
+    <span class="tool-pill">Meta Ads Manager (free to use)</span>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>Quick Win 10 — Paid Ads</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== ACTION PLAN ======================== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-label">Summary</div>
+    <div class="section-title">Your 30-Day AI Action Plan</div>
+  </div>
+
+  <p>Don't try to do everything at once. Follow this 4-week plan to build momentum, develop new habits, and see measurable results within a month.</p>
+
+  <table class="plan-table">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Quick Wins</th>
+        <th>Focus Area</th>
+        <th>Expected Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Week 1</td>
+        <td>Wins 1, 2, 3</td>
+        <td>Content + Design + Customer Response</td>
+        <td>Save 8+ hrs/week, professional graphics, faster replies</td>
+      </tr>
+      <tr>
+        <td>Week 2</td>
+        <td>Wins 4, 5</td>
+        <td>Visibility + Selling</td>
+        <td>Better Google presence, product listings that convert</td>
+      </tr>
+      <tr>
+        <td>Week 3</td>
+        <td>Wins 6, 7</td>
+        <td>Operations + Finance</td>
+        <td>Get paid faster, consistent staff training</td>
+      </tr>
+      <tr>
+        <td>Week 4</td>
+        <td>Wins 8, 9, 10</td>
+        <td>Data + Growth</td>
+        <td>Understand customers, launch website, run first ad</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Daily Habits to Build</h3>
+  <ul>
+    <li><strong>Morning (5 min):</strong> Use AI to write your first social post or respond to pending messages</li>
+    <li><strong>Weekly (30 min Monday):</strong> Batch-create all 7 social posts for the week</li>
+    <li><strong>Monthly (1 hour):</strong> Review customer feedback with AI, update your GMB profile, refresh product descriptions</li>
+  </ul>
+
+  <h3>The Compound Effect</h3>
+  <p>Each of these Quick Wins is worth something on its own. But when you combine all 10, the effect multiplies. You save 10+ hours every week. You look more professional than competitors. Your customers respond better. Your revenue grows.</p>
+
+  <div class="box-solution no-break">
+    <div class="box-label">Remember</div>
+    <p>AI is not replacing you or your business. It is your assistant — doing the repetitive, time-consuming work so you can focus on the relationships, decisions, and vision only you can provide.</p>
+    <p style="margin-bottom: 0;"><strong>Your competitors will adopt AI. The question is whether you lead or follow.</strong></p>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">TARAhut AI Labs</span>
+    <span>30-Day Action Plan</span>
+    <span>tarahutailabs.com</span>
+  </div>
+</div>
+
+<!-- ======================== CTA PAGE ======================== -->
+<div class="page page-break">
+  <div class="cta-page">
+    <div class="cta-eyebrow">TARAhut AI Labs — Free Offer</div>
+
+    <h2>Want Personalized AI Training for Your Business?</h2>
+
+    <p>
+      This guide gives you the tools to get started. But every business is different — your industry, your city, your customers, your challenges.
+    </p>
+
+    <p>
+      <strong>TARAhut AI Labs offers a free AI Assessment for business owners</strong> — a 30-minute session where we analyse your business and show you exactly which AI tools will make the biggest difference for you, step by step.
+    </p>
+
+    <p style="font-size: 11pt; color: #6b7280;">
+      No sales pitch. No obligation. Just practical, honest advice from people who understand Indian small businesses.
+    </p>
+
+    <div class="cta-contact">
+      <a class="cta-link" href="https://tarahutailabs.com/assess">tarahutailabs.com/assess</a>
+      <div class="cta-whatsapp">or WhatsApp us: +91 92008-82008</div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background: var(--brand-bg); border-radius: 8px; max-width: 500px; text-align: center;">
+      <p style="font-size: 10pt; color: var(--brand-dark); font-weight: 600; margin-bottom: 6px;">
+        What you get in the free assessment:
+      </p>
+      <ul style="list-style: none; padding: 0; text-align: left; font-size: 10pt; color: var(--gray-700);">
+        <li style="padding: 4px 0; border-bottom: 1px solid var(--brand-light);">&#10003; &nbsp; Analysis of your current business operations</li>
+        <li style="padding: 4px 0; border-bottom: 1px solid var(--brand-light);">&#10003; &nbsp; Top 3 AI opportunities specific to your business</li>
+        <li style="padding: 4px 0; border-bottom: 1px solid var(--brand-light);">&#10003; &nbsp; Custom prompt templates for your industry</li>
+        <li style="padding: 4px 0;">&#10003; &nbsp; A 30-day implementation roadmap</li>
+      </ul>
+    </div>
+
+    <div class="cta-footer">
+      <strong style="color: var(--brand);">TARAhut AI Labs</strong> &nbsp;|&nbsp; tarahutailabs.com &nbsp;|&nbsp; +91 92008-82008<br />
+      <span style="display: block; margin-top: 6px;">AI for Small Business — 10 Quick Wins Guide &nbsp;|&nbsp; April 2026 &nbsp;|&nbsp; Free to share with attribution</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

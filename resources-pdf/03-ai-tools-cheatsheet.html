@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tools Cheatsheet — 40+ Tools | TARAhut AI Labs</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 10.5pt;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 16px;
+      line-height: 1.4;
+    }
+
+    /* ── Print Setup ── */
+    @page {
+      size: A4;
+      margin: 14mm 14mm 14mm 14mm;
+    }
+
+    @media print {
+      body { padding: 0; max-width: 100%; font-size: 9pt; }
+      .page-break { page-break-before: always; break-before: page; }
+      .no-break { page-break-inside: avoid; break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    /* ── Colours ── */
+    :root {
+      --brand: #059669;
+      --brand-dark: #047857;
+      --brand-light: #ecfdf5;
+      --brand-mid: #d1fae5;
+      --accent: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --row-alt: #f8fafc;
+    }
+
+    /* ── Cover Page ── */
+    .cover {
+      min-height: 96vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(150deg, #f0fdf4 0%, #ecfdf5 60%, #d1fae5 100%);
+      border-radius: 8px;
+    }
+
+    .cover-logo {
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      border: 2px solid var(--brand);
+      padding: 5px 14px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .cover h1 {
+      font-size: 32pt;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .cover h1 span {
+      color: var(--brand);
+    }
+
+    .cover-sub {
+      font-size: 13pt;
+      color: var(--muted);
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 4px;
+      background: var(--brand);
+      border-radius: 2px;
+      margin: 0 auto 32px;
+    }
+
+    .cover-stats {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .cover-stat {
+      text-align: center;
+    }
+
+    .cover-stat-num {
+      font-size: 26pt;
+      font-weight: 900;
+      color: var(--brand);
+      line-height: 1;
+    }
+
+    .cover-stat-label {
+      font-size: 8.5pt;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 3px;
+    }
+
+    .cover-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .cover-cat {
+      background: #fff;
+      border: 1.5px solid var(--brand-mid);
+      color: var(--brand-dark);
+      font-size: 8.5pt;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .cover-footer {
+      font-size: 8.5pt;
+      color: var(--muted);
+    }
+
+    .cover-footer strong {
+      color: var(--brand-dark);
+    }
+
+    /* ── Section Headers ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0 8px;
+    }
+
+    .section-icon {
+      font-size: 16pt;
+      line-height: 1;
+    }
+
+    .section-title {
+      font-size: 13pt;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .section-count {
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--brand);
+      background: var(--brand-light);
+      border: 1px solid var(--brand-mid);
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-left: auto;
+    }
+
+    /* ── Tool Table ── */
+    .tool-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
+      font-size: 9pt;
+    }
+
+    .tool-table thead tr {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .tool-table thead th {
+      padding: 5px 7px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 8pt;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .tool-table thead th:nth-child(1) { width: 16%; }
+    .tool-table thead th:nth-child(2) { width: 31%; }
+    .tool-table thead th:nth-child(3) { width: 11%; }
+    .tool-table thead th:nth-child(4) { width: 27%; }
+    .tool-table thead th:nth-child(5) { width: 15%; }
+
+    .tool-table tbody tr:nth-child(even) {
+      background: var(--row-alt);
+    }
+
+    .tool-table tbody tr:hover {
+      background: var(--brand-light);
+    }
+
+    .tool-table td {
+      padding: 5px 7px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tool-name {
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .tool-url {
+      font-size: 7.5pt;
+      color: var(--brand-dark);
+      word-break: break-all;
+    }
+
+    .free-yes {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    .free-limited {
+      display: inline-block;
+      background: #fef9c3;
+      color: #854d0e;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    .free-no {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    /* ── Decision Tree Page ── */
+    .decision-page {
+      padding: 4px 0;
+    }
+
+    .decision-header {
+      background: var(--brand);
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 6px 6px 0 0;
+      margin-bottom: 0;
+    }
+
+    .decision-header h2 {
+      font-size: 15pt;
+      font-weight: 900;
+      margin-bottom: 2px;
+    }
+
+    .decision-header p {
+      font-size: 9pt;
+      opacity: 0.85;
+    }
+
+    .decision-body {
+      border: 2px solid var(--brand);
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+
+    .decision-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .decision-row:last-child {
+      border-bottom: none;
+    }
+
+    .decision-arrow {
+      font-size: 11pt;
+      color: var(--brand);
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .decision-if {
+      flex: 1;
+      font-size: 10pt;
+      color: var(--muted);
+    }
+
+    .decision-if strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .decision-then {
+      font-size: 10pt;
+      font-weight: 800;
+      color: var(--brand-dark);
+      background: var(--brand-light);
+      border: 1.5px solid var(--brand-mid);
+      padding: 3px 10px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    /* ── CTA Box ── */
+    .cta-box {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: #fff;
+      padding: 20px 22px;
+      border-radius: 8px;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      font-size: 13pt;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .cta-box p {
+      font-size: 9.5pt;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    .cta-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-link {
+      background: rgba(255,255,255,0.18);
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: #fff;
+      font-size: 9pt;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    /* ── Free Tier Legend ── */
+    .legend {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .legend-label {
+      font-size: 8pt;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Page Footer ── */
+    .page-footer {
+      text-align: center;
+      font-size: 7.5pt;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 6px;
+      margin-top: 12px;
+    }
+
+    /* ── Utility ── */
+    .mt-4 { margin-top: 4px; }
+    .mb-0 { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════
+       PAGE 1 — COVER
+  ════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-logo">TARAhut AI Labs</div>
+    <div class="cover-badge">2026 Edition</div>
+    <h1>AI Tools<br /><span>Cheatsheet</span></h1>
+    <p class="cover-sub">Your quick reference to every major AI tool in 2026</p>
+    <div class="cover-divider"></div>
+
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cover-stat-num">40+</div>
+        <div class="cover-stat-label">AI Tools</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">7</div>
+        <div class="cover-stat-label">Categories</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">8</div>
+        <div class="cover-stat-label">Pages</div>
+      </div>
+    </div>
+
+    <div class="cover-categories">
+      <span class="cover-cat">✍️ Writing &amp; Text</span>
+      <span class="cover-cat">🎨 Image &amp; Design</span>
+      <span class="cover-cat">🎬 Video &amp; Audio</span>
+      <span class="cover-cat">💻 Coding &amp; Dev</span>
+      <span class="cover-cat">📊 Productivity</span>
+      <span class="cover-cat">🔬 Research &amp; Learning</span>
+      <span class="cover-cat">🧭 How to Choose</span>
+    </div>
+
+    <div class="cover-footer">
+      Compiled by <strong>TARAhut AI Labs</strong> &nbsp;·&nbsp; tarahutailabs.com &nbsp;·&nbsp; April 2026
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       PAGE 2 — WRITING & TEXT
+  ════════════════════════════════════ -->
+  <div class="page-break"></div>
+
+  <div class="no-break">
+    <div class="section-header">
+      <span class="section-icon">✍️</span>
+      <span class="section-title">Writing &amp; Text</span>
+      <span class="section-count">8 tools</span>
+    </div>
+
+    <div class="legend">
+      <span class="legend-label">Free Tier Key:</span>
+      <span class="free-yes">Yes</span>
+      <span class="free-limited">Limited</span>
+      <span class="free-no">No</span>
+    </div>
+
+    <table class="tool-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>What it does</th>
+          <th>Free?</th>
+          <th>Best for</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tool-name">ChatGPT</td>
+          <td>General AI assistant, writing, coding</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Everything — a great all-rounder</td>
+          <td class="tool-url">chat.openai.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Claude</td>
+          <td>Long-form writing, analysis, coding</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Complex tasks, long documents</td>
+          <td class="tool-url">claude.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Gemini</td>
+          <td>Google's AI, integrates with Workspace</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Google users, Docs &amp; Gmail</td>
+          <td class="tool-url">gemini.google.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Perplexity</td>
+          <td>AI search with source citations</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Research with references</td>
+          <td class="tool-url">perplexity.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Jasper</td>
+          <td>Marketing copy at scale</td>
+          <td><span class="free-no">No</span></td>
+          <td>Marketing teams, brand voice</td>
+          <td class="tool-url">jasper.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Copy.ai</td>
+          <td>Sales and marketing copy generation</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Sales emails and outreach</td>
+          <td class="tool-url">copy.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Writesonic</td>
+          <td>Blog posts, landing pages, and ads</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Content marketers</td>
+          <td class="tool-url">writesonic.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">QuillBot</td>
+          <td>Paraphrasing, grammar, and summarizing</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Students and writers</td>
+          <td class="tool-url">quillbot.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════
+       PAGE 3 — IMAGE & DESIGN
+  ════════════════════════════════════ -->
+  <div class="page-break"></div>
+
+  <div class="no-break">
+    <div class="section-header">
+      <span class="section-icon">🎨</span>
+      <span class="section-title">Image &amp; Design</span>
+      <span class="section-count">6 tools</span>
+    </div>
+
+    <div class="legend">
+      <span class="legend-label">Free Tier Key:</span>
+      <span class="free-yes">Yes</span>
+      <span class="free-limited">Limited</span>
+      <span class="free-no">No</span>
+    </div>
+
+    <table class="tool-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>What it does</th>
+          <th>Free?</th>
+          <th>Best for</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tool-name">Canva AI</td>
+          <td>Design + AI image generation in-browser</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Non-designers, quick graphics</td>
+          <td class="tool-url">canva.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Midjourney</td>
+          <td>Premium AI art from text prompts</td>
+          <td><span class="free-no">No</span></td>
+          <td>Creative professionals</td>
+          <td class="tool-url">midjourney.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">DALL-E 3</td>
+          <td>Image generation via ChatGPT</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Quick visuals inside ChatGPT</td>
+          <td class="tool-url">openai.com/dall-e</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Leonardo AI</td>
+          <td>AI art with model fine-tuning</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Artists, consistent characters</td>
+          <td class="tool-url">leonardo.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Adobe Firefly</td>
+          <td>AI image editing inside Photoshop</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Designers using Adobe suite</td>
+          <td class="tool-url">firefly.adobe.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Remove.bg</td>
+          <td>Instant background removal from photos</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Product photos, profile pics</td>
+          <td class="tool-url">remove.bg</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════
+       PAGE 4 — VIDEO & AUDIO
+  ════════════════════════════════════ -->
+  <div class="page-break"></div>
+
+  <div class="no-break">
+    <div class="section-header">
+      <span class="section-icon">🎬</span>
+      <span class="section-title">Video &amp; Audio</span>
+      <span class="section-count">6 tools</span>
+    </div>
+
+    <div class="legend">
+      <span class="legend-label">Free Tier Key:</span>
+      <span class="free-yes">Yes</span>
+      <span class="free-limited">Limited</span>
+      <span class="free-no">No</span>
+    </div>
+
+    <table class="tool-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>What it does</th>
+          <th>Free?</th>
+          <th>Best for</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tool-name">HeyGen</td>
+          <td>AI avatar videos from a script</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Marketing and explainer videos</td>
+          <td class="tool-url">heygen.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Synthesia</td>
+          <td>AI presenter videos without filming</td>
+          <td><span class="free-no">No</span></td>
+          <td>Training and L&amp;D content</td>
+          <td class="tool-url">synthesia.io</td>
+        </tr>
+        <tr>
+          <td class="tool-name">ElevenLabs</td>
+          <td>AI voice cloning and text-to-speech</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Voiceovers, narration</td>
+          <td class="tool-url">elevenlabs.io</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Descript</td>
+          <td>Video editing by editing a transcript</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Podcasters, video creators</td>
+          <td class="tool-url">descript.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Runway ML</td>
+          <td>AI-generated video from text or images</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Creative and cinematic video</td>
+          <td class="tool-url">runwayml.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">CapCut</td>
+          <td>Video editor with AI captions &amp; effects</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Short-form social media videos</td>
+          <td class="tool-url">capcut.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════
+       PAGE 5 — CODING & DEVELOPMENT
+  ════════════════════════════════════ -->
+  <div class="page-break"></div>
+
+  <div class="no-break">
+    <div class="section-header">
+      <span class="section-icon">💻</span>
+      <span class="section-title">Coding &amp; Development</span>
+      <span class="section-count">5 tools</span>
+    </div>
+
+    <div class="legend">
+      <span class="legend-label">Free Tier Key:</span>
+      <span class="free-yes">Yes</span>
+      <span class="free-limited">Limited</span>
+      <span class="free-no">No</span>
+    </div>
+
+    <table class="tool-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>What it does</th>
+          <th>Free?</th>
+          <th>Best for</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tool-name">GitHub Copilot</td>
+          <td>AI code completion inside your editor</td>
+          <td><span class="free-no">No</span></td>
+          <td>Professional developers</td>
+          <td class="tool-url">github.com/copilot</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Cursor</td>
+          <td>AI-first code editor (VS Code-based)</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Developers, AI-native workflow</td>
+          <td class="tool-url">cursor.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Replit</td>
+          <td>AI-powered coding environment in browser</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Beginners, no-setup coding</td>
+          <td class="tool-url">replit.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">v0</td>
+          <td>Generate UI components from text prompts</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Frontend developers, React/Next</td>
+          <td class="tool-url">v0.dev</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Bolt</td>
+          <td>Full-stack app generation from a prompt</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Rapid prototyping, MVPs</td>
+          <td class="tool-url">bolt.new</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════
+       PAGE 6 — PRODUCTIVITY & BUSINESS
+  ════════════════════════════════════ -->
+  <div class="page-break"></div>
+
+  <div class="no-break">
+    <div class="section-header">
+      <span class="section-icon">📊</span>
+      <span class="section-title">Productivity &amp; Business</span>
+      <span class="section-count">8 tools</span>
+    </div>
+
+    <div class="legend">
+      <span class="legend-label">Free Tier Key:</span>
+      <span class="free-yes">Yes</span>
+      <span class="free-limited">Limited</span>
+      <span class="free-no">No</span>
+    </div>
+
+    <table class="tool-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>What it does</th>
+          <th>Free?</th>
+          <th>Best for</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tool-name">Notion AI</td>
+          <td>AI writing and summarising inside Notion</td>
+          <td><span class="free-no">No</span></td>
+          <td>Teams using Notion workspace</td>
+          <td class="tool-url">notion.so</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Gamma</td>
+          <td>AI presentation maker from an outline</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Anyone who needs to present</td>
+          <td class="tool-url">gamma.app</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Beautiful.ai</td>
+          <td>Smart slide design that auto-arranges</td>
+          <td><span class="free-no">No</span></td>
+          <td>Business presentations</td>
+          <td class="tool-url">beautiful.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Otter.ai</td>
+          <td>Real-time meeting transcription</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Remote workers, note-takers</td>
+          <td class="tool-url">otter.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Fireflies.ai</td>
+          <td>Meeting notes, summaries, action items</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Sales teams, client meetings</td>
+          <td class="tool-url">fireflies.ai</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Zapier AI</td>
+          <td>Natural-language workflow automation</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Ops teams, automating tasks</td>
+          <td class="tool-url">zapier.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Make</td>
+          <td>Visual automation builder (Integromat)</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Technical users, complex flows</td>
+          <td class="tool-url">make.com</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Tome</td>
+          <td>AI storytelling and narrative slides</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Storytellers, pitch decks</td>
+          <td class="tool-url">tome.app</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════
+       PAGE 7 — RESEARCH & LEARNING
+  ════════════════════════════════════ -->
+  <div class="page-break"></div>
+
+  <div class="no-break">
+    <div class="section-header">
+      <span class="section-icon">🔬</span>
+      <span class="section-title">Research &amp; Learning</span>
+      <span class="section-count">5 tools</span>
+    </div>
+
+    <div class="legend">
+      <span class="legend-label">Free Tier Key:</span>
+      <span class="free-yes">Yes</span>
+      <span class="free-limited">Limited</span>
+      <span class="free-no">No</span>
+    </div>
+
+    <table class="tool-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>What it does</th>
+          <th>Free?</th>
+          <th>Best for</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tool-name">Consensus</td>
+          <td>AI-powered academic paper search</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Researchers, evidence-based work</td>
+          <td class="tool-url">consensus.app</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Elicit</td>
+          <td>Research paper analysis and synthesis</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Academics, literature review</td>
+          <td class="tool-url">elicit.org</td>
+        </tr>
+        <tr>
+          <td class="tool-name">NotebookLM</td>
+          <td>Google's AI research notebook</td>
+          <td><span class="free-yes">Yes</span></td>
+          <td>Students, document analysis</td>
+          <td class="tool-url">notebooklm.google</td>
+        </tr>
+        <tr>
+          <td class="tool-name">SciSpace</td>
+          <td>Paper reading and explanation assistant</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Researchers, complex papers</td>
+          <td class="tool-url">typeset.io</td>
+        </tr>
+        <tr>
+          <td class="tool-name">Scholarcy</td>
+          <td>Auto-summarise academic papers</td>
+          <td><span class="free-limited">Limited</span></td>
+          <td>Students, quick paper review</td>
+          <td class="tool-url">scholarcy.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════
+       PAGE 8 — HOW TO CHOOSE
+  ════════════════════════════════════ -->
+  <div class="page-break"></div>
+
+  <div class="decision-page no-break">
+
+    <div class="decision-header">
+      <h2>How to Choose the Right Tool</h2>
+      <p>Not sure where to start? Use this simple guide to find your best first AI tool.</p>
+    </div>
+
+    <div class="decision-body">
+
+      <div class="decision-row">
+        <div class="decision-arrow">→</div>
+        <div class="decision-if">
+          <strong>"I want to write better"</strong>
+          Emails, reports, essays, blog posts, anything text-based
+        </div>
+        <div class="decision-then">Claude or ChatGPT</div>
+      </div>
+
+      <div class="decision-row">
+        <div class="decision-arrow">→</div>
+        <div class="decision-if">
+          <strong>"I want to create visuals"</strong>
+          Social posts, banners, logos, product images
+        </div>
+        <div class="decision-then">Start with Canva AI</div>
+      </div>
+
+      <div class="decision-row">
+        <div class="decision-arrow">→</div>
+        <div class="decision-if">
+          <strong>"I want to make videos"</strong>
+          Marketing, training, or explainer videos
+        </div>
+        <div class="decision-then">Start with HeyGen</div>
+      </div>
+
+      <div class="decision-row">
+        <div class="decision-arrow">→</div>
+        <div class="decision-if">
+          <strong>"I want to code"</strong>
+          Build apps, automate scripts, write functions
+        </div>
+        <div class="decision-then">Cursor or Copilot</div>
+      </div>
+
+      <div class="decision-row">
+        <div class="decision-arrow">→</div>
+        <div class="decision-if">
+          <strong>"I want to automate work"</strong>
+          Connect apps, trigger actions, save hours on repetitive tasks
+        </div>
+        <div class="decision-then">Start with Zapier</div>
+      </div>
+
+      <div class="decision-row">
+        <div class="decision-arrow">→</div>
+        <div class="decision-if">
+          <strong>"I want to do research"</strong>
+          Academic papers, fact-checking, deep dives
+        </div>
+        <div class="decision-then">Perplexity or NotebookLM</div>
+      </div>
+
+      <div class="decision-row">
+        <div class="decision-arrow">→</div>
+        <div class="decision-if">
+          <strong>"I want to build a presentation"</strong>
+          Slides for clients, investors, or internal teams
+        </div>
+        <div class="decision-then">Gamma or Beautiful.ai</div>
+      </div>
+
+    </div>
+
+    <div class="cta-box">
+      <h3>Want hands-on training with these tools?</h3>
+      <p>Join TARAhut AI Labs — India's practical AI training hub for professionals and teams.</p>
+      <div class="cta-links">
+        <span class="cta-link">tarahutailabs.com</span>
+        <span class="cta-link">WhatsApp +91 92008-82008</span>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      AI Tools Cheatsheet 2026 &nbsp;·&nbsp; TARAhut AI Labs &nbsp;·&nbsp; tarahutailabs.com &nbsp;·&nbsp; All tools listed as of April 2026. Pricing may change — verify on each tool's website.
+    </div>
+
+  </div>
+
+</body>
+</html>

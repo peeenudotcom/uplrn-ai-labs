@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Career Roadmap 2025–2026 for India | TARAhut AI Labs</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 11pt;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Print setup ── */
+    @page {
+      size: A4;
+      margin: 20mm 18mm 22mm 18mm;
+    }
+
+    @media print {
+      body { max-width: 100%; padding: 0; font-size: 10.5pt; }
+      .no-print { display: none !important; }
+    }
+
+    /* ── Colours ── */
+    :root {
+      --green: #059669;
+      --green-dark: #047857;
+      --green-light: #d1fae5;
+      --green-pale: #f0fdf4;
+      --accent: #065f46;
+      --muted: #6b7280;
+      --border: #d1d5db;
+      --bg-light: #f9fafb;
+    }
+
+    /* ── Typography ── */
+    h1 { font-size: 28pt; line-height: 1.2; font-weight: 700; color: var(--accent); }
+    h2 { font-size: 17pt; font-weight: 700; color: var(--green-dark); margin-bottom: 6pt; }
+    h3 { font-size: 13pt; font-weight: 700; color: #1a1a1a; margin-bottom: 4pt; margin-top: 14pt; }
+    h4 { font-size: 11pt; font-weight: 700; color: var(--accent); margin-bottom: 3pt; margin-top: 10pt; }
+    p  { margin-bottom: 9pt; }
+    ul, ol { margin-left: 20pt; margin-bottom: 9pt; }
+    li { margin-bottom: 3pt; }
+    strong { font-weight: 700; }
+
+    /* ── Page break helpers ── */
+    .page-break { page-break-after: always; break-after: page; }
+    .page-break-before { page-break-before: always; break-before: page; }
+    .avoid-break { page-break-inside: avoid; break-inside: avoid; }
+
+    /* ── Section wrapper ── */
+    section { margin-bottom: 0; }
+
+    /* ── Cover page ── */
+    .cover {
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40pt 0 30pt;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 22pt;
+    }
+
+    .cover h1 {
+      font-size: 32pt;
+      margin-bottom: 12pt;
+      color: #0f172a;
+    }
+
+    .cover h1 span { color: var(--green); }
+
+    .cover-subtitle {
+      font-size: 14pt;
+      color: #374151;
+      font-style: italic;
+      margin-bottom: 30pt;
+      line-height: 1.5;
+      max-width: 540px;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 4px;
+      background: var(--green);
+      border-radius: 2px;
+      margin-bottom: 30pt;
+    }
+
+    .cover-meta {
+      font-family: 'Arial', sans-serif;
+      font-size: 10pt;
+      color: var(--muted);
+      margin-bottom: 6pt;
+    }
+
+    .cover-brand {
+      font-family: 'Arial', sans-serif;
+      font-size: 20pt;
+      font-weight: 900;
+      color: var(--green);
+      letter-spacing: -0.5px;
+      margin-bottom: 4pt;
+    }
+
+    .cover-brand span { color: #0f172a; }
+
+    .cover-tagline {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 28pt;
+    }
+
+    .cover-highlight-box {
+      background: var(--green-pale);
+      border-left: 4px solid var(--green);
+      padding: 14pt 18pt;
+      border-radius: 0 8px 8px 0;
+      margin-top: 16pt;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .cover-highlight-box p {
+      font-family: 'Arial', sans-serif;
+      font-size: 10pt;
+      color: #374151;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Chapter header ── */
+    .chapter-header {
+      border-top: 3px solid var(--green);
+      padding-top: 16pt;
+      margin-bottom: 18pt;
+    }
+
+    .chapter-number {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 4pt;
+    }
+
+    /* ── Stat cards ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10pt;
+      margin: 16pt 0;
+    }
+
+    .stat-card {
+      background: var(--green-pale);
+      border: 1px solid var(--green-light);
+      border-radius: 8px;
+      padding: 12pt 10pt;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Arial', sans-serif;
+      font-size: 18pt;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      color: var(--muted);
+      margin-top: 3pt;
+      line-height: 1.4;
+    }
+
+    /* ── Myth vs Reality ── */
+    .myth-reality {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12pt;
+      margin: 16pt 0;
+    }
+
+    .myth-box {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 12pt;
+    }
+
+    .reality-box {
+      background: var(--green-pale);
+      border: 1px solid var(--green-light);
+      border-radius: 8px;
+      padding: 12pt;
+    }
+
+    .myth-box .label {
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #dc2626;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 5pt;
+    }
+
+    .reality-box .label {
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 5pt;
+    }
+
+    .myth-box p, .reality-box p {
+      font-size: 10pt;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Career path cards ── */
+    .career-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14pt 16pt;
+      margin-bottom: 14pt;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .career-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8pt;
+    }
+
+    .career-card-title {
+      font-family: 'Arial', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .salary-badge {
+      background: var(--green);
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .career-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8pt;
+      margin-top: 8pt;
+    }
+
+    .career-mini-section label {
+      font-family: 'Arial', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2pt;
+    }
+
+    .career-mini-section p {
+      font-size: 9.5pt;
+      margin: 0;
+      line-height: 1.4;
+      color: #374151;
+    }
+
+    /* ── Skill tier ── */
+    .tier-block {
+      background: var(--bg-light);
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 12pt 16pt;
+      margin-bottom: 12pt;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .tier-block.tier2 { border-left-color: #0891b2; }
+    .tier-block.tier3 { border-left-color: #7c3aed; }
+
+    .tier-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 3pt;
+    }
+
+    .tier1 .tier-label { color: var(--green); }
+    .tier2 .tier-label { color: #0891b2; }
+    .tier3 .tier-label { color: #7c3aed; }
+
+    .tier-block h3 {
+      margin-top: 0;
+      font-size: 11pt;
+      color: #0f172a;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5pt;
+      margin-top: 6pt;
+    }
+
+    .tag {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: 'Arial', sans-serif;
+      font-size: 8.5pt;
+      padding: 2px 8px;
+      color: #374151;
+    }
+
+    /* ── Resource table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12pt 0;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    thead tr {
+      background: var(--green);
+      color: #fff;
+    }
+
+    thead th {
+      font-family: 'Arial', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      padding: 7pt 10pt;
+      text-align: left;
+      letter-spacing: 0.5px;
+    }
+
+    tbody tr:nth-child(even) { background: var(--bg-light); }
+
+    tbody td {
+      padding: 6pt 10pt;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    /* ── Tool grid ── */
+    .tool-category {
+      margin-bottom: 14pt;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .tool-category-title {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      border-bottom: 2px solid var(--green-light);
+      padding-bottom: 4pt;
+      margin-bottom: 8pt;
+    }
+
+    .tool-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6pt;
+    }
+
+    .tool-item {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7pt 10pt;
+    }
+
+    .tool-name {
+      font-family: 'Arial', sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .tool-badge {
+      display: inline-block;
+      font-family: 'Arial', sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    .badge-free { background: var(--green-light); color: var(--green-dark); }
+    .badge-paid { background: #fef3c7; color: #92400e; }
+    .badge-freemium { background: #e0e7ff; color: #3730a3; }
+
+    /* ── 90-day plan ── */
+    .month-block {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 14pt;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .month-header {
+      background: var(--green);
+      color: #fff;
+      padding: 10pt 16pt;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .month-header h3 {
+      color: #fff;
+      font-size: 12pt;
+      margin: 0 0 2pt 0;
+    }
+
+    .month-header p {
+      font-size: 9pt;
+      opacity: 0.88;
+      margin: 0;
+    }
+
+    .month-body {
+      padding: 12pt 16pt;
+    }
+
+    .week-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10pt;
+      margin-bottom: 8pt;
+      font-size: 10pt;
+    }
+
+    .week-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: var(--green);
+      white-space: nowrap;
+      padding-top: 1pt;
+      min-width: 48pt;
+    }
+
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .checklist li {
+      padding-left: 18pt;
+      position: relative;
+      font-size: 9.5pt;
+      margin-bottom: 4pt;
+    }
+
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: 10pt;
+    }
+
+    /* ── Job boards ── */
+    .board-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10pt;
+      margin: 12pt 0;
+    }
+
+    .board-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10pt 12pt;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .board-box h4 {
+      font-size: 10pt;
+      color: var(--green-dark);
+      margin-top: 0;
+      margin-bottom: 6pt;
+      border-bottom: 1px solid var(--green-light);
+      padding-bottom: 4pt;
+    }
+
+    .board-box ul {
+      margin-left: 14pt;
+    }
+
+    .board-box li {
+      font-size: 9.5pt;
+    }
+
+    /* ── Mistakes ── */
+    .mistake-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12pt;
+      padding: 10pt 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mistake-item:last-child { border-bottom: none; }
+
+    .mistake-num {
+      font-family: 'Arial', sans-serif;
+      font-size: 16pt;
+      font-weight: 900;
+      color: var(--green-light);
+      line-height: 1;
+      min-width: 24pt;
+    }
+
+    .mistake-content strong {
+      display: block;
+      font-size: 10.5pt;
+      color: #dc2626;
+      margin-bottom: 2pt;
+    }
+
+    .mistake-content p {
+      font-size: 9.5pt;
+      color: #374151;
+      margin: 0;
+    }
+
+    /* ── CTA ── */
+    .cta-page {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40pt 0;
+    }
+
+    .cta-box {
+      background: var(--green-pale);
+      border: 2px solid var(--green);
+      border-radius: 16px;
+      padding: 30pt 28pt;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .cta-box h2 {
+      font-size: 18pt;
+      color: var(--accent);
+      margin-bottom: 10pt;
+      line-height: 1.3;
+    }
+
+    .cta-box p {
+      font-size: 11pt;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 10pt;
+    }
+
+    .cta-highlight {
+      background: var(--green);
+      color: #fff;
+      border-radius: 8px;
+      padding: 12pt 16pt;
+      margin: 14pt 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 14pt;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+    }
+
+    .cta-contact {
+      font-family: 'Arial', sans-serif;
+      font-size: 11pt;
+      color: #374151;
+      margin-top: 10pt;
+    }
+
+    .cta-contact a {
+      color: var(--green-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 8pt;
+      margin-top: 24pt;
+    }
+
+    @media print {
+      .page-footer {
+        position: running(footer);
+      }
+
+      @page {
+        @bottom-center {
+          content: "TARAhut AI Labs  |  tarahutailabs.com  |  +91 92008-82008";
+          font-family: Arial, sans-serif;
+          font-size: 8pt;
+          color: #9ca3af;
+        }
+        @bottom-right {
+          content: counter(page);
+          font-family: Arial, sans-serif;
+          font-size: 8pt;
+          color: #9ca3af;
+        }
+      }
+    }
+
+    /* ── Info callout ── */
+    .callout {
+      background: var(--green-pale);
+      border-left: 4px solid var(--green);
+      border-radius: 0 6px 6px 0;
+      padding: 10pt 14pt;
+      margin: 12pt 0;
+      font-size: 10pt;
+    }
+
+    .callout strong {
+      color: var(--green-dark);
+    }
+
+    /* ── Number list styles ── */
+    .numbered-highlight {
+      counter-reset: item;
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .numbered-highlight li {
+      counter-increment: item;
+      position: relative;
+      padding-left: 30pt;
+      margin-bottom: 7pt;
+      font-size: 10pt;
+    }
+
+    .numbered-highlight li::before {
+      content: counter(item);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--green);
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      width: 18pt;
+      height: 18pt;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 18pt;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════════ -->
+<section class="cover page-break">
+  <div class="cover-badge">Free Resource by TARAhut AI Labs</div>
+
+  <div class="cover-brand">TARA<span>hut</span> AI Labs</div>
+  <div class="cover-tagline">India's First Offline AI Training Centre · Kotkapura, Punjab</div>
+
+  <h1>AI Career<br><span>Roadmap</span><br>2025–2026</h1>
+
+  <p class="cover-subtitle">Your step-by-step guide to building a successful AI career in India — from zero to earning.</p>
+
+  <div class="cover-divider"></div>
+
+  <p class="cover-meta">Edition: <strong>April 2026</strong> &nbsp;·&nbsp; Region: <strong>India</strong> &nbsp;·&nbsp; Level: <strong>Beginner to Advanced</strong></p>
+
+  <div class="cover-highlight-box">
+    <p>This guide covers <strong>6 AI career paths</strong>, a <strong>90-day action plan</strong>, the <strong>tools you must master</strong>, and exactly where to find AI jobs and clients in India. Whether you are a student, professional, or aspiring freelancer — your AI career starts here.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 1: THE AI OPPORTUNITY IN INDIA
+═══════════════════════════════════════════ -->
+<section>
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 1</div>
+    <h2>The AI Opportunity in India</h2>
+  </div>
+
+  <p>We are living through the most significant technological shift since the internet. Artificial intelligence is no longer a concept confined to research labs or Silicon Valley — it is reshaping every industry in India right now. The question is not whether AI will affect your career; it is whether you will be ahead of the change or behind it.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-number">$17B+</div>
+      <div class="stat-label">India AI market size by 2027</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1.25M</div>
+      <div class="stat-label">New AI-related jobs expected by 2026</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">73%</div>
+      <div class="stat-label">Indian companies planning AI adoption in 2025</div>
+    </div>
+  </div>
+
+  <h3>India's AI Market: Why It Matters to You</h3>
+  <p>India's AI sector is growing at a compound annual growth rate of over 28%. By 2027, the market is projected to exceed $17 billion. This growth is driven by increased digital adoption, an expanding startup ecosystem, and aggressive government investment in AI infrastructure.</p>
+  <p>Major Indian cities like Bengaluru, Hyderabad, Pune, and Mumbai are already global hubs for AI talent. But the opportunity is not limited to metro cities. With remote work and freelancing, a skilled AI professional in Kotkapura, Amritsar, or Jaipur can serve clients across India and internationally.</p>
+
+  <h3>Government Initiatives Powering the AI Push</h3>
+  <ul>
+    <li><strong>IndiaAI Mission (₹10,371 crore):</strong> Launched in 2024 to build AI compute infrastructure, datasets, and an AI application ecosystem across the country.</li>
+    <li><strong>Digital India Programme:</strong> Expanding internet access to 800 million users, creating a massive user base for AI-powered services.</li>
+    <li><strong>National AI Portal (NASSCOM):</strong> Curating AI talent development and connecting skilled professionals to industry.</li>
+    <li><strong>Startup India + AI:</strong> Dedicated funding and mentorship for AI startups, creating demand for AI builders and specialists.</li>
+    <li><strong>State AI Policies:</strong> States like Telangana, Karnataka, and Tamil Nadu have announced dedicated AI centres and skilling programmes.</li>
+  </ul>
+
+  <h3>Why NOW Is the Right Time to Build an AI Career</h3>
+  <ol class="numbered-highlight">
+    <li><strong>Supply-demand gap:</strong> Demand for AI skills is growing 3x faster than the supply of trained professionals. Early movers earn a premium.</li>
+    <li><strong>Low barrier to entry:</strong> Unlike traditional tech careers, AI productivity tools require no computer science degree to use professionally.</li>
+    <li><strong>Global clients, Indian cost base:</strong> Indian freelancers can charge international rates while living at Indian costs — an enormous advantage.</li>
+    <li><strong>First-mover advantage:</strong> Businesses are scrambling to hire people who understand AI. Getting skilled now means you grow with the companies that adopt it early.</li>
+    <li><strong>Compounding skills:</strong> AI tools evolve fast. Every week you practice, your skills compound. Starting later means a larger gap to close.</li>
+  </ol>
+
+  <h3>Myth vs. Reality: Setting the Record Straight</h3>
+  <p>Before diving into career paths, let us address the fears that hold most people back.</p>
+
+  <div class="myth-reality">
+    <div class="myth-box">
+      <div class="label">Myth</div>
+      <p>"AI will take my job and there will be nothing left for me to do."</p>
+    </div>
+    <div class="reality-box">
+      <div class="label">Reality</div>
+      <p>AI will change the <em>how</em> of most jobs, not eliminate them. People who use AI will replace people who don't.</p>
+    </div>
+  </div>
+
+  <div class="myth-reality">
+    <div class="myth-box">
+      <div class="label">Myth</div>
+      <p>"You need a BTech in Computer Science or a data science degree to work in AI."</p>
+    </div>
+    <div class="reality-box">
+      <div class="label">Reality</div>
+      <p>The fastest-growing AI roles — content creator, prompt engineer, automation specialist — require curiosity and practice, not degrees.</p>
+    </div>
+  </div>
+
+  <div class="myth-reality">
+    <div class="myth-box">
+      <div class="label">Myth</div>
+      <p>"AI is only for big companies in big cities. It doesn't apply to small-town India."</p>
+    </div>
+    <div class="reality-box">
+      <div class="label">Reality</div>
+      <p>Fiverr, Upwork, and LinkedIn don't care where you live. Skills travel. Your clients can be in Dubai, London, or Singapore.</p>
+    </div>
+  </div>
+
+  <div class="myth-reality">
+    <div class="myth-box">
+      <div class="label">Myth</div>
+      <p>"I need to wait until I complete a long course before starting to work on AI."</p>
+    </div>
+    <div class="reality-box">
+      <div class="label">Reality</div>
+      <p>You can land your first paying AI gig within 30–60 days of focused learning. Done beats perfect.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Key Takeaway:</strong> India is at an inflection point. The government is investing, companies are adopting, and millions of jobs are being reshaped by AI. The people who invest in AI skills today will have a decisive career advantage for the next decade.
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 2: AI CAREER PATHS
+═══════════════════════════════════════════ -->
+<section>
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 2</div>
+    <h2>AI Career Paths: Find Your Direction</h2>
+  </div>
+
+  <p>There is no single "AI career." Depending on your background, interests, and goals, there are multiple viable paths — from creative to technical, from employee to entrepreneur. Below are six proven career directions for Indian professionals in 2025–2026.</p>
+
+  <!-- Career Card 1 -->
+  <div class="career-card avoid-break">
+    <div class="career-card-header">
+      <div>
+        <div class="career-card-title">1. AI Content Creator</div>
+      </div>
+      <div class="salary-badge">₹3–8 LPA</div>
+    </div>
+    <p style="font-size:10pt; color:#374151; margin-bottom:8pt;">Creates blog posts, social media content, video scripts, email campaigns, and marketing copy using AI tools. Combines human creativity and brand voice with AI speed and scale.</p>
+    <div class="career-card-grid">
+      <div class="career-mini-section">
+        <label>What You Do</label>
+        <p>Use ChatGPT, Claude, Canva AI, and Jasper to produce high-volume, high-quality content for brands. Edit and humanise AI output. Manage content calendars.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Skills Needed</label>
+        <p>Prompt engineering, copywriting basics, SEO fundamentals, content strategy, tool fluency (ChatGPT, Canva, Grammarly, Notion AI).</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Best For</label>
+        <p>Marketing graduates, writers, journalism students, social media managers looking to 10x their output and earning potential.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Career Card 2 -->
+  <div class="career-card avoid-break">
+    <div class="career-card-header">
+      <div>
+        <div class="career-card-title">2. AI Marketing Specialist</div>
+      </div>
+      <div class="salary-badge">₹5–12 LPA</div>
+    </div>
+    <p style="font-size:10pt; color:#374151; margin-bottom:8pt;">Plans and executes AI-powered digital marketing campaigns. Uses AI for audience targeting, ad copy generation, A/B testing, analytics interpretation, and personalisation at scale.</p>
+    <div class="career-card-grid">
+      <div class="career-mini-section">
+        <label>What You Do</label>
+        <p>Leverage AI tools for paid ads, email marketing, SEO, and social strategy. Analyse campaign data with AI. Create personalised customer journeys.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Skills Needed</label>
+        <p>Digital marketing fundamentals, Google Ads, Meta Ads, prompt engineering, AI analytics tools, marketing automation platforms.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Best For</label>
+        <p>Existing marketing professionals wanting to upskill, MBA marketing students, digital agency executives looking to offer AI-enhanced services.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Career Card 3 -->
+  <div class="career-card avoid-break">
+    <div class="career-card-header">
+      <div>
+        <div class="career-card-title">3. Prompt Engineer</div>
+      </div>
+      <div class="salary-badge">₹6–15 LPA</div>
+    </div>
+    <p style="font-size:10pt; color:#374151; margin-bottom:8pt;">Designs, tests, and optimises prompts for AI systems used in business contexts. Acts as the bridge between what a company needs and what an AI model can deliver. A highly transferable and in-demand role.</p>
+    <div class="career-card-grid">
+      <div class="career-mini-section">
+        <label>What You Do</label>
+        <p>Write structured prompts for chatbots, content pipelines, customer service bots, and internal tools. Test outputs, iterate, and document prompt libraries.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Skills Needed</label>
+        <p>Deep knowledge of LLM behaviour, systematic thinking, strong writing skills, familiarity with GPT-4, Claude, Gemini APIs, basic JSON/YAML.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Best For</label>
+        <p>Analytical thinkers, former QA engineers, technical writers, linguists, and anyone who loves dissecting how language and logic interact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<section>
+  <!-- Career Card 4 -->
+  <div class="career-card avoid-break">
+    <div class="career-card-header">
+      <div>
+        <div class="career-card-title">4. AI Automation Specialist</div>
+      </div>
+      <div class="salary-badge">₹8–18 LPA</div>
+    </div>
+    <p style="font-size:10pt; color:#374151; margin-bottom:8pt;">Builds automated workflows that combine AI with business tools. From auto-summarising emails to building end-to-end client onboarding pipelines — automation specialists save companies thousands of hours every year.</p>
+    <div class="career-card-grid">
+      <div class="career-mini-section">
+        <label>What You Do</label>
+        <p>Use Zapier, Make (Integromat), and n8n to connect AI tools with CRMs, communication apps, databases, and business software. Build no-code and low-code AI workflows.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Skills Needed</label>
+        <p>Workflow logic, API basics, Zapier/Make/n8n proficiency, AI tool integration, business process understanding, basic troubleshooting.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Best For</label>
+        <p>Operations managers, IT support staff, business analysts, and anyone who loves solving repetitive problems with systems. Very high demand right now.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Career Card 5 -->
+  <div class="career-card avoid-break">
+    <div class="career-card-header">
+      <div>
+        <div class="career-card-title">5. AI Product Builder</div>
+      </div>
+      <div class="salary-badge">₹10–25 LPA</div>
+    </div>
+    <p style="font-size:10pt; color:#374151; margin-bottom:8pt;">Designs and builds AI-powered applications, SaaS tools, and internal platforms. The most technical path on this list, but also the highest earning potential for those who invest in the skills.</p>
+    <div class="career-card-grid">
+      <div class="career-mini-section">
+        <label>What You Do</label>
+        <p>Build apps using AI APIs (OpenAI, Anthropic, Google), design product features, integrate AI into web/mobile products, ship MVPs using AI-assisted coding tools.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Skills Needed</label>
+        <p>Python or JavaScript, REST APIs, basic ML concepts, Cursor/GitHub Copilot, cloud deployment (Vercel, Supabase), product thinking, UI/UX basics.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Best For</label>
+        <p>Software developers, BTech graduates, engineering students, and technical founders who want to build AI-powered SaaS products or take on high-value consulting projects.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Career Card 6 -->
+  <div class="career-card avoid-break">
+    <div class="career-card-header">
+      <div>
+        <div class="career-card-title">6. AI Freelancer</div>
+      </div>
+      <div class="salary-badge">₹20K–2L/month</div>
+    </div>
+    <p style="font-size:10pt; color:#374151; margin-bottom:8pt;">Sells AI services independently on platforms like Fiverr, Upwork, and LinkedIn. The income ceiling is entirely based on skill level and niche. The fastest path to earning for many beginners — no employer required.</p>
+    <div class="career-card-grid">
+      <div class="career-mini-section">
+        <label>What You Do</label>
+        <p>Offer services: AI content writing, AI video creation, chatbot building, automation setup, prompt libraries, AI voiceovers, presentation design with AI.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Skills Needed</label>
+        <p>One or two AI tools mastered deeply, client communication, proposal writing, gig optimisation, niche selection, portfolio building.</p>
+      </div>
+      <div class="career-mini-section">
+        <label>Best For</label>
+        <p>Self-starters, stay-at-home parents returning to work, students who want to earn while studying, and anyone who wants freedom over a fixed salary.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Which path is right for you?</strong> Do not overthink this. Pick the path closest to your current background and start there. You can always layer on additional skills later. Most successful AI professionals combine 2–3 of these paths over time.
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 3: SKILLS YOU NEED
+═══════════════════════════════════════════ -->
+<section>
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 3</div>
+    <h2>Skills You Need to Build</h2>
+  </div>
+
+  <p>AI skills exist on a spectrum. Not everyone needs to learn to code, but everyone needs to understand how to work <em>with</em> AI effectively. Think of it as three tiers — each one unlocking higher earning potential and more specialised opportunities.</p>
+
+  <div class="tier-block tier1">
+    <div class="tier-label">Tier 1 — Foundation (Everyone Needs This)</div>
+    <h3>Essential AI Fluency</h3>
+    <p style="font-size:10pt; margin-bottom:6pt;">These skills are the baseline for every AI career path. Without them, you cannot progress. With them, you are already ahead of 80% of the market.</p>
+    <div class="tag-list">
+      <span class="tag">Prompt Engineering</span>
+      <span class="tag">AI Tool Proficiency</span>
+      <span class="tag">Critical Thinking</span>
+      <span class="tag">Output Editing & QA</span>
+      <span class="tag">AI Ethics Basics</span>
+      <span class="tag">ChatGPT / Claude</span>
+      <span class="tag">Effective Googling</span>
+      <span class="tag">Digital Communication</span>
+    </div>
+  </div>
+
+  <div class="tier-block tier2">
+    <div class="tier-label">Tier 2 — Specialist Layer (For Career Growth)</div>
+    <h3>Domain-Specific AI Skills</h3>
+    <p style="font-size:10pt; margin-bottom:6pt;">Layer these onto your Tier 1 foundation based on your chosen career path. These skills differentiate you from general AI users and command higher rates.</p>
+    <div class="tag-list">
+      <span class="tag">Data Analysis</span>
+      <span class="tag">Workflow Automation</span>
+      <span class="tag">Content Strategy</span>
+      <span class="tag">SEO with AI</span>
+      <span class="tag">AI Video Production</span>
+      <span class="tag">Chatbot Design</span>
+      <span class="tag">Marketing Analytics</span>
+      <span class="tag">No-Code Tools</span>
+      <span class="tag">AI Image Generation</span>
+      <span class="tag">Presentation Design</span>
+    </div>
+  </div>
+
+  <div class="tier-block tier3">
+    <div class="tier-label">Tier 3 — Builder Level (For Product Builders)</div>
+    <h3>Technical AI Development Skills</h3>
+    <p style="font-size:10pt; margin-bottom:6pt;">Required for the AI Product Builder path. Optional but valuable for automation specialists who want to build custom integrations beyond no-code tools.</p>
+    <div class="tag-list">
+      <span class="tag">Python Basics</span>
+      <span class="tag">REST APIs</span>
+      <span class="tag">AI App Development</span>
+      <span class="tag">OpenAI API</span>
+      <span class="tag">Anthropic API</span>
+      <span class="tag">LangChain / LlamaIndex</span>
+      <span class="tag">Supabase / Firebase</span>
+      <span class="tag">Vercel Deployment</span>
+      <span class="tag">Vector Databases</span>
+      <span class="tag">RAG Pipelines</span>
+    </div>
+  </div>
+
+  <h3>Skill-to-Resource Table</h3>
+  <p>Here is where to learn each skill for free, and a realistic time estimate for someone practising 1–2 hours per day.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Skill</th>
+        <th>Best Free Resource</th>
+        <th>Time to Learn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Prompt Engineering</strong></td>
+        <td>LearnPrompting.org, OpenAI Cookbook (GitHub)</td>
+        <td>1–2 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>ChatGPT Proficiency</strong></td>
+        <td>YouTube (AI Advantage, Matt Wolfe channels)</td>
+        <td>1 week</td>
+      </tr>
+      <tr>
+        <td><strong>Content Creation with AI</strong></td>
+        <td>HubSpot Academy (free certification)</td>
+        <td>2–3 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>AI Image Generation</strong></td>
+        <td>Canva free tier, DALL-E via ChatGPT</td>
+        <td>3–5 days</td>
+      </tr>
+      <tr>
+        <td><strong>Zapier Automation</strong></td>
+        <td>Zapier University (free, zapier.com/university)</td>
+        <td>2 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>Make (Integromat)</strong></td>
+        <td>Make Academy (free at make.com/en/academy)</td>
+        <td>2–3 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>Data Analysis Basics</strong></td>
+        <td>Google Data Analytics (Coursera, audit free)</td>
+        <td>4–6 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>Python for AI</strong></td>
+        <td>freeCodeCamp Python, CS50P (Harvard, free)</td>
+        <td>6–10 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>OpenAI API Basics</strong></td>
+        <td>OpenAI official docs + YouTube tutorials</td>
+        <td>2–3 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>Freelancing on Fiverr</strong></td>
+        <td>Fiverr Learn (some free), YouTube guides</td>
+        <td>1–2 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>LinkedIn Personal Brand</strong></td>
+        <td>LinkedIn Learning (free 1-month trial)</td>
+        <td>1 week</td>
+      </tr>
+      <tr>
+        <td><strong>AI SEO Writing</strong></td>
+        <td>Ahrefs Academy (free), Semrush blog</td>
+        <td>2–3 weeks</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Pro Tip:</strong> Do not try to learn everything at once. Pick Tier 1 first, then focus on 2–3 skills from Tier 2 that match your career path. Learning one skill deeply is worth more than ten skills learned shallowly.
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 4: TOOLS TO MASTER
+═══════════════════════════════════════════ -->
+<section>
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 4</div>
+    <h2>Tools to Master in 2025–2026</h2>
+  </div>
+
+  <p>The AI tools landscape is vast and changes rapidly. Instead of chasing every new tool, focus on mastering the key platforms in your chosen category. Below is a curated list — the tools that are actually used by working AI professionals in India and globally.</p>
+
+  <div class="tool-category avoid-break">
+    <div class="tool-category-title">Text & Language AI</div>
+    <div class="tool-row">
+      <div class="tool-item">
+        <div class="tool-name">ChatGPT <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">The most widely adopted AI writing assistant. Free tier works well; GPT-4o available on paid plan. Essential for any AI career.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Claude <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Anthropic's model. Superior for long-form writing, nuanced analysis, and safe outputs. Increasingly preferred for business use.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Perplexity AI <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">AI-powered search engine with citations. Excellent for research, fact-checking, and up-to-date information retrieval.</div>
+      </div>
+    </div>
+    <div class="tool-row" style="margin-top:6pt;">
+      <div class="tool-item">
+        <div class="tool-name">Gemini <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Google's flagship AI. Deeply integrated with Google Workspace. Excellent for document drafting and Slides generation.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Jasper <span class="tool-badge badge-paid">Paid</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Enterprise-grade AI content platform. Popular with marketing teams for brand-consistent content at scale.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Copy.ai <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Focused on marketing copy. Templates for ads, emails, and social posts. Good for freelancers offering content services.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-category avoid-break">
+    <div class="tool-category-title">Image Generation & Design</div>
+    <div class="tool-row">
+      <div class="tool-item">
+        <div class="tool-name">Midjourney <span class="tool-badge badge-paid">Paid</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Industry-leading image quality. Accessed via Discord. The gold standard for AI art and commercial image creation. From $10/month.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Canva AI <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">AI-enhanced design platform. Magic Write, background remover, image generator built in. Best tool for non-designers.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">DALL-E 3 <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">OpenAI's image model. Integrated into ChatGPT Plus. Great for quick image generation with natural language prompts.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-category avoid-break">
+    <div class="tool-category-title">Video & Audio AI</div>
+    <div class="tool-row">
+      <div class="tool-item">
+        <div class="tool-name">HeyGen <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Create AI avatar videos without a camera. Used for explainers, course content, and marketing videos. Huge freelancing demand.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Synthesia <span class="tool-badge badge-paid">Paid</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Enterprise AI video platform. 140+ AI avatars, 120+ languages. Popular with L&D and corporate communication teams.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">ElevenLabs <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Best-in-class AI voice generation. Clone voices, create audiobooks, podcasts, and voiceovers. Free tier: 10K chars/month.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-category avoid-break">
+    <div class="tool-category-title">Coding & Developer AI</div>
+    <div class="tool-row">
+      <div class="tool-item">
+        <div class="tool-name">GitHub Copilot <span class="tool-badge badge-paid">Paid</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">AI pair programmer integrated into VS Code. Writes, explains, and debugs code. Free for students via GitHub Student Pack.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Cursor <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">AI-first code editor. Chat with your codebase, generate entire features from descriptions. Rapidly replacing traditional IDEs.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Replit <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Cloud-based IDE with built-in AI. Build and deploy apps from your browser. Excellent for beginners learning to build with AI.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-category avoid-break">
+    <div class="tool-category-title">Business Productivity AI</div>
+    <div class="tool-row">
+      <div class="tool-item">
+        <div class="tool-name">Notion AI <span class="tool-badge badge-paid">Paid</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">AI writing and summarisation built into the popular Notion workspace. Drafts docs, summarises meetings, generates action items.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Gamma <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">AI-powered presentation builder. Type a prompt, get a beautiful slide deck. Replaces hours of PowerPoint work in minutes.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Beautiful.ai <span class="tool-badge badge-paid">Paid</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Smart presentation software that auto-designs slides as you add content. Popular with consultants and agencies for client decks.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-category avoid-break">
+    <div class="tool-category-title">Automation & Integration AI</div>
+    <div class="tool-row">
+      <div class="tool-item">
+        <div class="tool-name">Zapier <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">The most popular no-code automation platform. Connects 6,000+ apps. Now includes AI-powered "Zaps." Free tier: 100 tasks/month.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Make (Integromat) <span class="tool-badge badge-freemium">Freemium</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Visual workflow automation with more power than Zapier. Complex scenarios, data transformation, AI module support. Free tier available.</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">n8n <span class="tool-badge badge-free">Free</span></div>
+        <div style="font-size:8.5pt; color:var(--muted); margin-top:3pt;">Open-source self-hosted automation. Unlimited workflows when self-hosted. Highly flexible. Popular with technical freelancers for custom builds.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Start Here:</strong> You do not need to master all these tools. Pick one from each category relevant to your path. ChatGPT + Canva + one automation tool will take most beginners further than they expect in their first 60 days.
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 5: 90-DAY ACTION PLAN
+═══════════════════════════════════════════ -->
+<section>
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 5</div>
+    <h2>Your 90-Day Action Plan</h2>
+  </div>
+
+  <p>The difference between those who build successful AI careers and those who do not is not talent — it is execution. This 90-day plan gives you a structured path from learning the fundamentals to landing your first paying opportunity.</p>
+
+  <div class="month-block avoid-break">
+    <div class="month-header">
+      <h3>Month 1 — Learn Fundamentals</h3>
+      <p>Days 1–30: Build your foundation, get hands-on, complete your first project</p>
+    </div>
+    <div class="month-body">
+      <p style="font-size:10pt; margin-bottom:10pt;">Focus entirely on learning. Do not worry about money or clients yet. Your only job in Month 1 is to get comfortable using AI tools and finish one real project — even if it's small.</p>
+
+      <div class="week-item">
+        <div class="week-label">Week 1</div>
+        <div>
+          <ul class="checklist">
+            <li>Sign up for ChatGPT (free), Claude (free), and Canva (free)</li>
+            <li>Complete the LearnPrompting.org beginner module (free, 4–5 hours)</li>
+            <li>Practice 10 different prompting techniques — save your best prompts</li>
+            <li>Watch 3 YouTube videos on your chosen career path</li>
+            <li>Decide: which of the 6 career paths best fits your background?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 2</div>
+        <div>
+          <ul class="checklist">
+            <li>Deep-dive into 2–3 tools specific to your chosen path</li>
+            <li>Complete one free course related to your path (HubSpot, Zapier University, etc.)</li>
+            <li>Start a personal "AI Experiments" folder — document everything you try</li>
+            <li>Create your first AI-generated piece of work (content, automation, image set)</li>
+            <li>Join 1 AI community online (Discord server, LinkedIn group, Reddit r/AItools)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 3</div>
+        <div>
+          <ul class="checklist">
+            <li>Build a "real" mini-project: pick a mock client problem and solve it with AI</li>
+            <li>Learn prompt chaining — write multi-step prompt sequences</li>
+            <li>Study 3 profiles of working AI professionals on LinkedIn in your field</li>
+            <li>Identify your top 3 services you could offer (even as a beginner)</li>
+            <li>Read 1 AI industry newsletter (Ben's Bites, The Rundown AI — both free)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 4</div>
+        <div>
+          <ul class="checklist">
+            <li>Complete and document your first project end-to-end</li>
+            <li>Write a short case study: problem → approach → AI tools used → result</li>
+            <li>Set up your LinkedIn profile with an AI-focused headline and summary</li>
+            <li>Review your Month 1 learning — what gaps still exist?</li>
+            <li>Set your Month 2 goal: How many portfolio pieces will you have?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-block avoid-break">
+    <div class="month-header">
+      <h3>Month 2 — Build Your Portfolio</h3>
+      <p>Days 31–60: Create 3–5 real portfolio pieces and build your online presence</p>
+    </div>
+    <div class="month-body">
+      <p style="font-size:10pt; margin-bottom:10pt;">A portfolio is your most powerful sales tool. In AI, this does not mean a fancy website — it means tangible proof that you can solve real problems using AI. Show, do not tell.</p>
+
+      <div class="week-item">
+        <div class="week-label">Week 5</div>
+        <div>
+          <ul class="checklist">
+            <li>Build Portfolio Project #1: A complete AI-generated content pack for a local business</li>
+            <li>Document the process — screenshots, before/after comparisons, time saved</li>
+            <li>Publish your first LinkedIn post about your AI learning journey</li>
+            <li>Connect with 20 AI professionals on LinkedIn with personalised notes</li>
+            <li>Research Fiverr/Upwork gig categories that match your path</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 6</div>
+        <div>
+          <ul class="checklist">
+            <li>Build Portfolio Project #2 (different industry or use case from Project #1)</li>
+            <li>Create a free Notion portfolio page or GitHub repository to host your work</li>
+            <li>Publish a second LinkedIn post — this time sharing a specific AI tip or tutorial</li>
+            <li>Identify 10 local businesses that could benefit from your AI services</li>
+            <li>Get feedback on your work from the AI community (Discord, LinkedIn)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 7</div>
+        <div>
+          <ul class="checklist">
+            <li>Build Portfolio Project #3 — this one should be your best, most polished work</li>
+            <li>Create your Fiverr or Upwork profile (even if you don't publish a gig yet)</li>
+            <li>Write 3 testimonial request templates for when you do your first free/discounted project</li>
+            <li>Attend 1 online AI webinar or virtual meetup</li>
+            <li>Start a simple personal brand on one platform (LinkedIn or Twitter/X)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 8</div>
+        <div>
+          <ul class="checklist">
+            <li>Complete Projects #4 and #5 (can be shorter pieces — variety is good)</li>
+            <li>Create a "Services I Offer" document with clear descriptions and pricing</li>
+            <li>Do a free or heavily discounted project for a friend, family member, or local business</li>
+            <li>Ask for a written testimonial — even a simple WhatsApp message screenshot works</li>
+            <li>Review Month 2: Do you have 3+ portfolio pieces and at least 1 testimonial?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<section>
+  <div class="month-block avoid-break">
+    <div class="month-header">
+      <h3>Month 3 — Start Earning</h3>
+      <p>Days 61–90: Apply for jobs, publish freelance gigs, and begin networking seriously</p>
+    </div>
+    <div class="month-body">
+      <p style="font-size:10pt; margin-bottom:10pt;">Month 3 is where the rubber meets the road. Your goal is not to be earning ₹1 lakh per month by Day 90 — it is to have your first paying client or job interview lined up. That first win is the catalyst for everything that follows.</p>
+
+      <div class="week-item">
+        <div class="week-label">Week 9</div>
+        <div>
+          <ul class="checklist">
+            <li>Publish your first live Fiverr gig or Upwork profile (with portfolio samples)</li>
+            <li>Apply to 5 AI-adjacent jobs on LinkedIn and Naukri using your new portfolio</li>
+            <li>Cold-message 5 people on LinkedIn who work in companies you want to join</li>
+            <li>Share your portfolio publicly — post on LinkedIn, tag relevant companies</li>
+            <li>Price your services: research competitor gigs and set competitive starting rates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 10</div>
+        <div>
+          <ul class="checklist">
+            <li>Follow up on all job applications with a personalised LinkedIn message</li>
+            <li>Offer a free 30-minute "AI audit" call to local businesses — this opens doors</li>
+            <li>Publish 2 more LinkedIn posts focused on your niche expertise</li>
+            <li>Join Internshala and search for AI internships to build credibility fast</li>
+            <li>Set your target: ₹20,000–₹30,000 in revenue by the end of Month 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 11</div>
+        <div>
+          <ul class="checklist">
+            <li>Land your first paid project (even small — ₹2,000–₹5,000 is a real win)</li>
+            <li>Deliver exceptional quality — over-deliver on your first client project</li>
+            <li>Ask for a detailed review/testimonial immediately after delivery</li>
+            <li>Apply to 10 more jobs — keep the pipeline full regardless of freelance wins</li>
+            <li>Network at 1 local startup meetup, college tech fest, or AI community event</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-item">
+        <div class="week-label">Week 12</div>
+        <div>
+          <ul class="checklist">
+            <li>Conduct a full 90-day review: what worked, what didn't, what to double down on</li>
+            <li>Set your 6-month income target and the specific actions to reach it</li>
+            <li>Raise your Fiverr/Upwork prices by 20–30% after your first positive review</li>
+            <li>Identify 1 new skill to add in the next 30 days based on client feedback</li>
+            <li>Celebrate — you started 90 days ago with nothing. You now have a portfolio, a presence, and earnings. That is real.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Important:</strong> This plan works only if you are consistent. 1–2 focused hours per day beats 8-hour marathon sessions once a week. Consistency compounds. Progress beats perfection every time.
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 6: WHERE TO FIND AI JOBS IN INDIA
+═══════════════════════════════════════════ -->
+<section>
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 6</div>
+    <h2>Where to Find AI Jobs in India</h2>
+  </div>
+
+  <p>Knowing where to look is half the battle. India's AI job market is spread across traditional job boards, freelance platforms, startup networks, and emerging AI-specific communities. Here is a comprehensive map of where to focus your search.</p>
+
+  <div class="board-grid">
+    <div class="board-box">
+      <h4>Job Boards — Employment</h4>
+      <ul>
+        <li><strong>LinkedIn Jobs</strong> — Search "AI" + your role. Set up job alerts. Best for roles in tech companies and startups. Connect before applying.</li>
+        <li><strong>Naukri.com</strong> — India's largest job board. Filter by "Artificial Intelligence", "Machine Learning", "AI tools". Good for mid-sized companies.</li>
+        <li><strong>Internshala</strong> — Best for freshers and students. Many AI internships converting to full-time roles. High-quality postings from funded startups.</li>
+        <li><strong>AngelList India (Wellfound)</strong> — Startup-focused. Most AI-first companies post here. Often lists equity alongside salary.</li>
+        <li><strong>Instahyre</strong> — Tech-focused Indian job board. Good for AI developer and data science roles at product companies.</li>
+      </ul>
+    </div>
+    <div class="board-box">
+      <h4>Freelance Platforms</h4>
+      <ul>
+        <li><strong>Fiverr</strong> — Largest freelance marketplace. High demand for AI content, AI video, chatbot building, automation setup. Create gigs in competitive but proven niches.</li>
+        <li><strong>Upwork</strong> — Higher-value projects. Hourly and fixed-price contracts. Better for specialists with a track record. Competition is strong but quality clients pay well.</li>
+        <li><strong>Toptal</strong> — Top 3% of freelancers. Very selective screening process. Excellent rates for senior AI developers. Aim for this after 1–2 years of experience.</li>
+        <li><strong>Contra</strong> — Commission-free freelance platform. Growing rapidly. Good for AI-adjacent creative and marketing roles.</li>
+        <li><strong>PeoplePerHour</strong> — European-focused, but works well for Indian freelancers offering AI services to UK/EU businesses.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Direct Outreach: The Most Underused Strategy</h3>
+  <p>Most job seekers apply to posted roles and wait. The most effective AI professionals go directly to decision-makers. Here is a proven approach:</p>
+
+  <ol class="numbered-highlight">
+    <li><strong>Identify your target companies</strong> — make a list of 20–30 companies using AI in your niche (startups on AngelList, tech companies on LinkedIn).</li>
+    <li><strong>Find the hiring manager</strong> — not HR. Search LinkedIn for "Head of Marketing", "VP Product", "CTO" at those companies.</li>
+    <li><strong>Send a value-first message:</strong> "Hi [Name], I noticed [Company] uses [AI tool/approach]. I recently built [relevant project] that achieved [result]. I would love to share how this could apply at [Company]. Would a 15-minute call be useful?" — Keep it to 3–4 sentences maximum.</li>
+    <li><strong>Follow up once</strong> — after 5–7 days if no response. One follow-up is professional; two or more is harassment.</li>
+    <li><strong>Track your outreach</strong> — use a simple spreadsheet. Send 5–10 cold messages per week and iterate your message based on reply rates.</li>
+  </ol>
+
+  <h3>AI Communities & Networking in India</h3>
+  <p>Your network is your net worth — especially in AI where opportunities spread through referral. Here is where the AI community gathers in India:</p>
+
+  <div class="board-grid">
+    <div class="board-box">
+      <h4>Online Communities</h4>
+      <ul>
+        <li><strong>NASSCOM AI community</strong> — India's official AI industry body. Events, resources, job listings.</li>
+        <li><strong>AI India (LinkedIn Group)</strong> — 50,000+ members. Daily discussions on AI tools and careers.</li>
+        <li><strong>Hugging Face Discord</strong> — Global, but many Indian members. Best for ML/AI builders.</li>
+        <li><strong>Twitter/X: #AIIndia</strong> — Follow AI researchers, founders, and practitioners. Engage daily.</li>
+        <li><strong>Reddit: r/india + r/AItools</strong> — Peer discussions, opportunity sharing, tool reviews.</li>
+      </ul>
+    </div>
+    <div class="board-box">
+      <h4>In-Person Events</h4>
+      <ul>
+        <li><strong>Google Developer Groups</strong> — Monthly meetups in 50+ Indian cities. AI/ML sessions.</li>
+        <li><strong>Nasscom AI Leadership Summit</strong> — Annual flagship event. Premium networking.</li>
+        <li><strong>college tech fests</strong> — IIT, NIT, IIIT hackathons regularly feature AI challenges. Great for students.</li>
+        <li><strong>Startup events (Headstart Network)</strong> — Connects AI freelancers with startup founders who need AI services.</li>
+        <li><strong>Local AI meetups (Meetup.com)</strong> — Search "AI [your city]". Many free monthly gatherings now in Tier 2 cities.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>The LinkedIn Strategy That Works:</strong> Post 3 times per week about AI. Share what you are learning, tools you discovered, projects you built. Consistency over 90 days builds a following of hiring managers and clients who come to you — rather than you chasing them.
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 7: COMMON MISTAKES TO AVOID
+═══════════════════════════════════════════ -->
+<section>
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 7</div>
+    <h2>Common Mistakes to Avoid</h2>
+  </div>
+
+  <p>These are the five mistakes that consistently derail aspiring AI professionals. Read them carefully — awareness is the first step to avoiding them.</p>
+
+  <div class="mistake-item">
+    <div class="mistake-num">01</div>
+    <div class="mistake-content">
+      <strong>Learning Theory Without Building Anything</strong>
+      <p>Consuming AI content — watching YouTube videos, reading articles, taking courses — without creating anything real. Learning by doing is the only way to genuinely develop AI skills. Every hour you spend building is worth five hours of watching. Set a rule: for every 1 hour of learning, spend 1 hour applying it to a real task.</p>
+    </div>
+  </div>
+
+  <div class="mistake-item">
+    <div class="mistake-num">02</div>
+    <div class="mistake-content">
+      <strong>Ignoring Prompt Engineering</strong>
+      <p>Most beginners treat AI tools as magic boxes: type something vague, get a mediocre output. Professionals who understand prompt engineering consistently get dramatically better results from the same tools. A well-engineered prompt is the difference between a generic blog post and one that converts. This is the single most important skill to master first.</p>
+    </div>
+  </div>
+
+  <div class="mistake-item">
+    <div class="mistake-num">03</div>
+    <div class="mistake-content">
+      <strong>Not Building a Portfolio</strong>
+      <p>No hiring manager or client will pay you based on what you say you can do. They pay based on proof. Your portfolio is your proof. Three strong portfolio pieces — real projects with documented outcomes — are worth more than any certificate. Start building from Week 1, not after you feel "ready." You will never feel ready.</p>
+    </div>
+  </div>
+
+  <div class="mistake-item">
+    <div class="mistake-num">04</div>
+    <div class="mistake-content">
+      <strong>Waiting for "The Perfect Course"</strong>
+      <p>There is always a newer, better course coming. There is always a reason to wait one more week before starting. The AI field moves so fast that courses are often outdated within months. The 90-day action plan in this guide is built on resources available today — many of them free. Start with what exists now. Adapt as you go.</p>
+    </div>
+  </div>
+
+  <div class="mistake-item">
+    <div class="mistake-num">05</div>
+    <div class="mistake-content">
+      <strong>Underpricing Freelance Services</strong>
+      <p>Indian freelancers consistently undercharge out of self-doubt. AI skills are genuinely scarce and genuinely valuable. A well-built automation that saves a client 10 hours per week is worth ₹30,000–₹50,000 in setup fees — even if it took you only 6 hours to build. Price based on the value you deliver, not the time you spent. Research international rates on Fiverr, set competitive Indian prices, and raise them as you accumulate reviews.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:20pt;">
+    <strong>Bonus Mistake:</strong> Trying to be an expert in everything. Pick one path, one niche, one or two tools — and go deep. Depth beats breadth in the early stages. You can always expand later. A "Python + OpenAI API + Startup clients" specialist earns far more than a generalist who dabbles in ten AI tools.
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     CTA / FINAL PAGE
+═══════════════════════════════════════════ -->
+<section class="cta-page">
+  <div style="text-align:center; margin-bottom:20pt;">
+    <div class="cover-brand" style="font-size:24pt;">TARA<span>hut</span> AI Labs</div>
+    <div style="font-family:Arial,sans-serif; font-size:9pt; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-top:4pt;">India's First Offline AI Training Centre · Kotkapura, Punjab</div>
+  </div>
+
+  <div class="cta-box">
+    <h2>Start Your AI Career Today</h2>
+    <p>You have read the roadmap. You know the career paths, the skills, the tools, and the 90-day plan. Now the only thing standing between you and an AI career is action.</p>
+    <p>TARAhut AI Labs is India's first offline AI training centre, based in Kotkapura, Punjab. We have helped hundreds of students, professionals, and freelancers transition into AI careers through hands-on, practical training.</p>
+
+    <div class="cta-highlight">9 Courses from ₹2,499</div>
+
+    <p style="font-size:10pt; color:#374151; margin-bottom:6pt;">Our courses are designed for real outcomes — not certificates. From AI Content Creation to Automation to AI Product Building, we cover every career path in this guide with live instruction, project-based learning, and job placement support.</p>
+
+    <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:14pt 16pt; margin:14pt 0; text-align:left;">
+      <div style="font-family:Arial,sans-serif; font-size:9pt; font-weight:700; color:var(--green-dark); letter-spacing:1px; text-transform:uppercase; margin-bottom:8pt;">What Our Students Get</div>
+      <ul style="margin-left:16pt; font-size:10pt; color:#374151;">
+        <li>Live offline training in Kotkapura + recorded sessions for revision</li>
+        <li>Hands-on projects you can add directly to your portfolio</li>
+        <li>Access to TARAhut AI community for networking and job referrals</li>
+        <li>Placement assistance and freelancing support</li>
+        <li>Certificate of completion recognised by partner companies</li>
+      </ul>
+    </div>
+
+    <p class="cta-contact">
+      Visit: <a href="https://tarahutailabs.com">tarahutailabs.com</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      WhatsApp: <a href="tel:+919200882008">+91 92008-82008</a>
+    </p>
+    <p style="font-size:9pt; color:var(--muted); margin-top:4pt; margin-bottom:0;">Kotkapura, Faridkot, Punjab, India &nbsp;·&nbsp; Batches starting every month</p>
+  </div>
+
+  <div style="margin-top:28pt; text-align:center; font-family:Arial,sans-serif; font-size:9pt; color:var(--muted);">
+    <p style="margin-bottom:4pt;">This guide is published by TARAhut AI Labs — April 2026 Edition.</p>
+    <p style="margin:0;">Free to share. Please credit TARAhut AI Labs when distributing.</p>
+  </div>
+</section>
+
+<!-- Printed footer (visible in screen view, replaced by @page rule when printing) -->
+<div class="page-footer no-print" style="display:none;"></div>
+
+<div class="page-footer">
+  TARAhut AI Labs &nbsp;|&nbsp; tarahutailabs.com &nbsp;|&nbsp; +91 92008-82008
+</div>
+
+</body>
+</html>
